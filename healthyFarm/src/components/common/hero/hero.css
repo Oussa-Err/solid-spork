@@ -1,0 +1,149 @@
+.hero__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.first {
+    width: 100%;
+    height: 570px;
+    display: flex;
+    align-items: center;
+}
+
+.first__left-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+    background-color: rgb(228, 238, 194);
+}
+
+.first__left-section h3 {
+    font-family: var(--gradient-font);
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 38px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    color: #1D1B1B;
+}
+
+.first__left-section p {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 37px;
+    color: #5A636C;
+    margin-bottom: 20px;
+}
+
+.hero__btn > a {
+    padding-left: 10px;
+
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20.5066px;
+    line-height: 22px;
+
+    color: #6F6969;
+}
+
+.hero__btn > div {
+    position: relative;
+    z-index: 2;
+    width: 130px;
+    height: 12px;
+    top: -7px;
+    background-color: rgba(255, 214, 0, 0.50) !important;
+    border-radius: 30px;
+}
+
+.first__right-section {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+}
+
+.first__right-section > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4%;
+    background-size: cover;
+}
+
+.second {
+    width: 100%;
+    height: 570px;
+    display: flex;
+    align-items: center;
+}
+
+.second__left-section {
+    
+}
+
+.second__right-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+    background-color: rgb(228, 238, 194);
+}
+
+.second__right-section > p{
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 37px;
+    color: #5A636C;
+    margin-bottom: 20px;
+}
+
+.second__right-section > h3 {
+    font-family: var(--gradient-font);
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 38px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    color: #1D1B1B;
+}
+
+.second__left-section > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4%;
+    background-size: cover;
+}
+
+.second__left-section {
+    scroll-timeline-name: myScrollTimeLine;
+}
+
+.second__left-section > img {
+    animation-name: rotateAnimation;
+    animation-name: mySrollTimeline;
+}
+
+
+
+
+@media screen and (max-width: 1050px) {
+    .first, .second, .third {
+       flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .first, .second, .third {
+        font-size: 1rem;
+    }
+}

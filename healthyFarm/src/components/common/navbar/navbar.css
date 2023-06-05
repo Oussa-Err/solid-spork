@@ -1,0 +1,161 @@
+.container {
+    background-color: #3DBEFF;
+    width: 100vw;
+    height: 458px;
+    overflow: hidden;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    color: #FFF7F7;
+    margin: 0 0 20px 15px;
+    font-size: larger;
+}
+
+.navbar__btn {
+    padding: 1.5em 2em;
+}
+
+.navbar__links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar__links > li {
+    padding: 15px;
+}
+
+.navbar__links > li > a {
+    color: #FFF6F6;
+}
+
+.navbar__btn > button > a {
+    color: #3f4160;
+}
+
+button:hover {
+    border-color: #646cff;
+}
+
+a:hover {
+  color: #9a9eea !important;
+}
+
+.duBio {
+    color: #FFF6F6;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.navbar__maticha > img {
+    align-self: flex-end;
+}
+
+.navbar__maticha {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 75%;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.navbar__burger {
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+    z-index: 100;
+}
+
+.menu__container-links > p {
+    font-family: var(--font-family);
+    font-size: 14px;
+    text-transform: capitalize;
+    cursor: pointer;
+    margin-left: 1rem;
+    line-height: 3;
+}
+
+.menu__container {
+    display: none;
+    padding: 1rem 0;
+    position: absolute;
+    top: 3rem;
+    z-index: 99;
+    background-color: #9fcdb7;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+    width: 200px;
+}
+
+@media screen and (max-width: 890px) {
+    .navbar__maticha > img {
+        height: 285px;
+    }
+
+    .duBio {
+        font-size: 2rem;
+    }
+
+    .navbar__burger {
+        display: flex;
+        position: relative;
+    }
+
+    .navbar__btn {
+        display: none;
+    }
+
+    .navbar__links-container {
+        display: none;
+    }
+
+    .menu__container {
+        display: block;
+    }
+
+    .navbar__logo {
+        font-size: 25px;
+        margin: 0 0 27px 15px;
+    }
+
+    .navbar__links > li > a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navbar__btn {
+        display: none;
+    }
+
+    .navbar__menu-btn {
+        display: block;
+    }
+
+    .navbar__logo {
+        font-size: 24px;
+        margin: 0 0 29px 10px;
+    }
+
+    .duBio {
+        font-size: 1.5rem;
+    }
+}
