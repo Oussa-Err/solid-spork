@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&family=Rowdies:wght@300;400;700&display=swap');
+
+:root {
+  --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+  --gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
+  
+  --color-hero-nosProduit: #2C7566;
+  --color-hero-home: #3DBEFF;
+  --color-black: #040C18;
+  --color-footer : #88D7C7;
+
+  --font-family: 'Rowdies', Arial, sans-serif;
+  }
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+a {
+  font-weight: 400;
+  text-decoration: inherit;
+}
+
+
+body {
+  display: flex;
+  font-family: var(--font-family);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus,
+button:focus-visible {
+  /* outline: 4px auto -webkit-focus-ring-color; */
+}
+
+
+
+
+
+
+
