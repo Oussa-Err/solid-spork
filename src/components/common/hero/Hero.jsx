@@ -1,11 +1,10 @@
 import React from 'react'
 import './hero.css'
-import paper from '../../../assets/taken_by_khoukh.jpeg'
-import oeuf from '../../../assets/oeuf.png'
+import { paper, article2img } from './import.js'
 
 function Hero() {
   return (
-      <div className='m-50 rounded-md grid hero__container'>
+      <div className='hero__container'>
         <div className='first'>
           <div className='first__left-section'>
             <h3>Manger bio, Pourquoi ?</h3>
@@ -21,19 +20,11 @@ function Hero() {
         </div>
         <div className='second'>
           <div className='second__left-section'>
-            <img src={ oeuf } alt="lbid" />
+            <img src={ article2img } alt="lbid" />
           </div>
           <div className='second__right-section'>
               <h3>Besoin de composer vous-même votre panier de légumes bio ?</h3>
               <p>Vous pouvez créer vous-même votre assortiment, en fonction de vos goûts et des produits disponibles. Pas de gâchis, vous n’achetez que les légumes BIO qui vous font envie à vous et à votre famille.</p>
-          </div>
-        </div>
-        <div className='third'>
-          <div className='third__left-section'>
-
-          </div>
-          <div className='third__right-section'>
-
           </div>
         </div>
 

@@ -3,9 +3,10 @@
 }
 
 .hero__container {
-  padding: 0 40px;
+  padding: 0 100px;
 }
 
-/* .article__container {
+.about__container {
+  padding: 0;
 
-} */
+}

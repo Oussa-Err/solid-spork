@@ -31,10 +31,8 @@ body {
   font-family: var(--font-family);
   line-height: 1.5;
   font-weight: 400;
-}
-
-h1 {
-  font-size: 1em;
+  min-height: 100vh;
+  background-color: #E3EEF9;
 }
 
 button {

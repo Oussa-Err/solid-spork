@@ -1,10 +1,10 @@
-import Article from './common/article/Article'
+import About from './common/about/About'
 import Hero from './common/hero/Hero'
 import Navbar from './common/navbar/Navbar'
 import Footer from './common/footer/Footer'
 
 export {
-    Article,
+    About,
     Hero,
     Navbar,
     Footer
