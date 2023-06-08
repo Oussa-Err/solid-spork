@@ -18,10 +18,6 @@ function About() {
               <img src={ noBgLogo } alt="khedra" />
             </div>
           </div>
-      <div>
-        <p>Nous accordons un grand soin à votre commande. Nous disposons des fruits et légumes avec précaution afin qu'ils ne s'abîment pas pendant le transport. This correction ensures the use of "des fruits" to indicate the general category of fruits, rather than a specific set of fruits.</p>
-
-      </div>
     </div>
   ) 
 } 

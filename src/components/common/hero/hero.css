@@ -68,8 +68,7 @@
     
 
 .first__left-section >  h3,
-.second__right-section > h3,
-.third__left-section > h3 {
+.second__right-section > h3 {
     font-family: var(--gradient-font);
     font-weight: 600;
     font-size: 36px;

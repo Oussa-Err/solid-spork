@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Hero, Footer, About } from './components'
+import { Navbar, Hero, Footer, About, Us, Contact } from './components'
 import './App.css'
 
 function App() {
@@ -12,6 +12,10 @@ function App() {
       <div className='article__section'>
         <About />
       </div>
+      <div className='us__section'>
+        <Us />
+      </div>
+      <Contact />
       <div className='footer__section'>
         <Footer />
       </div>
