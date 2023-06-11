@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import ArrowSVG from '../../assets/Arrow.svg'
+// import ArrowSVG from '../../assets/Arrow.svg'
 
 function Arrow() {
   const arrowRef = useRef(null);
@@ -25,7 +25,7 @@ function Arrow() {
     };
   }, []);
 
-  return <div ref={arrowRef}><ArrowSVG /></div>; // Replace ⇓ with your arrow icon or SVG
+  return <div ref={arrowRef}><ArrowSVG /></div>;
 }
 
 export default Arrow;

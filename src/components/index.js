@@ -1,15 +1,9 @@
-import About from './common/about/About'
-import Hero from './common/hero/Hero'
-import Navbar from './common/navbar/Navbar'
-import Footer from './common/footer/Footer'
-import Us from './common/us/Us'
-import Contact from './common/contact/Contact'
+import Home from './pages/Home'
+import ProductPage from './pages/ProductPage'
+import ContactPage from './pages/ContactPage'
 
 export {
-    About,
-    Hero,
-    Navbar,
-    Footer,
-    Us,
-    Contact
+    Home,
+    ProductPage,
+    ContactPage
 }

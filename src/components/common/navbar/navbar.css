@@ -36,16 +36,8 @@
     color: #FFF6F6;
 }
 
-.navbar__btn > button > a {
-    color: #3f4160;
-}
-
-button:hover {
-    border-color: #646cff;
-}
-
-a:hover {
-  color: #9a9eea !important;
+.navbar__menu-btn> button:hover {
+    border-color: #101114;
 }
 
 .duBio {
@@ -72,37 +64,39 @@ a:hover {
 }
 
 .navbar__burger {
+    display: none;
     justify-content: center;
     align-items: flex-end;
     flex-direction: column;
+
     text-align: center;
-    display: none;
     cursor: pointer;
+
     position: absolute;
     top: 0.5rem;
     right: 2rem;
     z-index: 100;
 }
 
-.menu__container-links > p {
+.menu__container-links > p  > a{
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: 17px;
     text-transform: capitalize;
     cursor: pointer;
-    margin-left: 1rem;
-    line-height: 3;
+    line-height: 4;
+    color: #5c5b59 ;
 }
 
 .menu__container {
     display: none;
     padding: 1rem 0;
     position: absolute;
-    top: 3rem;
+    top: 5rem;
     z-index: 99;
-    background-color: #9fcdb7;
+    background-color: #c8efdf;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-    width: 200px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    width: 250px;
 }
 
 @media screen and (max-width: 890px) {
