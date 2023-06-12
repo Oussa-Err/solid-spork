@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
 // import { Arrow } from '../Arrow'
+import { Button } from '@mui/material';
 import arrow from '../../../assets/Arrow.png'
 import './contact.css'
 
@@ -14,7 +15,7 @@ const Menu = () => {
     )
 }
 
-function Contact() {
+const Contact = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
@@ -32,7 +33,7 @@ function Contact() {
                         </ul>
                     </div>
                     <div className='navbar__btn'>
-                        <button type='button'><a href="/contact">Contact</a></button>
+                        <Button href='/contact' variant="contained" color='success' disabled>Contact</Button>
                     </div>
                     <div className='navbar__burger'>
                         {toggleMenu
@@ -44,7 +45,7 @@ function Contact() {
                                 <div className='menu__container-links'>
                                     <Menu />
                                     <div className='navbar__menu-btn'>
-                                        <button type='button'><a href="/contact">Contact</a></button>
+                                        <Button href='/contact' variant="contained" color='success' disabled>Contact</Button>
                                     </div>
                                 </div>
                             </div>

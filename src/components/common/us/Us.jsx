@@ -1,9 +1,8 @@
 import React from 'react'
 import './us.css'
 
-function Us() {
-  return (
-    <div>
+const Us = () =>
+    <>
         <div className='QuiNous_somme' id='us'>
             <h2>Qui somme-nous ?</h2>
             <div className='content'>
@@ -11,8 +10,6 @@ function Us() {
                 <p>Nous accordons un grand soin à votre commande. Nous disposons des fruits et légumes avec précaution afin qu'ils ne s'abîment pas pendant le transport.</p>
             </div>
       </div>
-    </div>
-  )
-}
+    </>
 
 export default Us

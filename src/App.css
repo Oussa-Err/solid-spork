@@ -1,12 +1,15 @@
-.app_container {
-
-}
-
 .hero__container {
   padding: 0 100px;
 }
 
-.about__container {
-  padding: 0;
+@media screen and (max-width: 1311px) {
+  .hero__container {
+    padding: 0 50px;
+  }
+}
 
+@media screen and (max-width: 1072px) {
+  .hero__container {
+    padding: 0;
+  }
 }

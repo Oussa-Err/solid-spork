@@ -1,5 +1,5 @@
 .QuiNous_somme {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     background-color: #feffff;
@@ -7,28 +7,55 @@
     justify-content: center;
 }
 
-.content > p{
+.content>p {
     font-family: Arial, sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 37px;
 
-    width: 900px;
-
     color: #5A636C;
     margin-bottom: 30px;
 }
 
-.QuiNous_somme > h2 {
+.QuiNous_somme>h2 {
     font-family: var(--font-family);
-    font-style: normal;
     font-weight: 400;
     font-size: 41.9996px;
     line-height: 52px;
     text-align: center;
     letter-spacing: 0.1em;
-    
+
     color: #8E8181;
 
-    padding: 50px;    
+    padding: 50px;
+}
+
+@media screen and (max-width: 900px) {
+    .QuiNous_somme>h2 {
+        font-weight: 400;
+        font-size: 40.9996px;
+        line-height: 42px;
+        padding: 25px;
+    }
+
+    .content > p {
+        font-size: 18px;
+        line-height: 35px;
+        margin:  0 15px 25px 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .QuiNous_somme>h2 {
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 32px;
+        padding: 15px;
+    }
+
+    .content > p {
+        font-size: 17px;
+        line-height: 32px;
+        margin:  0 10px 15px 10px;
+    }
 }

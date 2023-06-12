@@ -5,16 +5,14 @@ import './navbar.css'
 import maticha from '../../../assets/maticha.png'
 import arrow from '../../../assets/Arrow.png'
 
-const Menu = () => {
-  return (<>
+
+const Menu = () => <>
     <p><a href="/">Acceuil</a></p>
     <p><a href="#us">À propos</a></p>
     <p><a href="/products">Nos Produit</a></p>
   </>
-  )
-}
 
-function Navbar() {
+const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
