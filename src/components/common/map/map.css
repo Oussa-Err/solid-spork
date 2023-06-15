@@ -1,0 +1,7 @@
+.map-container {
+	width: 100%;
+	height: 40%;
+	position: static;
+	border-radius: 31px;
+	border: 30px double lightsalmon;
+}

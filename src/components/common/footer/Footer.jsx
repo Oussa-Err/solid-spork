@@ -1,6 +1,5 @@
 import React from 'react'
 import './footer.css'
-import logo from '../../../assets/noBgLogo.png'
 import { SocialIcon } from 'react-social-icons';
 
 
@@ -11,12 +10,13 @@ const Footer = () =>
         <h1>HEALTHY FARM</h1>
       </div>
       <div className='footer__pages-list'>
-        <a href="/contactPage"><p>Contact</p></a>
-        <a href="/productPage"><p>Nos Produits</p></a>
+        <a href="/"><p>Home</p></a>
+        <a href="/contact"><p>Contact</p></a>
+        <a href="/products"><p>Nos Produits</p></a>
       </div>
       <div className='footer__links'>
         <SocialIcon url="https://twitter.com/jaketrent" />
-        <SocialIcon url="" />
+        <SocialIcon url="	https://wa.me/21251551085?text=I'm%20interested%20in%20your%20car%20for%20sale" />
       </div>
     </div>
   </>

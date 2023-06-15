@@ -1,13 +1,13 @@
 import React from 'react'
-import { Product, Footer } from '../common'
+import { Product, ProductBody, Footer, Map, CarouselSlide } from '../common'
 
-function ProductPage() {
-  return (
-    <div>
-        <Product />
-        <Footer />
-    </div>
-  )
-}
+const ProductPage = () =>
+  <>
+    <Product />
+    <CarouselSlide />
+    <ProductBody />
+    <Map />
+    <Footer />
+  </>
 
 export default ProductPage

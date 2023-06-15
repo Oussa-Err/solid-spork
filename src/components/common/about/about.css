@@ -44,6 +44,7 @@
 .third__right-section > img {
     width: 100%;
     height: auto;
+    max-width: 35rem;
     
     background-size: cover;
     background-position: center;
@@ -56,9 +57,12 @@
     padding: 25px;
   }
 
-  .third__left-section,
+  .third__left-section {
+    padding: 1rem;
+  }
+
   .third__right-section {
-    padding: 2rem;
+    padding: 1rem 0 1rem 0;
   }
 
   .third__left-section > h3 {
@@ -88,10 +92,31 @@
   .third__right-section > img {
     max-height: 25rem;
     height: 18.75rem;
-    width: 18.75rem; 
+    width: 18.75rem;
   }
 
   .third__left-section > h3 {
     font-weight: 400;
+  }
+}
+
+
+@media screen and (max-width: 360px) {
+  .about__container {
+    padding: 0;
+  }
+  
+  .third__right-section > img {
+    max-height: 25rem;
+    height: 15.75rem;
+    width: 15.75rem; 
+  }
+
+.third__left-section {
+  padding-right: 3px;
+}
+
+  .third__right-section {
+    padding: 0;
   }
 }

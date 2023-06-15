@@ -5,6 +5,9 @@ import Hero from "./hero/Hero";
 import Product from "./product/Product";
 import Us from "./us/Us"
 import Navbar from "./navbar/Navbar"
+import ProductBody from "./productBody/ProductBody"
+import Map from "./map/Map";
+import CarouselSlide from "./productSlide/CarouselSlide";
 
 export {
     Contact,
@@ -13,5 +16,8 @@ export {
     Hero,
     Product,
     Us,
-    Navbar
+    Navbar,
+    ProductBody,
+    Map,
+    CarouselSlide
 }
