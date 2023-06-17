@@ -15,7 +15,7 @@ const Footer = () =>
         <a href="/products"><p>Nos Produits</p></a>
       </div>
       <div className='footer__links'>
-        <SocialIcon url="https://twitter.com/jaketrent" />
+        <SocialIcon url="https://www.instagram.com/healthyfarm.khemisset" />
         <SocialIcon url="	https://wa.me/21251551085?text=I'm%20interested%20in%20your%20car%20for%20sale" />
       </div>
     </div>

@@ -3,6 +3,9 @@
     width: 100vw;
     height: 458px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .navbar__container {
