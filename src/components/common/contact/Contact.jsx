@@ -62,7 +62,14 @@ const Contact = () => {
             <div className='contact__second-section'>
                 <div className="contact-body">
                     <img id='panier' src={panier} alt="" />
-                    <form name="contact" method="POST" data-netlify="true">
+                    <form
+                        name="contact"
+                        action="/pages/success"
+                        method="POST"
+                        netlify-honeypot="bot-field"
+                        data-netlify="true"
+                    >
+                        <input name="bot-field" style={{display: 'none'}}/>
                         <p>
                             <input placeholder='Name' type="text" name="name" />
                         </p>
