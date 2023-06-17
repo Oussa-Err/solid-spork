@@ -4,7 +4,7 @@ import { Product, ProductBody, Footer, Map, CarouselSlide } from '../common'
 const ProductPage = () =>
   <>
     <Product />
-    <CarouselSlide />
+    <CarouselSlide/>
     <ProductBody />
     <Map />
     <Footer />

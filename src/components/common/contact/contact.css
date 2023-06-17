@@ -20,11 +20,17 @@
 
 .contact__heading {
     display: flex;
+    /* padding-top: 4rem; */
     flex-direction: column;
     align-items: center;
 }
 
-.contact__heading>h2 {
+.navbar__logo {
+    /* color: wheat !important */
+}
+
+
+.contact_us {
     font-family: var(--font-familly);
     font-weight: 700;
     font-size: 58.1911px;
@@ -33,6 +39,7 @@
     text-transform: uppercase;
 
     color: #FFF7F7;
+
 }
 
 
@@ -41,57 +48,53 @@
 
 .contact__second-section {
     width: 100%;
-    height: 650px;
+    height: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     background-color: #F5E6E6;
+
+}
+
+#panier {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
 }
 
 
 .contact-body {
-    padding: 60px;
+    overflow: hidden;
     border-radius: 5%;
+
     width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
     background-color: #d4e2b3;
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 form {
-    margin-top: 20px;
-}
-
-h2 {
-    margin-bottom: 20px;
-}
-
-.form-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 70px;
-}
-
-label {
-    margin-bottom: 5px;
+    margin: 20px;
 }
 
 input,
 textarea {
     width: 100%;
-    border-radius: 3%;
-    border: 5px double rgb(137, 146, 67);
+    border: 5px double rgb(151, 161, 79);
     padding: 8px;
     margin-bottom: 10px;
 }
 
 #contact_button {
-    padding: 10px 20px;
     border: none;
     cursor: pointer;
 
+    margin: 1rem 0;
     height: 50px;
-    width: 300px;
 
 
     color: #fff;
@@ -100,24 +103,57 @@ textarea {
 }
 
 #contact_button:hover {
-    background-color: #006400;
+    background-color: #2ac02a;
 }
 
 /* media queries */
-@media (max-width: 1415px) {
+
+@media screen and (max-width: 1000px) {
+    .contact_us {
+        font-size: 40px;
+    }
+
     .contact-body {
-        /* flex-wrap: wrap; */
+        width: 90%;
+    }
+
+    .contact__second-section {
+        height: auto;
+        padding: 20px;
     }
 }
 
-@media (max-width: 900px) {
-    .form-row {
-        gap: 10px;
+
+@media screen and (max-width: 650px) {
+    .navbar__logo {
+        /* line-height: normal */
+    }
+
+    .contact_us {
+        font-size: 34px;
+        line-height: normal;
+    }
+
+    .contact-body {
+        width: 100%;
+        border-radius: 0;
+        align-items: baseline;
+    }
+
+    .contact__second-section {
+        height: auto;
+        padding: 0;
+    }
+
+    #contact_button {
+        margin-left: 2rem;
+        margin-top: 0;
     }
 }
 
-@media (max-width: 768px) {
-    .form-row {
-        gap: 10px;
+@media screen and (max-width: 500px) {
+    .contact_us {
+        font-size: 27px;
+        line-height: normal;
     }
 }
