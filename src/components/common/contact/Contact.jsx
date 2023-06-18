@@ -68,14 +68,16 @@ const Contact = () => {
                         method="POST"
                         netlify
                         netlify-honeypot="bot-field"
-
+                        onSubmit="submit"
                     >
                         <input type="hidden" name="form-name" value="contact" />
                         <p>
                             <input required placeholder='Name' type="text" name="name" />
                         </p>
                         <p>
-                            <input required placeholder='Téléphone' type="tel" name="Téléphone" />
+                            <input type="tel" id="phone" name="phone"
+                                pattern="[0-9]{10}" placeholder='Téléphone'
+                                required/>
                         </p>
                         <p>
                             <input required placeholder='Email' type="email" name="email" />
@@ -83,10 +85,10 @@ const Contact = () => {
                         <p>
                             <label >Message: <textarea required name="message"></textarea></label>
                         </p>
+                        <p>
+                            <button id='contact_button' type="submit">Submit</button>
+                        </p>
                     </form>
-                    <p>
-                        <button id='contact_button' type="submit">Submit</button>
-                    </p>
                 </div>
             </div>
         </div>
