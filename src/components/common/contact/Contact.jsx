@@ -22,7 +22,7 @@ const Contact = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
     return (
         <div className='contact__container'>
-            <div className='contact__first-section'>
+            {/* <div className='contact__first-section'>
                 <div className='navbar__contact-container'>
                     <div className='navbar__logo'>
                         <h2>HEALTHY FARM</h2>
@@ -59,9 +59,9 @@ const Contact = () => {
                     <img src={arrow} alt="arrow" />
                 </div>
             </div>
-            <div className='contact__second-section'>
-                <div className="contact-body">
-                    <img id='panier' src={panier} alt="" />
+            <div className='contact__second-section'> */}
+                {/* <div className="contact-body">
+                    <img id='panier' src={panier} alt="" /> */}
                     <form
                         name="contact"
                         method="POST"
@@ -78,8 +78,8 @@ const Contact = () => {
                         <label >Message: <textarea required name="message"></textarea></label>
                         <button id='contact_button' type="submit">Submit</button>
                     </form>
-                </div>
-            </div>
+                {/* </div> */}
+            {/* </div> */}
         </div>
     )
 }
