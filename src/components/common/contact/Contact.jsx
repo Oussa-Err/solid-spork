@@ -64,24 +64,24 @@ const Contact = () => {
                     <img id='panier' src={panier} alt="" />
                     <form
                         name="contact"
-                        action="/pages/success"
+                        action="/contact"
                         method="POST"
+                        netlify
                         netlify-honeypot="bot-field"
-                        data-netlify="true"
+
                     >
-                        <input name="bot-field" style={{display: 'none'}}/>
-                        <input type="hidden" name="form-name" value="contact"/>
+                        <input type="hidden" name="form-name" value="contact" />
                         <p>
-                            <input placeholder='Name' type="text" name="name" />
+                            <input required placeholder='Name' type="text" name="name" />
                         </p>
                         <p>
-                            <input placeholder='Téléphone' type="phone" name="Téléphone" />
+                            <input required placeholder='Téléphone' type="tel" name="Téléphone" />
                         </p>
                         <p>
-                            <input placeholder='Email' type="email" name="email" />
+                            <input required placeholder='Email' type="email" name="email" />
                         </p>
                         <p>
-                            <label >Message: <textarea name="message"></textarea></label>
+                            <label >Message: <textarea required name="message"></textarea></label>
                         </p>
                     </form>
                     <p>
