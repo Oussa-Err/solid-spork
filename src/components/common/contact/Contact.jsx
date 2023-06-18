@@ -62,10 +62,10 @@ const Contact = () => {
             <div className='contact__second-section'>
                 <div className="contact-body">
                     <img id='panier' src={panier} alt="" />
-                    {/* <form
+                    <form
                         name="contact v8"
-                        method="POST"
-                        data-netlify="true"
+                        action='POST'
+                        data-netlify='true'
                         netlify-honeypot="bot-field"
                         onSubmit="submit"
                     >
@@ -78,18 +78,6 @@ const Contact = () => {
                         <label >Message:
                             <textarea required name="message"></textarea></label>
                         <button id='contact_button' type="submit">Submit</button>
-                    </form> */}
-
-                    <form name="contact" netlify>
-                        <p>
-                            <label>Name <input type="text" name="name" /></label>
-                        </p>
-                        <p>
-                            <label>Email <input type="email" name="email" /></label>
-                        </p>
-                        <p>
-                            <button type="submit">Send</button>
-                        </p>
                     </form>
                 </div>
             </div>
