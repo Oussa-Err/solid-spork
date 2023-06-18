@@ -64,7 +64,7 @@ const Contact = () => {
                     <img id='panier' src={panier} alt="" />
                     <form
                         name="contact v8"
-                        action='POST'
+                        method='post'
                         data-netlify='true'
                         netlify-honeypot="bot-field"
                         onSubmit="submit"
