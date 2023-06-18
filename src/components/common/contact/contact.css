@@ -130,10 +130,6 @@ textarea {
 
 
 @media screen and (max-width: 650px) {
-    .navbar__logo {
-        /* line-height: normal */
-    }
-
     .contact_us {
         font-size: 34px;
         line-height: normal;

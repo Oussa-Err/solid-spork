@@ -22,7 +22,7 @@ const Contact = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
     return (
         <div className='contact__container'>
-            {/* <div className='contact__first-section'>
+            <div className='contact__first-section'>
                 <div className='navbar__contact-container'>
                     <div className='navbar__logo'>
                         <h2>HEALTHY FARM</h2>
@@ -59,27 +59,28 @@ const Contact = () => {
                     <img src={arrow} alt="arrow" />
                 </div>
             </div>
-            <div className='contact__second-section'> */}
-                {/* <div className="contact-body">
-                    <img id='panier' src={panier} alt="" /> */}
+            <div className='contact__second-section'>
+                <div className="contact-body">
+                    <img id='panier' src={panier} alt="" />
                     <form
-                        name="contact"
+                        name="contact v8"
                         method="POST"
-                        netlify
+                        data-netlify="true"
                         netlify-honeypot="bot-field"
                         onSubmit="submit"
                     >
-                        <input type="hidden" name="form-name" value="contact" />
+                        <input type="hidden" name="form-name" value="contact v8" />
                         <input required placeholder='Name' type="text" name="name" />
                         <input required type="tel" name="phone"
                             pattern="[0-9]{10}" placeholder='Téléphone'
                         />
                         <input required placeholder='Email' type="email" name="email" />
-                        <label >Message: <textarea required name="message"></textarea></label>
+                        <label >Message:
+                            <textarea required name="message"></textarea></label>
                         <button id='contact_button' type="submit">Submit</button>
                     </form>
-                {/* </div> */}
-            {/* </div> */}
+                </div>
+            </div>
         </div>
     )
 }
