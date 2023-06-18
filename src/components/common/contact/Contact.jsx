@@ -70,11 +70,12 @@ const Contact = () => {
                         data-netlify="true"
                     >
                         <input name="bot-field" style={{display: 'none'}}/>
+                        <input type="hidden" name="form-name" value="contact"/>
                         <p>
                             <input placeholder='Name' type="text" name="name" />
                         </p>
                         <p>
-                            <input placeholder='Téléphone' type="text" name="Téléphone" />
+                            <input placeholder='Téléphone' type="phone" name="Téléphone" />
                         </p>
                         <p>
                             <input placeholder='Email' type="email" name="email" />
