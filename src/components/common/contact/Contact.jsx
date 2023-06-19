@@ -64,19 +64,25 @@ const Contact = () => {
                     <img id='panier' src={panier} alt="" />
                     <form
                         name="contact"
-                        method='post'
-                        data-netlify='true'
+                        method="post"
+                        data-netlify="true"
                         netlify-honeypot="bot-field"
                     >
                         <input type="hidden" name="form-name" value="contact" />
-                        <input required placeholder='Name' type="text" name="name" />
-                        <input required type="tel" name="phone"
-                            pattern="[0-9]{10}" placeholder='Téléphone'
+                        <input required placeholder="Name" type="text" name="name" />
+                        <input
+                            required
+                            type="tel"
+                            name="phone"
+                            pattern="[0-9]{10}"
+                            placeholder="Téléphone"
                         />
-                        <input required placeholder='Email' type="email" name="email" />
-                        <label >Message:
-                            <textarea required name="message"></textarea></label>
-                        <button id='contact_button' type="submit" name='submit'>Submit</button>
+                        <input required placeholder="Email" type="email" name="email" />
+                        <label>
+                            Message:
+                            <textarea required name="message"></textarea>
+                        </label>
+                        <button id="contact_button" type="submit" name="submit">Submit</button>
                     </form>
                 </div>
             </div>
