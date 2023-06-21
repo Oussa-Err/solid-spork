@@ -31,6 +31,17 @@
     /* align-self: center; */
 }
 
+.nos_produit {
+    color: #FFF6F6;
+    font-size: 3rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    .nos_produit {
+        font-size: 2rem;
+    }
+}
 
 @media screen and (max-width: 500px) {
     .navbar__potato>img {
@@ -47,13 +58,15 @@
     }
 
 
-    .navbar__potato > img {
+    .navbar__potato>img {
         width: 500px;
         height: auto;
     }
 
-    .duBio {
+    .nos_produit {
+        color: darkslategrey;
         position: relative;
         top: 5rem;
     }
+
 }

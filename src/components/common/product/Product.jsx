@@ -47,7 +47,7 @@ function Product() {
           )}
         </div>
       </div>
-      <h1 className='duBio'>NOS PRODUITS</h1>
+      <h1  className='nos_produit'>NOS PRODUITS</h1>
       <div className='navbar__potato'>
         <div className='arrow'>
           <img src={arrow} alt="" />
