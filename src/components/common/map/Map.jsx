@@ -13,7 +13,7 @@ const Map = () => {
     });
     const center = useMemo(() => ({ lat: 33.74451577797111, lng: -6.155663348132094 }), [])
 
-    if (!isLoaded) { return <div>Loading...</div>; }
+    if (!isLoaded) { return <div className='map__loading'>Loading...</div>; }
     return (
         <GoogleMap 
         zoom={10} 
