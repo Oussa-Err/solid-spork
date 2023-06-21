@@ -48,11 +48,11 @@ function Product() {
         </div>
       </div>
       <h1 className='duBio'>NOS PRODUITS</h1>
-      <div className='navbar__maticha'>
+      <div className='navbar__potato'>
         <div className='arrow'>
           <img src={arrow} alt="" />
         </div>
-        <img width='700px' height='300px' src={potato} alt="potato" />
+        <img width='700px' height='300px' className='potato' src={potato} alt="potato" />
       </div>
     </div>
   )
