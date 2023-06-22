@@ -72,7 +72,6 @@ const Contact = () => {
                     <h2 className='contact_us'>Contactez nous</h2>
                     <img src={arrow} alt="arrow" />
                 </div>
-            </div>
             <div className='contact__second-section'>
                 <div className="contact-body">
                     <img id='panier' src={panier} alt="" />
@@ -93,6 +92,7 @@ const Contact = () => {
                         <button id="contact_button" value="send" type="submit">Submit</button>
                     </form>
                 </div>
+            </div>
             </div>
         </div>
     )

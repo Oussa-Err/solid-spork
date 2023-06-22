@@ -1,5 +1,5 @@
 .container {
-    background-color: #3DBEFF;
+    background: linear-gradient(150deg, #3c8ce7, #00eaff);
     width: 100vw;
     height: 458px;
     overflow: hidden;

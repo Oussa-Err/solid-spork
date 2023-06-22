@@ -15,7 +15,7 @@ function About() {
           </div>
         </div>
         <div className='third__right-section'>
-          <img src={noBgLogo} alt="khedra" />
+          <img src={noBgLogo} alt="logo" />
         </div>
       </div>
     </div>

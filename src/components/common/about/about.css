@@ -4,6 +4,7 @@
     display: flex;
     padding: 50px;
     background-color: #D9EAD3;
+    box-shadow: 0px 24px 30px 0px rgba(0,0,0,0.28);
 }
 
 .third__left-section,

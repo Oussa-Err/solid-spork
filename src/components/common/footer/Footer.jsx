@@ -1,7 +1,6 @@
 import React from 'react'
-import './footer.css'
 import { SocialIcon } from 'react-social-icons';
-
+import './footer.css'
 
 const Footer = () =>
   <>
@@ -15,8 +14,8 @@ const Footer = () =>
         <a href="/products"><p>Nos Produits</p></a>
       </div>
       <div className='footer__links'>
-        <SocialIcon url="https://www.instagram.com/healthyfarm.khemisset" />
-        <SocialIcon url="	https://wa.me/21251551085?text=I'm%20interested%20in%20your%20car%20for%20sale" />
+        <SocialIcon className='footer_icon' url="https://www.instagram.com/healthyfarm.khemisset" />
+        <SocialIcon className='footer_icon' url="	https://wa.me/21251551085?text=Bonjour,%20Je%20suis%20intéréssé%20" />
       </div>
     </div>
   </>
