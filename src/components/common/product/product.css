@@ -21,14 +21,14 @@
 
 @media screen and (max-width: 890px) {
     .navbar__potato>img {
-        height: 285px;
+        width: 500px;
+        height: 220px;
     }
 }
 
 .navbar__maticha>img {
-    width: 500px;
+    width: 400px;
     height: auto;
-    /* align-self: center; */
 }
 
 .nos_produit {
@@ -44,10 +44,6 @@
 }
 
 @media screen and (max-width: 500px) {
-    .navbar__potato>img {
-        width: 413px;
-    }
-
     .arrow {
         align-self: center;
     }
@@ -59,12 +55,11 @@
 
 
     .navbar__potato>img {
-        width: 500px;
+        width: 400px;
         height: auto;
     }
 
     .nos_produit {
-        color: darkslategrey;
         position: relative;
         top: 5rem;
     }

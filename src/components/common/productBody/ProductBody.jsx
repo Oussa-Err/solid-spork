@@ -7,12 +7,7 @@ import './productBody.css'
 export const ProductBody = () => {
   return (
     <div>
-      <div>
-
-      </div>
-
       <div id="feature">
-        <h1 className="fa">Features</h1>
         <div className="all">
           <div className="fe-box">
             <img width='300px' height='300px' src={feature1} alt="placeholder" />

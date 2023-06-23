@@ -1,7 +1,15 @@
 .map-container {
-	width: 100%;
-	height: 40%;
-	position: static;
-	border-radius: 31px;
-	border: 30px double lightsalmon;
+	width: 60%;
+	height: 30%;
+	border: 20px groove rgba(255, 165, 80, 0.42);
+	margin: 0 20%;
+}
+
+@media screen and (max-width: 900px) {
+	.map-container {
+		width: 100%;
+		height: 20%;
+		margin: 0;
+		border: 10px groove rgba(255, 165, 80, 0.42);
+	}
 }

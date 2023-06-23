@@ -15,13 +15,13 @@ const Map = () => {
 
     if (!isLoaded) { return <div className='map__loading'>Loading...</div>; }
     return (
-        <GoogleMap 
-        zoom={10} 
-        center={center}
-        mapContainerClassName='map-container'
-        >
-        <Marker position={center}/>
-        </GoogleMap>
+            <GoogleMap
+                zoom={13}
+                center={center}
+                mapContainerClassName='map-container'
+            >
+                <Marker position={center} />
+            </GoogleMap>
     )
 }
 

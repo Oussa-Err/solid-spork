@@ -56,3 +56,10 @@
 .fe-box:hover {
     box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1)
 }
+
+@media screen and (max-width: 900px) {
+    .fe-box{
+        width: 200px;
+        height: auto;
+    } 
+}

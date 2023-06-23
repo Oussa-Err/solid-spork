@@ -34,7 +34,7 @@ const CarouselSlide = () => {
           <p className="legend">Legend 3</p>
         </div>
       </Carousel>
-      <div>
+      <div className='description-section'>
         <h1>offers</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate porro quae autem. Soluta tempora est enim reiciendis earum mollitia neque dicta, non deserunt quia? Impedit maiores repellat autem quas adipisci.</p>
       </div>

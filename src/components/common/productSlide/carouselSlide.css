@@ -1,24 +1,24 @@
 .offers__container {
     display: flex;
     gap: 30px;
-    justify-content: space-around;
     align-items: center;
-    background-color: #e5edc2;
     padding: 100px;
+    background-color: #f3f1ef;
+
 }
 
 .carouselSlide__container {
     width: 50dvw;
 }
 
-.item {
-    width: 100%;
-    height: auto;
-
+#item {
+    padding-top: 40px;
 }
 
 #item > img {
     width: 300px;
+    border-radius: 10%;
+    box-shadow: 6px 4px 42px -3px rgba(0,0,0,0.75);
 }
 
 .carousel .slider-wrapper {
@@ -39,7 +39,8 @@
     text-align: center;
 }
 
-.carousel-status {
+.carousel-status,
+.control-dots {
     display: none;
 }
 
@@ -49,4 +50,29 @@
 
 .carousel .slide .legend {
     background-color: #274323  !important;
+}
+
+@media screen and (max-width: 930px) {
+    .offers__container {
+        flex-direction: column;
+        padding: 50px;
+    }
+
+    .carouselSlide__container {
+        width: 80dvw;
+    }
+}
+@media screen and (max-width: 600px) {
+    
+    .offers__container {
+        padding: 20px 0;
+    }
+
+    .carouselSlide__container {
+        width: 100dvw;
+    }
+
+    .description-section {
+        padding: 20px;
+    }
 }
