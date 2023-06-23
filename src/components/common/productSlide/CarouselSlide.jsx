@@ -1,42 +1,43 @@
 import React, { useState } from 'react'
 import './carouselSlide.css'
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs'
-import { slides } from './index'
-import headerImg from '../../../assets/carousel-1.jpg'
 
-const CarouselSlide = (data = slides) => {
-  const { slide, setSlide } = useState(1)
+import { img1, img2, img3, img4, img5 } from './index'
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-  const nextSlide = () => {
-    setSlide(slide === data.length - 1 ? 0 : slide + 1)
-  }
-
-  const prevSlide = () => {
-    setSlide(slide === 0 ? data.length - 1 : slide - 1)
-  }
-
+const CarouselSlide = () => {
   return (
-    <div className='carouselSlide__container'>
-      {/* <div className='header__img'>
-          <img src={ headerImg } alt="" />
-      </div> */}
-      <BsArrowLeftCircleFill className='arrow_carousel left-arrow' onClick={prevSlide} />
-      {slides.map((item, index) => {
-        return <img
-          src={item.src}
-          alt={item.alt}
-          key={index}
-          className={slide === index ? "slide" : "slide slide-hidden"} />
-      })}
-      <BsArrowRightCircleFill className='arrow_carousel right-arrow' onClick={nextSlide} />
-      <span className='indicators'>
-        {slides.map((_, index) => {
-          return <button
-            key={index}
-            onClick={() => setSlide(index)}
-            className={slide === index ? "indicator" : "indicator-inactive"}></button>
-        })}
-      </span>
+    <div className='offers__container' >
+      <Carousel className='carouselSlide__container'>
+        <div id='item'>
+          <img src={img1} alt="Image 1" />
+          <p className="legend">Legend 1</p>
+        </div>
+        <div id='item'>
+          <img src={img2} alt="Image 2" />
+          <p className="legend">Legend 2</p>
+        </div>
+        <div id='item'>
+          <img src={img3} alt="Image 3" />
+          <p className="legend">Legend 3</p>
+        </div>
+        <div id='item'>
+          <img src={img4} alt="Image 4" />
+          <p className="legend">Legend 3</p>
+        </div>
+        <div id='item'>
+          <img src={img5} alt="Image 5" />
+          <p className="legend">Legend 3</p>
+        </div>
+        <div id='item'>
+          <img src={img3} alt="Image 6" />
+          <p className="legend">Legend 3</p>
+        </div>
+      </Carousel>
+      <div>
+        <h1>offers</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate porro quae autem. Soluta tempora est enim reiciendis earum mollitia neque dicta, non deserunt quia? Impedit maiores repellat autem quas adipisci.</p>
+      </div>
     </div>
   )
 }
