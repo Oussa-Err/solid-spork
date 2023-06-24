@@ -1,8 +1,8 @@
 .map-container {
-	width: 60%;
-	height: 30%;
+	width: 75%;
+	height: 25%;
 	border: 20px groove rgba(255, 165, 80, 0.42);
-	margin: 0 20%;
+	margin: 0 15%;
 }
 
 @media screen and (max-width: 900px) {

@@ -18,6 +18,9 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 
 a {
@@ -45,12 +48,6 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
-
-button:focus,
-button:focus-visible {
-  /* outline: 4px auto -webkit-focus-ring-color; */
-}
-
 
 
 

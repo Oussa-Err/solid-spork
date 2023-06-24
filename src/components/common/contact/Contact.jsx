@@ -1,12 +1,10 @@
-import React, { useRef } from 'react'
-import { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
-// import { Arrow } from '../Arrow'
 import { Button } from '@mui/material';
 import arrow from '../../../assets/Arrow.png'
-import './contact.css'
 import panier from '../../../assets/header-panier-min.jpg'
 import emailjs from '@emailjs/browser';
+import './contact.css'
 
 const Menu = () => {
     return (<>
@@ -18,22 +16,29 @@ const Menu = () => {
 }
 
 const Contact = () => {
+    const [toggleMenu, setToggleMenu] = useState(false);
+    const [success, setSuccess] = useState(false);
     const form = useRef();
-    console.log(import.meta.env.VITE_SERVICE_EMAIL_ID) // 123
+
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm( import.meta.env.VITE_SERVICE_EMAIL_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, import.meta.env.VITE_EMAILJS_KEY)
+        emailjs.sendForm(
+            import.meta.env.VITE_SERVICE_EMAIL_ID,
+            import.meta.env.VITE_TEMPLATE_ID,
+            form.current,
+            import.meta.env.VITE_EMAILJS_KEY
+        )
             .then((result) => {
                 console.log(result.text);
                 e.target.reset();
+                setSuccess(true)
             }, (error) => {
                 console.log(error.text);
             });
     };
 
 
-    const [toggleMenu, setToggleMenu] = useState(false);
     return (
         <div className='contact__container'>
             <div className='contact__first-section'>
@@ -72,27 +77,33 @@ const Contact = () => {
                     <h2 className='contact_us'>Contactez nous</h2>
                     <img src={arrow} alt="arrow" />
                 </div>
-            <div className='contact__second-section'>
-                <div className="contact-body">
+                <div className='contact__second-section'>
+                    <div className="contact-body">
                     <img id='panier' src={panier} alt="" />
-                    <form ref={form} onSubmit={sendEmail}>
-                        <input required placeholder="Name" type="text" name="user_name" />
-                        <input
-                            required
-                            type="tel"
-                            name="user_tel"
-                            pattern="[0-9]{10}"
-                            placeholder="Téléphone"
-                        />
-                        <input required placeholder="Email" type="email" name="user_email" />
-                        <label>
-                            Message:
-                            <textarea required name="user_message"></textarea>
-                        </label>
-                        <button id="contact_button" value="send" type="submit">Submit</button>
-                    </form>
+                        {success ? (
+                            <div className='success'>
+                                <p>&#10004; Votre message a été envoyé avec succès</p>
+                            </div>
+                            
+                        ) : (
+                            <form ref={form} onSubmit={sendEmail}>
+                                <input required placeholder="Name" type="text" name="user_name" />
+                                <input
+                                    required
+                                    type="tel"
+                                    name="user_tel"
+                                    pattern="[0-9]{10}"
+                                    placeholder="Téléphone"
+                                />
+                                <input required placeholder="Email" type="email" name="user_email" />
+                                <label>
+                                    Message:
+                                    <textarea required name="user_message"></textarea>
+                                </label>
+                                <button id="contact_button" value="send" type="submit">Submit</button>
+                            </form>)}
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     )

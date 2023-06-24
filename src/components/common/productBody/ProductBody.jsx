@@ -1,7 +1,7 @@
 import React from 'react'
 import feature1 from '../../../assets/feature1.jpg'
 import feature2 from '../../../assets/feature2.png'
-import article3img from '../../../assets/article3img.png'
+import article3img from '../../../assets/support-customer.jpeg'
 import './productBody.css'
 
 export const ProductBody = () => {
@@ -18,7 +18,7 @@ export const ProductBody = () => {
             <h6>Online Order</h6>
           </div>
           <div className="fe-box last-item">
-            <img width='300px' height='300px' src={article3img} alt="placeholder" />
+            <img width='200px' height='300px' src={article3img} alt="placeholder" />
             <h6>24/7 Support</h6>
           </div>
         </div>

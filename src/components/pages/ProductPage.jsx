@@ -5,8 +5,8 @@ const ProductPage = () =>
   <>
     <Product />
     <CarouselSlide />
-    <ProductBody />
     <Map />
+    <ProductBody />
     <Footer />
   </>
 

@@ -35,8 +35,8 @@ const CarouselSlide = () => {
         </div>
       </Carousel>
       <div className='description-section'>
-        <h1>offers</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate porro quae autem. Soluta tempora est enim reiciendis earum mollitia neque dicta, non deserunt quia? Impedit maiores repellat autem quas adipisci.</p>
+        <h1>Alors que voulez-vous mettre dans votre Panier?</h1>
+        <p>Nous accordons un grand soin à votre commande. Nous disposons des fruits et légumes avec précaution afin qu'ils ne s'abîment pas pendant le transport.</p>
       </div>
     </div>
   )
