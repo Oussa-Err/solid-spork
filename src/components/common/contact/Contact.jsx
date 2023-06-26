@@ -87,7 +87,7 @@ const Contact = () => {
                             
                         ) : (
                             <form ref={form} onSubmit={sendEmail}>
-                                <input required placeholder="Name" type="text" name="user_name" />
+                                <input required placeholder="Nom" type="text" name="user_name" />
                                 <input
                                     required
                                     type="tel"

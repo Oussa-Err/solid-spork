@@ -15,11 +15,16 @@ const Footer = () =>
         <a href="/products"><p>Nos Produits</p></a>
       </div>
       <div className='footer__links'>
-          <a href="https://www.instagram.com/healthyfarm.khemisset" target="_blank">
+        <a href="https://www.instagram.com/healthyfarm.khemisset" target="_blank">
           <FontAwesomeIcon className='insta' icon={faInstagram} /></a>
-          <a href="https://wa.me/212651551085?text=Bonjour,%20Je%20suis%20intéréssé%20" target="_blank">
+        <a href="https://wa.me/212651551085?text=Bonjour,%20Je%20suis%20intéréssé%20" target="_blank">
           <FontAwesomeIcon className='whats' icon={faWhatsapp} /></a>
       </div>
+
+      <ul className='terms-privacy'>
+        <li><a href="/privacy"> Privacy Policy</a></li>
+        <li><a href="/terms"> Terms of Use</a></li>
+      </ul>
     </div>
   </>
 

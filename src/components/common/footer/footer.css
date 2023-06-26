@@ -70,3 +70,35 @@
     }
 
 }
+
+/* privacy page */
+
+.setCol .terms-privacy li a {
+    color: #544b4b;
+    font-weight: 200;
+}
+
+.setCol .terms-privacy {
+    list-style: none;
+    display: flex;
+    font-size: small;
+    gap: 50px;
+
+}
+
+.privacy-container,
+.terms-container {
+    width: 100%;
+    margin: 30px;
+}
+
+.privacy-container p,
+.terms-container p {
+    font-family: Arial, sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 37px;
+	color: #5A636C;
+	margin-bottom: 30px;
+}
+
