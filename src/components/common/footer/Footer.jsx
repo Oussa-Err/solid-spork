@@ -17,7 +17,7 @@ const Footer = () =>
       <div className='footer__links'>
         <a href="https://www.instagram.com/healthyfarm.khemisset" target="_blank">
           <FontAwesomeIcon className='insta' icon={faInstagram} /></a>
-        <a href="https://wa.me/212651551085?text=Bonjour,%20Je%20suis%20intéréssé%20" target="_blank">
+        <a href="https://wa.me/212662128707?text=Bonjour,%20Je%20suis%20intéréssé%20" target="_blank">
           <FontAwesomeIcon className='whats' icon={faWhatsapp} /></a>
       </div>
 

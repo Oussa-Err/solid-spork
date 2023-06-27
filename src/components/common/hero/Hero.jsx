@@ -10,7 +10,7 @@ function Hero() {
             <h3>Manger bio, Pourquoi ?</h3>
             <p>C’est bien connu : nous sommes ce que nous mangeons. Ainsi, personne ne voudrait manger des produits chimiques et des légumes pauvres en nutriments, transformés et désavantageux pour la santé.</p>
             <div className='hero__btn'>
-              <a href="/products">Learn more</a>
+              <a href="/products">En savoir plus</a>
               <div></div>
             </div>
           </div>
@@ -20,7 +20,7 @@ function Hero() {
         </div>
         <div className='second'>
           <div className='second__left-section'>
-            <img src={ article2img } alt="lbid" />
+            <img src={ article2img } alt="article Image" />
           </div>
           <div className='second__right-section'>
               <h3>Besoin de composer vous-même votre panier de légumes bio ?</h3>

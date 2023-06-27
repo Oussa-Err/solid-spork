@@ -11,7 +11,16 @@ import img10 from '../../../assets/comcombre.jpeg'
 import img11 from '../../../assets/chicore-frisé.jpg'
 import img12 from '../../../assets/cardon.jpeg'
 import img13 from '../../../assets/potato.jpeg'
-
+import img14 from '../../../assets/tomato.jpg'
+import img15 from '../../../assets/potiron.jpg'
+import img16 from '../../../assets/pasteque.jpeg'
+import img17 from '../../../assets/melon-musqué.jpg'
+import img18 from '../../../assets/comcombre-feggous.jpg'
+import img19 from '../../../assets/chou-cabus.jpg'
+import img20 from '../../../assets/celeri.jpg'
+import img21 from '../../../assets/brocoli.jpeg'
+import img22 from '../../../assets/basilic.jpg'
+import img23 from '../../../assets/asperge.jpg'
 
 export {
   img1,
@@ -27,4 +36,14 @@ export {
   img11,
   img12,
   img13,
+  img14,
+  img15,
+  img16,
+  img17,
+  img18,
+  img19,
+  img20,
+  img21,
+  img22,
+  img23
 }

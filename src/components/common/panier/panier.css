@@ -6,7 +6,7 @@
     flex: 1;
 }
 .flex {
-    width: 100%;
+    width: 100dvw;
     display: flex;
 }
 
@@ -22,9 +22,11 @@
 .picture-container img {
     max-width: 85%;
     border-radius: 20px;
-
+    border: 5px solid white;
 }
 
+.huile-container p,
+.oeuf-description p,
 .panier-container p {
     font-family: Arial, sans-serif;
     font-weight: 400;
@@ -34,6 +36,8 @@
     padding: 20px;
 }
 
+.oeuf-container h1,
+.huile-container h1,
 .panier-container h1 {
     font-family: var(--gradient-font);
     font-weight: 400;
@@ -42,6 +46,35 @@
 
     margin-bottom: 0;
     color: #212529;
+}
+
+
+.oeuf-container,
+.huile-container {
+    flex-direction: row-reverse;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 100dvw;
+    background-color: #f3f1ef;
+    padding: 50px 0 5px 50px;
+    gap: 20px
+}
+
+.huile-container {
+    flex-direction: row;
+}
+
+.oeuf-container img,
+.huile-container img {
+    width: 100%;
+    border-radius: 20px;
+    border: 5px solid white;
+}
+
+.oeuf-description
+.huile-description {
+    flex: 1;
 }
 
 .trouver-nous {
@@ -70,6 +103,18 @@
 @media screen and (max-width: 1200px) {
     .flex {
         flex-direction: column;
+    }
+
+    .oeuf-container,
+    .huile-container {
+        flex-direction: column-reverse;
+        padding: 10px 10px;
+    }
+
+    .oeuf-container img,
+    .huile-container img {
+        width: 85%;
+        margin: 0 auto;
     }
 }
 
