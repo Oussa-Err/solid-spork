@@ -8,6 +8,7 @@ import Navbar from "./navbar/Navbar"
 import ProductBody from "./productBody/ProductBody"
 import Map from "./map/Map";
 import CarouselSlide from "./productSlide/CarouselSlide";
+import Panier from "./panier/Panier";
 
 export {
     Contact,
@@ -19,5 +20,6 @@ export {
     Navbar,
     ProductBody,
     Map,
-    CarouselSlide
+    CarouselSlide,
+    Panier
 }

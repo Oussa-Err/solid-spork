@@ -3,7 +3,7 @@ import Footer from '../common/footer/Footer'
 
 export const Terms = () => {
   return (
-    <div style={{width: '100vw'}}>
+    <div style={{width: '100dvw'}}>
       <div className='terms-container'>
         <h1 style={{ color: 'green' }}>Terms of Use</h1>
 

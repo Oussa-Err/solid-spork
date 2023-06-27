@@ -1,5 +1,5 @@
 .footer__container {
-    width: 100vw;
+    width: 100dvw;
     height: auto;
 }
 
@@ -95,10 +95,17 @@
 .privacy-container p,
 .terms-container p {
     font-family: Arial, sans-serif;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 37px;
-	color: #5A636C;
-	margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 37px;
+    color: #5A636C;
+    margin-bottom: 30px;
 }
 
+@media screen and (max-width: 1000px) {
+    .privacy-container,
+    .terms-container {
+        margin: 0;
+        padding:  0 10px;
+    }
+}

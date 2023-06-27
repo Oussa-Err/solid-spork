@@ -4,6 +4,7 @@ import './carouselSlide.css'
 import { img1, img2, img3, img4, img5 } from './index'
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { text } from '@fortawesome/fontawesome-svg-core';
 
 const CarouselSlide = () => {
   return (
@@ -34,9 +35,9 @@ const CarouselSlide = () => {
           <p className="legend">Legend 3</p>
         </div>
       </Carousel>
-      <div className='description-section'>
-        <h1>Alors que voulez-vous mettre dans votre Panier?</h1>
-        <p>Nous accordons un grand soin à votre commande. Nous disposons des fruits et légumes avec précaution afin qu'ils ne s'abîment pas pendant le transport.</p>
+      <div className='description'>
+        <div className='splatter'></div>
+        <h2>Profitez de notre offre spéciale avec notre panier bio à seulement <span style={{ color: 'green'}}> 180 dh</span>. Et pour plus de simplicité et de confort, nous vous offrons la livraison à domicile gratuite.</h2>
       </div>
     </div>
   )

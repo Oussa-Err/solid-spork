@@ -1,0 +1,95 @@
+.panier-container {
+    width: 100dvw;
+    background-color: #f3f1ef;
+    padding: 40px;
+    padding-bottom: 0;
+    flex: 1;
+}
+.flex {
+    width: 100%;
+    display: flex;
+}
+
+.picture-container {
+    flex: 1;
+    width: 100%;
+    background-color: #f3f1ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.picture-container img {
+    max-width: 85%;
+    border-radius: 20px;
+
+}
+
+.panier-container p {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 37px;
+    color: #5A636C;
+    padding: 20px;
+}
+
+.panier-container h1 {
+    font-family: var(--gradient-font);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 38px;
+
+    margin-bottom: 0;
+    color: #212529;
+}
+
+.trouver-nous {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.trouver-nous p {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 37px;
+    color: #5A636C;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.trouver-nous p:last-child {
+    padding: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .flex {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .panier-container {
+        padding: 20px 20px 0 20px;
+    }
+
+    .trouver-nous h1 {
+        font-size: 25px;
+    }
+
+    .panier-container p {
+        font-size: 17px   
+    }
+
+    .panier-container h1 {
+        font-size: 25px;
+    }
+}
+
+
+

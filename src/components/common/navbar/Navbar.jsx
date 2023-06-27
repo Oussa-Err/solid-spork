@@ -41,7 +41,7 @@ const Navbar = () => {
               <div className='menu__container-links'>
                 <Menu />
                 <div className='navbar__menu-btn'>
-                  <button type='button'><a href="/contact">Contact</a></button>
+                  <a href="/contact"><button type='button'>Contact</button></a>
                 </div>
               </div>
             </div>

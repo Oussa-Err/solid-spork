@@ -1,6 +1,5 @@
 .offers__container {
     display: flex;
-    gap: 30px;
     align-items: center;
     padding: 100px;
     background-color: #f3f1ef;
@@ -15,7 +14,7 @@
     padding-top: 40px;
 }
 
-#item>img {
+#item img {
     width: 300px;
     border-radius: 10%;
     box-shadow: 6px 4px 42px -3px rgba(0, 0, 0, 0.75);
@@ -56,7 +55,51 @@
     background-color: #274323 !important;
 }
 
-@media screen and (max-width: 930px) {
+.description {
+    margin: 0 0 15rem 6rem;
+}
+
+.description h2 {
+    font-family: var(--gradient-font);
+    line-height: 38px;
+
+    margin-bottom: 30px;
+    color: #1D1B1B;
+    max-width: 480px;
+    font-weight: 200;
+}
+
+.splatter {
+    width: 480px;
+    border-radius: 30px;
+    opacity: 0.2;
+    height: 200px;
+    background: brown;
+    z-index: 900;
+    position: relative;
+    top:11.5rem;
+    left: 2rem;
+}
+
+@media screen and (max-width: 1581px) {
+    .description {
+        margin-left: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 1425px) {
+    .offers__container {
+        padding: 100px 30px;
+    }
+}
+
+@media screen and (max-width: 11510px) {
+    .carouselSlide__container {
+        width: 45dvw;
+    }
+}
+
+@media screen and (max-width: 1049px) {
     .offers__container {
         flex-direction: column;
         padding: 50px;
@@ -65,6 +108,12 @@
     .carouselSlide__container {
         width: 80dvw;
     }
+
+    .description {
+        height: 400px;
+        margin:0 0 0.9rem 0;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -76,8 +125,36 @@
     .carouselSlide__container {
         width: 100dvw;
     }
+}
 
-    .description-section {
-        padding: 20px;
+@media screen and (max-width: 550px){
+    .description {
+        margin-left: 0;
+    }
+
+    .description h2 {
+        max-width: 400px;
+    }
+
+    .splatter {
+        width: 380px;
+    }
+
+    .description h2 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 464px){
+    .splatter {
+        display: none;
+    }
+
+    .description {
+        height: auto;
+    }
+
+    .description h2 {
+        padding: 0 6px;
     }
 }
