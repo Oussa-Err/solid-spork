@@ -5,7 +5,7 @@ import './footer.css'
 
 const Footer = () =>
   <>
-    <div className='setCol'>
+    <div className='setCol' id='footer'>
       <div className='footer__heading'>
         <h1>HEALTHY FARM</h1>
       </div>
