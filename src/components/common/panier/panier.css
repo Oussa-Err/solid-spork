@@ -1,80 +1,77 @@
-.panier-container {
-    width: 100dvw;
-    background-color: #f3f1ef;
-    padding: 40px;
-    padding-bottom: 0;
-    flex: 1;
-}
-.flex {
+.container-huile-poulet-oeuf {
     width: 100dvw;
     display: flex;
+    flex-direction: column;
 }
 
-.picture-container {
+.oeuf-container,
+.huile-container,
+.panier-container {
+    background-color: #f3f1ef;
+    width: 100%;
+    display: flex;
+    padding: 3rem 5rem;
+}
+
+.huile-container {
+    background: #D9EAD3;
+}
+
+.oeuf__picture-container,
+.huile__picture-container,
+.panier__picture-container {
     flex: 1;
     width: 100%;
-    background-color: #f3f1ef;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.picture-container img {
-    max-width: 85%;
-    border-radius: 20px;
-    border: 5px solid white;
+.oeuf-description,
+.huile-description,
+.panier-description {
+    flex: 1;
 }
 
-.huile-container p,
+.huile-description p,
 .oeuf-description p,
-.panier-container p {
+.panier-description p {
     font-family: Arial, sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 37px;
     color: #5A636C;
-    padding: 20px;
+    padding: 20px 0;
+    padding-bottom: 17px;
 }
 
-.oeuf-container h1,
-.huile-container h1,
-.panier-container h1 {
+.oeuf-description h1,
+.huile-description h1,
+.panier-description h1 {
     font-family: var(--gradient-font);
     font-weight: 400;
     font-size: 30px;
     line-height: 38px;
-
-    margin-bottom: 0;
     color: #212529;
 }
 
-
-.oeuf-container,
-.huile-container {
-    flex-direction: row-reverse;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    width: 100dvw;
-    background-color: #f3f1ef;
-    padding: 50px 0 5px 50px;
-    gap: 20px
-}
-
-.huile-container {
-    flex-direction: row;
-}
-
-.oeuf-container img,
-.huile-container img {
-    width: 100%;
+.panier__picture-container img,
+.oeuf__picture-container img,
+.huile__picture-container img {
+    width: 85%;
     border-radius: 20px;
     border: 5px solid white;
 }
 
-.oeuf-description
-.huile-description {
-    flex: 1;
+.panier__picture-container,
+.oeuf__picture-container,
+.huile__picture-container {
+    justify-content: center;
+    align-items: center;
+}
+
+.oeuf-container {
+    flex-direction: row-reverse;
 }
 
 .trouver-nous {
@@ -101,40 +98,51 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .flex {
-        flex-direction: column;
-    }
 
     .oeuf-container,
-    .huile-container {
-        flex-direction: column-reverse;
-        padding: 10px 10px;
+    .huile-container,
+    .panier-container {
+        flex-direction: column;
+        padding: auto 4rem;
     }
 
-    .oeuf-container img,
-    .huile-container img {
-        width: 85%;
-        margin: 0 auto;
+    .huile-container,
+    .oeuf-container {
+        flex-direction: column-reverse;
+
+    }
+
+    .huile__picture-container img,
+    .oeuf__picture-container img,
+    .panier__picture-container img {
+        max-height: 700px;
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 716px) {
+
+}
+
+@media screen and (max-width: 700px) {
+
+    .oeuf-container,
+    .huile-container,
     .panier-container {
-        padding: 20px 20px 0 20px;
+        padding:2rem;
     }
 
     .trouver-nous h1 {
         font-size: 25px;
     }
 
-    .panier-container p {
-        font-size: 17px   
+    .oeuf-description p,
+    .huile-description p,
+    .panier-description p {
+        font-size: 17px
     }
 
-    .panier-container h1 {
+    .oeuf-description h1 .huile-description h1,
+    .panier-description h1 {
         font-size: 25px;
     }
 }
-
-
-

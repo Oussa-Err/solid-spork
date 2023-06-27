@@ -1,15 +1,16 @@
 import React from 'react'
 import panier from '../../../assets/article3imgAlt.jpg'
 import huile from '../../../assets/huile-bio.jpeg'
-import oeuf from '../../../assets/oeuf-beldi.jpeg'
+import oeuf from '../../../assets/oeuf-beldi.jpg'
 import './panier.css'
+import poulet from '../../../assets/collage-poulet.jpeg'
 
 const Panier = () => {
     return (
         <div>
-            <div>
-                <div className='flex'>
-                    <div className='panier-container'>
+            <div className='container-huile-poulet-oeuf' >
+                <div className='panier-container'>
+                    <div className='panier-description'>
                         <h1>Le panier de légumes bio</h1>
 
                         <p>Le panier bio de <a href="/"> <span style={{ color: 'green' }}>Healthy Farm</span></a>, est composé de 10 kilos de légumes de 11 variétés différentes selon les saisons. Conçu pour répondre aux besoins d'une famille de trois personnes ou d'un couple qui consomme régulièrement des légumes.</p>
@@ -23,25 +24,30 @@ const Panier = () => {
 
                         <p>Faites-nous confiance pour vous fournir des légumes de qualité supérieure. Nous accordons un grand soin à votre commande et manipulons les fruits et légumes avec précaution afin qu'ils ne s'abîment pas pendant le transport.</p>
                     </div>
-                    <div className='picture-container'>
+                    <div className='panier__picture-container'>
                         <img src={panier} alt="panier" />
                     </div>
                 </div>
 
                 <div className='huile-container'>
-                    <img src={huile} alt="huile" />
+                    <div className='huile__picture-container'>
+                        <img src={huile} alt="huile" />
+                    </div>
                     <div className='huile-description'>
-                        <h1>Découvrez l’huile d’olive vierge extra douce de <span style={{ color: 'green' }}>Healthy Farm !</span></h1>
-                        <p>L'huile d'olive vierge bio qui est de qualité supérieure, est obtenue à partir d'une première pression à froid ou simplement extraite à froid</p>
-                        <p>L'huile d'olives biologiques fait partie de notre patrimoine depuis des milliers d'années. Délicieuse en cuisine, en salade ou même sur du pain, elle est reconnue comme une très bonne huile pour la santé.</p>
+                        <h1>Découvrez l’huile d’olive vierge extra douce de <span style={{ color: 'green' }}>Healthy Farm!</span></h1>
+                        <p>L'huile d'olive vierge bio qui est de qualité supérieure, est obtenue à partir d'une première pression à froid ou simplement extraite à froid.</p>
+                        <p>L'huile d'olive biologique, un trésor millénaire, est disponible chez nous à un prix exceptionnel de seulement <span style={{ color: 'green' }}>130 dh</span> le litre. Savourez cette huile délicieuse en cuisine, en salade ou même sur du pain, tout en bénéficiant de ses nombreux bienfaits pour la santé. Découvrez notre passion pour la qualité et la tradition, et laissez-vous séduire par l'essence pure de l'huile d'olive biologique.</p>
                     </div>
                 </div>
 
                 <div className='oeuf-container'>
-                    <img src={oeuf}alt="oeuf" />
+                    <div className='oeuf__picture-container'>
+                        <img src={poulet} alt="poulet" />
+                    </div>
                     <div className='oeuf-description'>
                         <h1>Œufs Beldi</h1>
-                        <p>les poules sont libres au grand air et se nourrissentde graines et légumineuses. Les arrivages sont hebdomadaire pour vous en garantir la fraicheur.</p>
+                        <p>Nos poules, épanouies dans leur environnement naturel, profitent d'une vie libre et saine en plein air. Elles ont la possibilité de se déplacer librement dans de vastes espaces, grattant la terre à la recherche de graines et de légumineuses qui constituent leur alimentation quotidienne. Nous veillons à ce que leur régime alimentaire soit équilibré et riche en nutriments essentiels pour leur santé et leur bien-être.</p>
+                        <p>Faites le choix de la nature, de la fraîcheur et du goût authentique en optant pour nos œufs provenant de poules élevées en plein air, au prix attractif de seulement <span style={{ color: 'green' }}>3 dh</span> l'unité!</p>
                     </div>
                 </div>
 
