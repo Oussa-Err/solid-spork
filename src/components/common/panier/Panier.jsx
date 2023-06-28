@@ -4,6 +4,7 @@ import huile from '../../../assets/huile-bio.jpeg'
 import oeuf from '../../../assets/oeuf-beldi.jpg'
 import './panier.css'
 import poulet from '../../../assets/collage-poulet.jpeg'
+import Countdown from '../countdown/Countdown'
 
 const Panier = () => {
     return (
@@ -36,6 +37,7 @@ const Panier = () => {
                     <div className='huile-description'>
                         <h1>Découvrez l’huile d’olive vierge extra douce de <span style={{ color: 'green' }}>Healthy Farm!</span></h1>
                         <p>L'huile d'olive vierge bio qui est de qualité supérieure, est obtenue à partir d'une première pression à froid ou simplement extraite à froid.</p>
+                        <Countdown />
                         <p>L'huile d'olive biologique, un trésor millénaire, est disponible chez nous à un prix exceptionnel de seulement <span style={{ color: 'green' }}>130 dh</span> le litre. Savourez cette huile délicieuse en cuisine, en salade ou même sur du pain, tout en bénéficiant de ses nombreux bienfaits pour la santé. Découvrez notre passion pour la qualité et la tradition, et laissez-vous séduire par l'essence pure de l'huile d'olive biologique.</p>
                     </div>
                 </div>

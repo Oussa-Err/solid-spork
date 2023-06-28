@@ -115,12 +115,8 @@
     .huile__picture-container img,
     .oeuf__picture-container img,
     .panier__picture-container img {
-        max-height: 700px;
+        width: 100%;
     }
-}
-
-@media screen and (max-width: 716px) {
-
 }
 
 @media screen and (max-width: 700px) {
@@ -128,7 +124,7 @@
     .oeuf-container,
     .huile-container,
     .panier-container {
-        padding:2rem;
+        padding: 1rem;
     }
 
     .trouver-nous h1 {
@@ -138,7 +134,7 @@
     .oeuf-description p,
     .huile-description p,
     .panier-description p {
-        font-size: 17px
+        font-size: 18px
     }
 
     .oeuf-description h1 .huile-description h1,

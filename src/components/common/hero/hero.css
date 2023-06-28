@@ -86,8 +86,7 @@
 
 .first__right-section>img,
 .second__left-section>img {
-    max-width: 700px;
-    height: auto;
+    max-width: 100%;
 
     background-size: cover;
     background-position: center;

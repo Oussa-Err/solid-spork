@@ -1,0 +1,34 @@
+.timer-container {
+    background: #bee2b1;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    gap: 15px;
+    width: 100%;
+}
+
+.countdown span {
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center
+}
+
+.timer-container h3 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 45px;
+    padding: 10px 20px;
+    opacity: 0.6;
+}
