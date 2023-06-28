@@ -1,9 +1,9 @@
 import React from 'react'
 import panier from '../../../assets/article3imgAlt.jpg'
 import huile from '../../../assets/huile-bio.jpeg'
-import oeuf from '../../../assets/oeuf-beldi.jpg'
 import './panier.css'
 import poulet from '../../../assets/collage-poulet.jpeg'
+
 import Countdown from '../countdown/Countdown'
 
 const Panier = () => {
@@ -50,6 +50,10 @@ const Panier = () => {
                         <h1>Œufs Beldi</h1>
                         <p>Nos poules, épanouies dans leur environnement naturel, profitent d'une vie libre et saine en plein air. Elles ont la possibilité de se déplacer librement dans de vastes espaces, grattant la terre à la recherche de graines et de légumineuses qui constituent leur alimentation quotidienne. Nous veillons à ce que leur régime alimentaire soit équilibré et riche en nutriments essentiels pour leur santé et leur bien-être.</p>
                         <p>Faites le choix de la nature, de la fraîcheur et du goût authentique en optant pour nos œufs provenant de poules élevées en plein air, au prix attractif de seulement <span style={{ color: 'green' }}>3 dh</span> l'unité!</p>
+                        <h1>Poulet Fermier Élevé en Plein Air - Une Viande de Qualité Supérieure</h1>
+
+                        <p><em>De plus, </em>nous sommes ravis de vous offrir également notre délicieux poulet élevé en plein air, élevé avec la même attention et le même souci du bien-être animal, ce qui se traduit par une viande tendre, juteuse et pleine de saveur. </p>
+                        <p>N'hésitez pas à goûter à notre sélection de poulet élevé en plein air, disponible à un prix abordable. Faites confiance à notre engagement envers la qualité, le respect de l'environnement et le bien-être animal.</p>
                     </div>
                 </div>
 

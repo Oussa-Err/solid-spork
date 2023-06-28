@@ -32,3 +32,9 @@
     padding: 10px 20px;
     opacity: 0.6;
 }
+
+@media screen and (max-width: 367px) {
+    .countdown {
+    gap: 0px;
+    }
+}

@@ -26,7 +26,7 @@ export const Terms = () => {
         <p>You are responsible for any content you post on our website, and we may remove objectionable content.</p>
 
         <h2>7. Your Personal Information</h2>
-        <p>We collect and use your personal information in accordance with our Privacy Policy.</p>
+        <p>We collect and use your personal information in accordance with our <a href="/privacy">Privacy Policy.</a></p>
 
         <h2>8. Errors and Omissions</h2>
         <p>We strive for accuracy on our website but may contain errors or omissions, which we reserve the right to correct.</p>
