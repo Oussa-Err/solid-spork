@@ -47,13 +47,13 @@ const Countdown = () => {
             <div className='timer-container'>
                 <div className='countdown'>
                     <span>{timerDays}</span>
-                    <p>Jour</p>
+                    <p>Jours</p>
                     <span>{timerHours}</span>
-                    <p>Heures</p>
+                    <p>Hrs</p>
                     <span>{timerMinutes}</span>
-                    <p>minutes</p>
+                    <p>Min</p>
                     <span>{timerSeconds}</span>
-                    <p></p>
+                    <p>Sec</p>
                 </div>
                 <h3>La saison de la cueillette d'olives approche à grands pas, et avec elle, la promesse d'une huile d'olive vierge bio de qualité exceptionnelle. Notre passion pour l'huile d'olive biologique est telle que nous souhaitons vous offrir l'opportunité de commander dès <Button href='/contact' variant="contained" color='success' >Maintenant</Button></h3>
             </div>
