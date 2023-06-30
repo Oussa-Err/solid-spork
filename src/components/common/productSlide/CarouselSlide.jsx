@@ -103,7 +103,7 @@ const CarouselSlide = () => {
       </Carousel>
       <div className='description'>
         <div className='splatter'></div>
-        <h2>Profitez de notre offre spéciale avec notre panier bio à seulement <span style={{ color: 'green' }}> 180 dh</span>. Et pour plus de simplicité et de confort, nous vous offrons la livraison à domicile gratuite.</h2>
+        <h2>Profitez de notre offre spéciale avec notre panier bio à seulement <span style={{ color: 'green' }}> 180 dh</span>. Et pour plus de simplicité et de confort, nous vous offrons la livraison à domicile gratuite dans un rayon de 20km. Au dela, la livraison à <span style={{ color: 'green' }}> 25 dh</span> par panier.</h2>
       </div>
     </div>
   )
