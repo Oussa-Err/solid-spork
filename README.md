@@ -1,6 +1,4 @@
-# Healthy Farm website
-
----> https://farmkhemisset.com
+# Healthy Farm
 
 ![Home Screenshot](./src/assets/home-screenshot.png)
 
