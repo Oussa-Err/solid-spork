@@ -11,7 +11,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(15deg, #3cd6c7, #35e090)
+    background: #536451
 }
 
 .navbar__contact-container {
