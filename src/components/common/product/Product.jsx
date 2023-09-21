@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
-import potato from '../../../assets/potatoUpdated.png'
+import nosProduit from '../../../assets/nos-produit-hero-section.png'
 import arrow from '../../../assets/Arrow.png'
 import './product.css'
 
@@ -47,12 +47,8 @@ function Product() {
           )}
         </div>
       </div>
-      <h1  className='nos_produit'>NOS PRODUITS</h1>
       <div className='navbar__potato'>
-        <div className='arrow'>
-          <img src={arrow} alt="" />
-        </div>
-        <img width='700px' height='300px' className='potato' src={potato} alt="potato" />
+        <img width='700px' height='300px' className='potato' src={nosProduit} alt="_" />
       </div>
     </div>
   )

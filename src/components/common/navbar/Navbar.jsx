@@ -53,7 +53,7 @@ const Navbar = () => {
         <div className='arrow'>
           <img src={arrow} alt="" />
         </div>
-        <img src={maticha} alt="maticha" />
+        <img src={maticha} alt="_" />
       </div>
     </div>
 
