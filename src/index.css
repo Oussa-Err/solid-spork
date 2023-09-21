@@ -39,7 +39,7 @@ body {
   font-family: var(--font-family);
   line-height: 1.5;
   font-weight: 400;
-  width: 100vw;
+  width: 100dvw;
   height: auto;
   background-color: #E3EEF9;
 }
