@@ -1,14 +1,10 @@
 import React from 'react'
-import { Product, ProductBody, Footer, Map, CarouselSlide, Panier } from '../common'
+import { ProductHeader, ProductItems } from '../common'
 
 const ProductPage = () =>
   <>
-    <Product />
-    <CarouselSlide />
-    <Panier />
-    <Map />
-    <ProductBody />
-    <Footer />
+    <ProductHeader />
+    <ProductItems />
   </>
 
 export default ProductPage

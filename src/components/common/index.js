@@ -9,6 +9,8 @@ import ProductBody from "./productBody/ProductBody"
 import Map from "./map/Map";
 import CarouselSlide from "./productSlide/CarouselSlide";
 import Panier from "./panier/Panier";
+import ProductHeader from "./productHeader/ProductHeader"
+import ProductItems from "./productItems/ProductItems"
 
 export {
     Contact,
@@ -16,6 +18,8 @@ export {
     Footer,
     Hero,
     Product,
+    ProductHeader,
+    ProductItems,
     Us,
     Navbar,
     ProductBody,

@@ -1,13 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
-import nosProduit from '../../../assets/nos-produit-hero-section.png'
+import nosProduit from '../../../assets/Logo_crop1.png'
 import arrow from '../../../assets/Arrow.png'
 import './product.css'
 
 const Menu = () => <>
     <p><a href="/">Acceuil</a></p>
-    <p><a href="/#us">À propos</a></p>
+    <p><a href="/about">À propos</a></p>
     <p><a href="/products">Nos Produit</a></p>
   </>
 
@@ -23,7 +23,7 @@ function Product() {
         <div className='navbar__links-container'>
           <ul className='navbar__links'>
             <li><a href="/">Acceuil</a></li>
-            <li><a href="/#us">À propos</a></li>
+            <li><a href="/about">À propos</a></li>
             <li><a href="/products">Nos Produit</a></li>
           </ul>
         </div>
@@ -47,8 +47,8 @@ function Product() {
           )}
         </div>
       </div>
-      <div className='navbar__potato'>
-        <img width='700px' height='300px' className='potato' src={nosProduit} alt="_" />
+      <div className='navbar__maticha'>
+        <img width='500px' height='300px' className='potato' src={nosProduit} alt="_" />
       </div>
     </div>
   )

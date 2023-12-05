@@ -1,22 +1,20 @@
 import React from 'react'
 import { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
-import './navbar.css'
-import maticha from '../../../assets/maticha.png'
-import arrow from '../../../assets/Arrow.png'
-
+import nosProduit from '../../../assets/nos-produit-hero-section.png'
+import "./productHeader.css"
 
 const Menu = () => <>
     <p><a href="/">Acceuil</a></p>
-    <p><a href="#us">À propos</a></p>
+    <p><a href="/about">À propos</a></p>
     <p><a href="/products">Nos Produit</a></p>
   </>
 
-const Navbar = () => {
+function ProductHeader() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <div className='container'>
+    <div className='product__container1'>
       <div className='navbar__container'>
         <div className='navbar__logo'>
           <h2>HEALTHY FARM</h2>
@@ -41,23 +39,18 @@ const Navbar = () => {
               <div className='menu__container-links'>
                 <Menu />
                 <div className='navbar__menu-btn'>
-                  <a href="/contact"><button type='button'>Contact</button></a>
+                  <button type='button'><a href="/contact">Contact</a></button>
                 </div>
               </div>
             </div>
           )}
         </div>
       </div>
-      <h1 className='duBio'>DU BIO CHEZ NOUS</h1>
       <div className='navbar__maticha'>
-        <div className='arrow'>
-          <img src={arrow} alt="" />
-        </div>
-        <img src={maticha} alt="_" />
+        <img width='600px' height='300px' className='potato' src={nosProduit} alt="_" />
       </div>
     </div>
-
   )
 }
 
-export default Navbar
+export default ProductHeader

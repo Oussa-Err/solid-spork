@@ -9,7 +9,7 @@ import './contact.css'
 const Menu = () => {
     return (<>
         <p><a href="/">Acceuil</a></p>
-        <p><a href="/#us">À propos</a></p>
+        <p><a href="/about">À propos</a></p>
         <p><a href="/products">Nos Produit</a></p>
     </>
     )
@@ -49,7 +49,7 @@ const Contact = () => {
                     <div className='navbar__links-container'>
                         <ul className='navbar__links'>
                             <li><a href="/">Acceuil</a></li>
-                            <li><a href="/#Us">À propos</a></li>
+                            <li><a href="/about">À propos</a></li>
                             <li><a href="/products">Nos Produit</a></li>
                         </ul>
                     </div>
