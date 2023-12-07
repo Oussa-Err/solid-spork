@@ -28,36 +28,42 @@ const VegetableForm = () => {
   };
 
   const handle = (e) => {
-    const newData = { data };
-    setData(newData);
-    e.preventDefault();
+    const { name, price, value } = e.target;
+    console.log(data)
+    setData((prevData) => ({
+      ...prevData,
+      [price]: value,
+      [name]: value,
+    }));
+  };
+
+  const uploadImage = async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const base64 = await convertBase64(file);
+      setData((prevData) => ({
+        ...prevData,
+        photo_url: base64,
+      }));
+    }
   };
 
   const submit = async (e) => {
     e.preventDefault();
-    await axios
-      .post("http://127.0.0.1:8080/api/v1/products/", {
-        name: data.name,
-        price: data.price,
-        photo_url: data.photo_url,
-      })
-      .then((res) => {
-        console.log(res);
-        alert("Vegetable Uploaded Successfully");
-      })
-      .catch(console.log);
-  };
-
-  const uploadImage = (event) => {
-    const file = event.target.files;
-    if (file.length === 1) {
-      const base64 = convertBase64(file[0])
-      return base64
+    try {
+      const res = await axios.post(
+        "http://127.0.0.1:8080/api/v1/products/",
+        data
+      );
+      console.log(res);
+      alert("Vegetable Uploaded Successfully");
+    } catch (error) {
+      console.error(error);
     }
   };
 
   return (
-    <>
+    <div>
       {/* header */}
       <div className="product__container1">
         <div className="navbar__container">
@@ -121,61 +127,42 @@ const VegetableForm = () => {
         </div>
       </div>
       {/* body */}
-      <div>
-        <form
-          onSubmit={(e) => {
-            submit(e);
-          }}
-        >
-          <label>
-            upload vegetable image:
-            <input
-              type="file"
-              id="photo_url"
-              name="photo_url"
-              onChange={(e) => {
-                handle(uploadImage(e));
-              }}
-              accept="image/png, image/jpeg, image/jpg, image/webp"
-            />
-          </label>
-          <label>
-            vegetable name:
-            <input
-              required
-              type="text"
-              onChange={(e) => {
-                handle(e);
-              }}
-              value={data.name}
-              id="name"
-              name="name"
-            />
-          </label>
-          <label>
-            vegetable price:
-            <input
-              required
-              type="number"
-              id="price"
-              name="price"
-              value={data.price}
-              onChange={(e) => {
-                handle(e);
-              }}
-            />
-          </label>
-          <button
-            type="submit"
-            onClick={(e) => {
-              submit(e);
-            }}
-          >
-            Enregistrer
-          </button>
-        </form>
-      </div>
-    </>
+      <form onSubmit={submit}>
+        <label>
+          Upload vegetable image:
+          <input
+            type="file"
+            id="photo_url"
+            name="photo_url"
+            onChange={uploadImage}
+            accept="image/png, image/jpeg, image/jpg, image/webp"
+          />
+        </label>
+        <label>
+          Vegetable name:
+          <input
+            required
+            type="text"
+            onChange={handle}
+            value={data.name}
+            id="name"
+            name="name"
+          />
+        </label>
+        <label>
+          Vegetable price:
+          <input
+            required
+            type="number"
+            id="price"
+            name="price"
+            value={data.price}
+            onChange={handle}
+          />
+        </label>
+        <button type="submit">Enregistrer</button>
+      </form>
+    </div>
   );
 };
 
