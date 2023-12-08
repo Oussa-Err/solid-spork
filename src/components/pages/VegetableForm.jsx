@@ -27,14 +27,32 @@ const VegetableForm = () => {
     });
   };
 
+  const submit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(
+        "http://127.0.0.1:8080/api/v1/products/",
+        data,
+        {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "POST",
+          "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        }
+      );
+      console.log(res);
+      alert("Vegetable Uploaded Successfully");
+    } catch (error) {
+      console.error("Error is" + error);
+    }
+  };
+
   const handle = (e) => {
-    const { name, price, value } = e.target;
-    console.log(data)
+    const { name, value } = e.target;
     setData((prevData) => ({
       ...prevData,
-      [price]: value,
       [name]: value,
     }));
+    console.log(data);
   };
 
   const uploadImage = async (event) => {
@@ -45,20 +63,6 @@ const VegetableForm = () => {
         ...prevData,
         photo_url: base64,
       }));
-    }
-  };
-
-  const submit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await axios.post(
-        "http://127.0.0.1:8080/api/v1/products/",
-        data
-      );
-      console.log(res);
-      alert("Vegetable Uploaded Successfully");
-    } catch (error) {
-      console.error(error);
     }
   };
 
@@ -140,24 +144,15 @@ const VegetableForm = () => {
         </label>
         <label>
           Vegetable name:
-          <input
-            required
-            type="text"
-            onChange={handle}
-            value={data.name}
-            id="name"
-            name="name"
-          />
+          <input type="text" onChange={handle} value={data.name} name="name" />
         </label>
         <label>
           Vegetable price:
           <input
-            required
-            type="number"
-            id="price"
             name="price"
-            value={data.price}
+            type="number"
             onChange={handle}
+            value={data.price}
           />
         </label>
         <button type="submit">Enregistrer</button>
