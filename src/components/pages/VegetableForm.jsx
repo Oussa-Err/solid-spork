@@ -3,6 +3,8 @@ import "./vegetableForm.css";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import Arrow from "../../assets/Arrow.png";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const VegetableForm = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -30,17 +32,15 @@ const VegetableForm = () => {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://127.0.0.1:8080/api/v1/products/",
-        data,
-        {
+      await axios.post("http://127.0.0.1:8080/api/v1/products/", data, {
+        headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "POST",
           "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-        }
-      );
-      console.log(res);
-      alert("Vegetable Uploaded Successfully");
+          "Access-Control-Allow-Headers": "*",
+        },
+      });
+      toast.success("Vegetable Uploaded Successfully");
     } catch (error) {
       console.error("Error is" + error);
     }
@@ -53,6 +53,11 @@ const VegetableForm = () => {
       [name]: value,
     }));
     console.log(data);
+    if (!data) {
+      toast.warning("Please fill out this input", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    }
   };
 
   const uploadImage = async (event) => {
@@ -63,6 +68,7 @@ const VegetableForm = () => {
         ...prevData,
         photo_url: base64,
       }));
+      toast("Vegetable image Uploaded Successfully");
     }
   };
 
@@ -131,32 +137,45 @@ const VegetableForm = () => {
         </div>
       </div>
       {/* body */}
-      <form onSubmit={submit}>
-        <label>
-          Upload vegetable image:
-          <input
-            type="file"
-            id="photo_url"
-            name="photo_url"
-            onChange={uploadImage}
-            accept="image/png, image/jpeg, image/jpg, image/webp"
-          />
-        </label>
-        <label>
-          Vegetable name:
-          <input type="text" onChange={handle} value={data.name} name="name" />
-        </label>
-        <label>
-          Vegetable price:
-          <input
-            name="price"
-            type="number"
-            onChange={handle}
-            value={data.price}
-          />
-        </label>
-        <button type="submit">Enregistrer</button>
-      </form>
+      <div className="forms_container">
+        <div className="forms_items">
+          <form onSubmit={submit}>
+            <label>
+              Upload vegetable image:
+              <input
+                required
+                type="file"
+                id="photo_url"
+                name="photo_url"
+                onChange={uploadImage}
+                accept="image/png, image/jpeg, image/jpg, image/webp"
+              />
+            </label>
+            <label>
+              Vegetable name:
+              <input
+                type="text"
+                required
+                onChange={handle}
+                value={data.name}
+                name="name"
+              />
+            </label>
+            <label>
+              Vegetable price:
+              <input
+                required
+                name="price"
+                type="number"
+                onChange={handle}
+                value={data.price}
+              />
+            </label>
+            <button type="submit">Enregistrer</button>
+            <ToastContainer />
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

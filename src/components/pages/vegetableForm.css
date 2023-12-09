@@ -1,10 +1,13 @@
-/* VegetableForm.css */
-.vegetable-form-container {
+.form_container {
     width: 100dvw;
     height: 50dvh;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.forms_items {
+    background-color: plum;
 }
 
 .vegetable-form {
