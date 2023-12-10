@@ -18,6 +18,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
 }
 
 html {
@@ -26,7 +28,8 @@ html {
 
 
 a {
-  font-weight: 400;
+  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-decoration: inherit;
 }
 
@@ -51,5 +54,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
+  color: #E3EEF9;
   cursor: pointer;
 }

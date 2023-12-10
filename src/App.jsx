@@ -7,7 +7,10 @@ import {
   Terms,
   Privacy,
   AboutPage,
-  VegetableForm
+  VegetableForm,
+  LogIn,
+  ItemPage,
+  SignUp
 } from "./components";
 import "./App.css";
 
@@ -22,6 +25,9 @@ function App() {
         <Route path="/vegetable-form" element={<VegetableForm />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/item" element={<ItemPage />} />
       </Routes>
     </Router>
   );

@@ -4,7 +4,10 @@ import ContactPage from './pages/ContactPage'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import AboutPage from './pages/AboutPage'
-import VegetableForm from './pages/VegetableForm'
+import VegetableForm from './pages/vegetables/VegetableForm'
+import LogIn from './pages/LogIn'
+import ItemPage from './pages/vegetables/ItemPage'
+import SignUp from './pages/LogIn'
 
 export {
     Home,
@@ -13,5 +16,8 @@ export {
     Privacy,
     Terms,
     AboutPage,
-    VegetableForm
+    VegetableForm,
+    LogIn,
+    ItemPage,
+    SignUp
 }
