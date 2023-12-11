@@ -5,10 +5,26 @@ import "react-toastify/dist/ReactToastify.css";
 import "./vegetableForm.css";
 
 const UpdateProduct = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const accordion = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <div>
-      <div className="vegetable-container">
-        <h1 className="text">Update Vegetable</h1>
+      <div className="vegetable-container" style={{height: isOpen? "auto" : "100px"}}>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+            position: "absoulute",
+          }}
+        >
+          <h1 className="text">Update Vegetable</h1>
+          <span onClick={accordion} className="gg-chevron-down-o"></span>
+        </div>
         <form action="#">
           <div className="form-row">
             <button className="upload-area">

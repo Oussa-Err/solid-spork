@@ -28,7 +28,7 @@ function Product() {
           </ul>
         </div>
         <div className='navbar__btn'>
-          <button type='button'><a href="/contact">Contact</a></button>
+          <button type='button'><a href="/contact" style={{ color: "white" }}>Contact</a></button>
         </div>
         <div className='navbar__burger'>
           {toggleMenu
@@ -40,7 +40,7 @@ function Product() {
               <div className='menu__container-links'>
                 <Menu />
                 <div className='navbar__menu-btn'>
-                  <button type='button'><a href="/contact">Contact</a></button>
+                  <button type='button'><a href="/contact" style={{ color: "white" }}>Contact</a></button>
                 </div>
               </div>
             </div>

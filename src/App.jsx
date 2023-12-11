@@ -9,7 +9,6 @@ import {
   AboutPage,
   VegetableForm,
   LogIn,
-  ItemPage,
   SignUp
 } from "./components";
 import "./App.css";
@@ -27,7 +26,6 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/item" element={<ItemPage />} />
       </Routes>
     </Router>
   );

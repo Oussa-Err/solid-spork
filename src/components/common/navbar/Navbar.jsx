@@ -8,7 +8,7 @@ import arrow from '../../../assets/Arrow.png'
 
 const Menu = () => <>
     <p><a href="/">Acceuil</a></p>
-    <p><a href="#us">À propos</a></p>
+    <p><a href="/about">À propos</a></p>
     <p><a href="/products">Nos Produit</a></p>
   </>
 
@@ -29,7 +29,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className='navbar__btn'>
-          <button type='button'><a href="/contact">Contact</a></button>
+          <button type='button'><a href="/contact" style={{ color: "white" }}>Contact</a></button>
         </div>
         <div className='navbar__burger'>
           {toggleMenu
@@ -41,7 +41,7 @@ const Navbar = () => {
               <div className='menu__container-links'>
                 <Menu />
                 <div className='navbar__menu-btn'>
-                  <a href="/contact"><button type='button'>Contact</button></a>
+                  <a href="/contact"><button type='button' style={{ color: "white" }}>Contact</button></a>
                 </div>
               </div>
             </div>
