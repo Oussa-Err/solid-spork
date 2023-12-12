@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import CreateProduct from "./CreateProduct";
 import UpdateProduct from "./UpdateProduct";
 import Footer from "../../common/footer/Footer";
+import GetUsers from "./GetUsers";
 
 const Menu = () => (
   <>
@@ -100,6 +101,7 @@ const VegetableForm = () => {
           </div>
           <UpdateProduct />
           <CreateProduct />
+          <GetUsers />
         </div>
       </div>
       <Footer />

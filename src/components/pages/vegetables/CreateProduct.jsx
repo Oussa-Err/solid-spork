@@ -76,7 +76,6 @@ const CreateProduct = () => {
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
-            // position: "relative",
           }}
         >
           <h1 className="text">Create new Vegetable</h1>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Product, ProductBody, Footer, Map, CarouselSlide, Panier } from '../common'
+import { Product, Footer, Map, CarouselSlide, Panier } from '../common'
 
 const About = () =>
   <>
@@ -7,7 +7,6 @@ const About = () =>
     <CarouselSlide />
     <Panier />
     <Map />
-    <ProductBody />
     <Footer />
   </>
 
