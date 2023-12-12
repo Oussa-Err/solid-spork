@@ -3,14 +3,28 @@
   justify-content: center;
 }
 
+
 .card-view {
   width: 100dvw;
   height: 100dvh;
-  position: relative;
-  top: 30%;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.faCircleMinus {
+  align-self: end;
+  position: relative;
+  top: 0;
+  right: 0;
+  color: rgb(143, 8, 8);
+  font-size: larger;
+  cursor: pointer;
 }
 
 .details {
@@ -32,13 +46,14 @@
 
 @media screen and (max-width: 1000px) {
   .grid-container {
-    grid-template-columns: 15% 15%;
+    grid-template-columns: repeat(2, 1fr);
+
   }
 }
 
 @media screen and (max-width: 700px) {
   .grid-container {
-    grid-template-columns: 15%;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -50,7 +65,10 @@
   border-radius: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
+
 
 .image {
   background-repeat: no-repeat;

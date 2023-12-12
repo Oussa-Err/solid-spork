@@ -7,7 +7,7 @@
     justify-content: center;
 }
 
-.content>p {
+.content_QuiNous_somme>p {
     font-family: Arial, sans-serif;
     font-weight: 400;
     font-size: 20px;
@@ -40,7 +40,7 @@
         padding: 25px;
     }
 
-    .content > p {
+    .content_QuiNous_somme > p {
         font-size: 18px;
         line-height: 35px;
         margin:  0 15px 25px 15px;
@@ -55,7 +55,7 @@
         padding: 15px;
     }
 
-    .content > p {
+    .content_QuiNous_somme > p {
         font-size: 17px;
         line-height: 32px;
         margin:  0 10px 15px 10px;

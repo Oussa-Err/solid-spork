@@ -48,7 +48,7 @@ function Product() {
         </div>
       </div>
       <div className='navbar__maticha'>
-        <img width='500px' height='300px' className='potato' src={nosProduit} alt="_" />
+        <img width='400px' height='300px' className='potato' src={nosProduit} alt="_" />
       </div>
     </div>
   )

@@ -3,6 +3,8 @@ import "./productItems.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { RiCloseLine } from "react-icons/ri";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleMinus } from "@fortawesome/free-solid-svg-icons";
 
 const ProductItems = () => {
   const [product, setProduct] = useState(null);
@@ -30,13 +32,16 @@ const ProductItems = () => {
     <div>
       <h1>
         <button>
-          <a href="/vegetable-form" style={{ color: "white" }}>Edit vegetables</a>
+          <a href="/vegetable-form" style={{ color: "white" }}>
+            Edit vegetables
+          </a>
         </button>
       </h1>
       <div className="cards">
         <div className="grid-container">
           {product.data.map((el, index) => (
             <div className="card" key={index}>
+              <FontAwesomeIcon className="faCircleMinus" icon={faCircleMinus} />
               <div>
                 <img
                   src={el.photo_url.url || el.photo_url}
@@ -48,7 +53,7 @@ const ProductItems = () => {
               </div>
               <div className="content">
                 <h2 className="product-title">{el.name}</h2>
-                <p className="product-price">{el.price}</p>
+                <p className="product-price">{el.price}MAD /KG</p>
                 <button
                   className="add-to-basket-button"
                   onClick={() => viewItem(el)}
@@ -60,7 +65,13 @@ const ProductItems = () => {
           ))}
         </div>
       </div>
-      <div className="card-view" style={{backdropFilter: details.length>0 ? "blur(10px)" : "none", zIndex: details.length>0 ? "1" : "-1"}}>
+      <div
+        className="card-view"
+        style={{
+          backdropFilter: details.length > 0 ? "blur(10px)" : "none",
+          zIndex: details.length > 0 ? "1" : "-1",
+        }}
+      >
         {details.map((elem, i) => (
           <div className="details" key={i}>
             <RiCloseLine
