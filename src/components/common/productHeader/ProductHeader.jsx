@@ -27,7 +27,7 @@ function ProductHeader() {
           </ul>
         </div>
         <div className='navbar__btn'>
-          <button type='button'><a href="/contact" style={{ color: "white" }}>Contact</a></button>
+          <button type='button'><a href="/contact"  className='button_top' style={{ color: "#000000" }}>Contact</a></button>
         </div>
         <div className='navbar__burger'>
           {toggleMenu
@@ -39,7 +39,7 @@ function ProductHeader() {
               <div className='menu__container-links'>
                 <Menu />
                 <div className='navbar__menu-btn'>
-                  <button type='button'><a href="/contact" style={{ color: "white" }}>Contact</a></button>
+                  <button type='button' ><a href="/contact" className='button_top' style={{ color: "#000000" }}>Contact</a></button>
                 </div>
               </div>
             </div>

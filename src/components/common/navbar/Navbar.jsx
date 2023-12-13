@@ -29,7 +29,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className='navbar__btn'>
-          <button type='button'><a href="/contact" style={{ color: "white" }}>Contact</a></button>
+          <button type='button' ><a href="/contact" className='button_top' style={{ color: "#000000" }}>Contact</a></button>
         </div>
         <div className='navbar__burger'>
           {toggleMenu
@@ -41,7 +41,7 @@ const Navbar = () => {
               <div className='menu__container-links'>
                 <Menu />
                 <div className='navbar__menu-btn'>
-                  <a href="/contact"><button type='button' style={{ color: "white" }}>Contact</button></a>
+                  <button type='button' ><a href="/contact" className='button_top' style={{ color: "white" }}>Contact</a></button>
                 </div>
               </div>
             </div>

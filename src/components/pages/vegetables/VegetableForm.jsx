@@ -65,7 +65,7 @@ const VegetableForm = () => {
               </ul>
             </div>
             <div className="navbar__btn">
-              <button type="button">
+              <button type="button" className="button_top">
                 <a href="/contact" style={{ color: "white" }}>Contact</a>
               </button>
             </div>
@@ -88,7 +88,7 @@ const VegetableForm = () => {
                   <div className="menu__container-links">
                     <Menu />
                     <div className="navbar__menu-btn">
-                      <button type="button">
+                      <button type="button" className="button_top">
                         <a href="/contact" style={{ color: "white" }} >
                           Contact
                         </a>

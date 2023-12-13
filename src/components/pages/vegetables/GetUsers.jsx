@@ -24,7 +24,7 @@ const GetUsers = () => {
         console.log(err);
       });
   }, []);
-
+  console.log(users)
   if(!users) return null
 
   return (

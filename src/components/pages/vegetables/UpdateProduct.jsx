@@ -70,7 +70,7 @@ const UpdateProduct = () => {
               <label htmlFor="">Price</label>
             </div>
           </div>
-          <button type="submit">Create</button>
+          <button type="submit"><span className="button_top">Update</span></button>
           <ToastContainer />
         </form>
       </div>

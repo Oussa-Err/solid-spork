@@ -2,7 +2,6 @@ import React from 'react'
 import { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
 import nosProduit from '../../../assets/Logo_crop1.png'
-import arrow from '../../../assets/Arrow.png'
 import './product.css'
 
 const Menu = () => <>
@@ -28,7 +27,7 @@ function Product() {
           </ul>
         </div>
         <div className='navbar__btn'>
-          <button type='button'><a href="/contact" style={{ color: "white" }}>Contact</a></button>
+          <button type='button' ><a href="/contact" className='button_top' style={{ color: "#000000" }}>Contact</a></button>
         </div>
         <div className='navbar__burger'>
           {toggleMenu
@@ -40,7 +39,7 @@ function Product() {
               <div className='menu__container-links'>
                 <Menu />
                 <div className='navbar__menu-btn'>
-                  <button type='button'><a href="/contact" style={{ color: "white" }}>Contact</a></button>
+                  <button type='button'><a href="/contact" className='button_top' style={{ color: "white" }}>Contact</a></button>
                 </div>
               </div>
             </div>

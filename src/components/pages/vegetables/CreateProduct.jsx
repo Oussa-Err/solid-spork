@@ -85,7 +85,7 @@ const CreateProduct = () => {
         </div>
         <form action="#" >
           <div className="form-row">
-            <button className="upload-area">
+            <button className="upload-area" style={{color: "whitesmoke"}}>
               <span className="upload-area-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@ const CreateProduct = () => {
               <label htmlFor="">Price</label>
             </div>
           </div>
-          <button type="submit" className="button_top">Create</button>
+          <button type="submit" ><span className="button_top">Create</span></button>
           <ToastContainer />
         </form>
       </div>
