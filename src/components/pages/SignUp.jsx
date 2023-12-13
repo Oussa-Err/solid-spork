@@ -21,8 +21,8 @@ function Copyright(props) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://farmkhemisset.com/">
+        farmkhemisset.com
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -134,9 +134,11 @@ const SignUp = () => {
                     Forgot password?
                   </Link>
                 </Grid>
+                
                 <Grid item>
+                  
                   <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                  You have an account? Login
                   </Link>
                 </Grid>
               </Grid>

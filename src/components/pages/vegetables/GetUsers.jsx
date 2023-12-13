@@ -14,10 +14,18 @@ const GetUsers = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8080/api/v1/users")
-      .then((data) => setUsers(data))
-      .catch((err) => console.log(err));
+      .get("http://127.0.0.1:8080/api/v1/users/")
+      .then((res) => {
+        setUsers(res.data);
+        console.log(res.data);
+        toast.success("user sumoned Successfully");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
+
+  if(!users) return null
 
   return (
     <div>
@@ -36,13 +44,15 @@ const GetUsers = () => {
             <h1 className="text">View Users</h1>
             <span onClick={accordion} className="gg-chevron-down-o"></span>
           </div>
-          <div>User1</div>
-          <div>User1</div>
-          <div>User1</div>
-          <div>User1</div>
-          <div>User1</div>
-          <div>User1</div>
-          <div>User1</div>
+          <div>
+            {users.data.map((el, index) => (
+              <div className="users" key={index}>
+                <p>{el.name}</p>
+                <p>{el.email}</p>
+                <p>{el.role}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

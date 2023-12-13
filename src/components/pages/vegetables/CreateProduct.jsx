@@ -3,6 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./vegetableForm.css";
+import "animate.css"
 
 const CreateProduct = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,7 @@ const CreateProduct = () => {
     photo_url: "",
   });
 
+   
   const convertBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -70,7 +72,7 @@ const CreateProduct = () => {
 
   return (
     <div>
-      <div className="vegetable-container" style={{height: isOpen? "auto" : "100px"}}>
+      <div className="vegetable-container animated" style={{height: isOpen? "auto" : "100px"}}>
         <div
           style={{
             width: "100%",
@@ -81,13 +83,13 @@ const CreateProduct = () => {
           <h1 className="text">Create new Vegetable</h1>
           <span onClick={accordion} className="gg-chevron-down-o"></span>
         </div>
-        <form action="#">
+        <form action="#" >
           <div className="form-row">
             <button className="upload-area">
               <span className="upload-area-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
                   width="340.531"
                   height="419.116"
                   viewBox="0 0 340.531 419.116"
@@ -126,7 +128,7 @@ const CreateProduct = () => {
               <label htmlFor="">Price</label>
             </div>
           </div>
-          <button type="submit">Create</button>
+          <button type="submit" className="button_top">Create</button>
           <ToastContainer />
         </form>
       </div>
