@@ -186,7 +186,7 @@ const ProductItems = () => {
                 <div className="card-price">
                   <span>MAD</span> {elem.price}
                 </div>
-                <button className="button_top">Add to Basket</button>
+                <button><span className="button_top">Add to Basket</span></button>
               </div>
             </div>
           </div>
