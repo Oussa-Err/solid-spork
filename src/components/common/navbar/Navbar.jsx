@@ -1,7 +1,7 @@
+import './navbar.css'
 import React from 'react'
 import { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
-import './navbar.css'
 import maticha from '../../../assets/maticha.png'
 import arrow from '../../../assets/Arrow.png'
 

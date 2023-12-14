@@ -1,7 +1,7 @@
+import './panier.css'
 import React from 'react'
 import panier from '../../../assets/article3imgAlt.jpg'
 import huile from '../../../assets/huile-bio.jpeg'
-import './panier.css'
 import poulet from '../../../assets/collage-poulet.jpeg'
 
 import Countdown from '../countdown/Countdown'

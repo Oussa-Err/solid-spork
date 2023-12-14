@@ -65,8 +65,8 @@ const VegetableForm = () => {
               </ul>
             </div>
             <div className="navbar__btn">
-              <button type="button" className="button_top">
-                <a href="/contact" style={{ color: "white" }}>Contact</a>
+              <button type="button">
+                <a href="/contact"  className="button_top" style={{ color: "#000000" }}>Contact</a>
               </button>
             </div>
             <div className="navbar__burger">

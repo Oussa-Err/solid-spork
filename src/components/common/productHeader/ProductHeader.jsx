@@ -1,8 +1,8 @@
+import "./productHeader.css"
 import React from 'react'
 import { useState } from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri'
 import nosProduit from '../../../assets/nos-produit-hero-section.png'
-import "./productHeader.css"
 
 const Menu = () => <>
     <p><a href="/">Acceuil</a></p>

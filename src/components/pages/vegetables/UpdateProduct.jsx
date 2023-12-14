@@ -27,7 +27,7 @@ const UpdateProduct = () => {
         </div>
         <form action="#">
           <div className="form-row">
-            <button className="upload-area">
+            <button className="upload-area" style={{color: "whitesmoke"}}>
               <span className="upload-area-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@ const UpdateProduct = () => {
                 </svg>
               </span>
               <span className="upload-area-title">
-                Drag file(s) here to upload.
+                Drag file here to upload.
               </span>
               <span className="upload-area-description">
                 Alternatively, you can select a file by <br />

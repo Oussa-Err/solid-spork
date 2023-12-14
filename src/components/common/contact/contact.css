@@ -98,7 +98,8 @@ textarea {
 
     color: #fff;
     background: #54D068;
-    border-radius: 29.4307px;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
 }
 
 #contact_button:hover {

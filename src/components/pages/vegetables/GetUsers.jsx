@@ -8,24 +8,25 @@ const GetUsers = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [users, setUsers] = useState([]);
 
-  const accordion = () => {
-    setIsOpen(!isOpen);
-  };
-
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8080/api/v1/users/")
       .then((res) => {
         setUsers(res.data);
-        console.log(res.data);
         toast.success("user sumoned Successfully");
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
-  console.log(users)
-  if(!users) return null
+
+  const accordion = () => {
+    setIsOpen(!isOpen);
+  };
+
+  if (!users.data) {
+    return null;
+  }
 
   return (
     <div>
@@ -55,6 +56,7 @@ const GetUsers = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
