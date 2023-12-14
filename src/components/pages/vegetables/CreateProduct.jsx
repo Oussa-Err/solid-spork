@@ -1,8 +1,8 @@
+import "./vegetableForm.css";
 import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./vegetableForm.css";
 import "animate.css"
 
 const CreateProduct = () => {
@@ -72,7 +72,7 @@ const CreateProduct = () => {
 
   return (
     <div>
-      <div className="vegetable-container animated" style={{height: isOpen? "auto" : "100px"}}>
+      <div className="vegetable-container" style={{height: isOpen? "auto" : "100px"}}>
         <div
           style={{
             width: "100%",

@@ -1,8 +1,8 @@
+import "./vegetableForm.css";
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./vegetableForm.css";
 
 const GetUsers = () => {
   const [isOpen, setIsOpen] = useState(false);

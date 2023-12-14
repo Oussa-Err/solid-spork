@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import "./vegetableForm.css";
+import React, { useState } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import "react-toastify/dist/ReactToastify.css";
 import CreateProduct from "./CreateProduct";
@@ -23,15 +23,7 @@ const Menu = () => (
 
 const VegetableForm = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [open, setOpen] = useState("1");
-  const toggle = (id) => {
-    if (open === id) {
-      setOpen();
-    } else {
-      setOpen(id);
-    }
-  };
-
+  
   return (
     <>
       <div style={{ minHeight: "100dvh", backgroundColor: "#baae98" }}>

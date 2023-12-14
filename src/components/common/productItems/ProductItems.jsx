@@ -3,7 +3,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { RiCloseLine } from "react-icons/ri";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleMinus } from "@fortawesome/free-solid-svg-icons";
 
 const ProductItems = () => {
@@ -22,7 +21,6 @@ const ProductItems = () => {
   }, []);
 
   const viewItem = (prod) => {
-    // console.log([{ ...prod }]);
     setDetails([{ ...prod }]);
   };
 
@@ -30,13 +28,103 @@ const ProductItems = () => {
   if (!product) return null;
   return (
     <div>
-      <h1>
+      <div className="filter_bar-container">
+        <div style={{display: "flex", gap: "10px", cursor: "pointer"}}>
+          <p style={{fontSize: "15px"}}>Filter by</p>
+          <svg
+            height="21"
+            viewBox="0 0 21 21"
+            width="21"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fill-rule="evenodd"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              transform="translate(2 4)"
+            >
+              <path d="m4.5 0c.55228475 0 1 .44771525 1 1v2c0 .55228475-.44771525 1-1 1s-1-.44771525-1-1v-2c0-.55228475.44771525-1 1-1z" />
+              <path d="m16.5 2h-11" />
+              <path d="m3.5 2h-3" />
+              <path d="m4.5 10c.55228475 0 1 .4477153 1 1v2c0 .5522847-.44771525 1-1 1s-1-.4477153-1-1v-2c0-.5522847.44771525-1 1-1z" />
+              <path d="m16.5 12h-11" />
+              <path d="m3.5 12h-3" />
+              <path d="m12.5 5c.5522847 0 1 .44771525 1 1v2c0 .55228475-.4477153 1-1 1s-1-.44771525-1-1v-2c0-.55228475.4477153-1 1-1z" />
+              <path d="m11.5 7h-11" />
+              <path d="m16.5 7h-3" />
+            </g>
+          </svg>
+        </div>
+        <div class="input-container">
+          <input
+            type="text"
+            name="text"
+            class="input"
+            placeholder="search..."
+          />
+          <span class="icon">
+            <svg
+              width="19px"
+              height="19px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <path
+                  opacity="1"
+                  d="M14 5H20"
+                  stroke="#000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+                <path
+                  opacity="1"
+                  d="M14 8H17"
+                  stroke="#000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+                <path
+                  d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2"
+                  stroke="#000"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+                <path
+                  opacity="1"
+                  d="M22 22L20 20"
+                  stroke="#000"
+                  stroke-width="3.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{" "}
+              </g>
+            </svg>
+          </span>
+        </div>
         <button>
-          <a href="/vegetable-form" className="button_top" style={{ color: "#000000"}}>
-            Edit vegetables
+          <a
+            href="/vegetable-form"
+            className="button_top"
+            style={{ color: "#000000" }}
+          >
+            Edit
           </a>
         </button>
-      </h1>
+      </div>
       <div className="grid-container">
         {product.data.map((elem, index) => (
           <div className="card" key={index}>
