@@ -1,5 +1,4 @@
 .product__container1 {
-    background-color: #baae98;
     width: 100vw;
     height: 458px;
     overflow: hidden;
@@ -7,6 +6,9 @@
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 2rem #000;
+    width: 100%;
+    background: repeating-linear-gradient(45deg, #92c9b1, #92c9b1 20px, #b3e0d2 20px, #b3e0d2 40px);
+    box-shadow: 0px 24px 30px 0px rgba(0, 0, 0, 0.28);
 }
 
 .navbar__potato {

@@ -31,15 +31,15 @@ function ProductHeader() {
         </div>
         <div className='navbar__burger'>
           {toggleMenu
-            ? <RiCloseLine color='#fff' size={27} onClick={() => setToggleMenu(false)} />
-            : <RiMenu3Line color='#fff' size={27} onClick={() => setToggleMenu(true)} />
+            ? <RiCloseLine color='#000' size={27} onClick={() => setToggleMenu(false)} />
+            : <RiMenu3Line color='#000' size={27} onClick={() => setToggleMenu(true)} />
           }
           {toggleMenu && (
             <div className='menu__container'>
               <div className='menu__container-links'>
                 <Menu />
                 <div className='navbar__menu-btn'>
-                  <button type='button' ><a href="/contact" className='button_top' style={{ color: "#000000" }}>Contact</a></button>
+                  <button type='button' ><a href="/contact" className='button_top' style={{ color: "#000" }}>Contact</a></button>
                 </div>
               </div>
             </div>

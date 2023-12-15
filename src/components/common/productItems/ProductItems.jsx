@@ -3,11 +3,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { RiCloseLine } from "react-icons/ri";
-import { faCircleMinus } from "@fortawesome/free-solid-svg-icons";
 
 const ProductItems = () => {
   const [product, setProduct] = useState(null);
   const [details, setDetails] = useState([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     axios
@@ -24,13 +24,18 @@ const ProductItems = () => {
     setDetails([{ ...prod }]);
   };
 
+  const setPageHandler = (no) => {
+    if (no > 0 && no <= Math.round(product.data.length / 4) && no !== page)
+      setPage(no);
+  };
+
   console.log(product);
   if (!product) return null;
   return (
     <div>
       <div className="filter_bar-container">
-        <div style={{display: "flex", gap: "10px", cursor: "pointer"}}>
-          <p style={{fontSize: "15px"}}>Filter by</p>
+        <div style={{ display: "flex", gap: "10px", cursor: "pointer" }}>
+          <p style={{ fontSize: "15px" }}>Filter by</p>
           <svg
             height="21"
             viewBox="0 0 21 21"
@@ -126,7 +131,7 @@ const ProductItems = () => {
         </button>
       </div>
       <div className="grid-container">
-        {product.data.map((elem, index) => (
+        {product.data.slice(page * 6 - 6, page * 6).map((elem, index) => (
           <div className="card" key={index}>
             <div className="card-img">
               <img src={elem.photo_url.url} alt="" width="100" height="100" />
@@ -153,7 +158,46 @@ const ProductItems = () => {
           </div>
         ))}
       </div>
-
+      {product.data.length > 0 && (
+        <div class="pagination_container">
+          <ul class="pagination">
+            <li
+              style={page === 1 ? { display: "none" } : { display: "block" }}
+              onClick={() => {
+                setPageHandler(page - 1);
+              }}
+            >
+              Prev
+            </li>
+            {[...Array(Math.ceil(product.data.length / 6))].map((_, i) => {
+              return (
+                <li
+                  aria-current={page}
+                  key={i}
+                  className={i + 1 === page ? "active" : ""}
+                  onClick={() => {
+                    setPageHandler(i + 1);
+                  }}
+                >
+                  {i + 1}
+                </li>
+              );
+            })}
+            <li
+              style={
+                page === Math.ceil(product.data.length / 6)
+                  ? { display: "none" }
+                  : { display: "block" }
+              }
+              onClick={() => {
+                setPageHandler(page + 1);
+              }}
+            >
+              suivant
+            </li>
+          </ul>
+        </div>
+      )}
       <div
         className="card-view"
         style={{
@@ -186,7 +230,9 @@ const ProductItems = () => {
                 <div className="card-price">
                   <span>MAD</span> {elem.price}
                 </div>
-                <button><span className="button_top">Add to Basket</span></button>
+                <button>
+                  <span className="button_top">Add to Basket</span>
+                </button>
               </div>
             </div>
           </div>

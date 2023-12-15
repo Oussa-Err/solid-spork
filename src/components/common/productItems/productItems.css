@@ -1,3 +1,46 @@
+.pagination_container {
+  position: relative;
+  width: 100%;background-color: #181010;
+  margin-top: 20px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination_container .pagination {
+  position: relative;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+  border-radius: 2px;
+}
+
+.pagination_container .pagination li {
+  list-style-type: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.pagination_container .pagination li  {
+  position: relative;
+  padding: 20px 25px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.pagination_container .pagination li:hover,
+.pagination_container .pagination li.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+
 .filter_bar-container{
   width: 100dvw;
   display: flex;
@@ -5,6 +48,7 @@
   gap: 30px;
   padding: 30px;
 }
+
 .input-container {
   width: 220px;
   position: relative;
@@ -153,7 +197,6 @@
 }
 
 .card-img .img::after {
-  /* delete */
   content: '';
   position: absolute;
   box-sizing: border-box;
