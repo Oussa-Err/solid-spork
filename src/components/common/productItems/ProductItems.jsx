@@ -9,6 +9,11 @@ const ProductItems = () => {
   const [details, setDetails] = useState([]);
   const [page, setPage] = useState(1);
 
+  const openFilter = (e) => {
+    e.preventDefault();
+    setOpen(!open);
+  };
+
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8080/api/v1/products/")
@@ -33,35 +38,53 @@ const ProductItems = () => {
   if (!product) return null;
   return (
     <div>
-      <div className="filter_bar-container">
-        <div style={{ display: "flex", gap: "10px", cursor: "pointer" }}>
-          <p style={{ fontSize: "15px" }}>Filter by</p>
-          <svg
-            height="21"
-            viewBox="0 0 21 21"
-            width="21"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g
-              fill="none"
-              fill-rule="evenodd"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              transform="translate(2 4)"
+      <div
+        className="filter_by-container"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          cursor: "pointer",
+        }}
+      >
+        <details>
+          <summary style={{ fontSize: "15px" }}>
+            Filter by
+            <svg
+              height="21"
+              viewBox="0 0 21 21"
+              width="21"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ marginLeft: "15px" }}
             >
-              <path d="m4.5 0c.55228475 0 1 .44771525 1 1v2c0 .55228475-.44771525 1-1 1s-1-.44771525-1-1v-2c0-.55228475.44771525-1 1-1z" />
-              <path d="m16.5 2h-11" />
-              <path d="m3.5 2h-3" />
-              <path d="m4.5 10c.55228475 0 1 .4477153 1 1v2c0 .5522847-.44771525 1-1 1s-1-.4477153-1-1v-2c0-.5522847.44771525-1 1-1z" />
-              <path d="m16.5 12h-11" />
-              <path d="m3.5 12h-3" />
-              <path d="m12.5 5c.5522847 0 1 .44771525 1 1v2c0 .55228475-.4477153 1-1 1s-1-.44771525-1-1v-2c0-.55228475.4477153-1 1-1z" />
-              <path d="m11.5 7h-11" />
-              <path d="m16.5 7h-3" />
-            </g>
-          </svg>
-        </div>
+              <g
+                fill="none"
+                fill-rule="evenodd"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                transform="translate(2 4)"
+              >
+                <path d="m4.5 0c.55228475 0 1 .44771525 1 1v2c0 .55228475-.44771525 1-1 1s-1-.44771525-1-1v-2c0-.55228475.44771525-1 1-1z" />
+                <path d="m16.5 2h-11" />
+                <path d="m3.5 2h-3" />
+                <path d="m4.5 10c.55228475 0 1 .4477153 1 1v2c0 .5522847-.44771525 1-1 1s-1-.4477153-1-1v-2c0-.5522847.44771525-1 1-1z" />
+                <path d="m16.5 12h-11" />
+                <path d="m3.5 12h-3" />
+                <path d="m12.5 5c.5522847 0 1 .44771525 1 1v2c0 .55228475-.4477153 1-1 1s-1-.44771525-1-1v-2c0-.55228475.4477153-1 1-1z" />
+                <path d="m11.5 7h-11" />
+                <path d="m16.5 7h-3" />
+              </g>
+            </svg>
+          </summary>
+          <nav class="menu">
+            <a href="#link">Oil</a>
+            <a href="#link">Vegetables</a>
+            <a href="#link">Meat</a>
+            <a href="#link">Eggs</a>
+          </nav>
+        </details>
+      </div>
+      <div className="filter_bar-container">
         <div class="input-container">
           <input
             type="text"
@@ -146,7 +169,12 @@ const ProductItems = () => {
               <div className="card-price">
                 <span>MAD</span> {elem.price}
               </div>
-              <button className="card-btn" onClick={() => viewItem(elem)}>
+              <button
+                className="card-btn"
+                onClick={() => {
+                  viewItem(elem), setOpen(false);
+                }}
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                   <path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path>
                   <path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>

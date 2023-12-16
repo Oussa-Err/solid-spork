@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
 import './countdown.css'
+import React, { useEffect, useRef, useState } from 'react'
 import { Button } from '@mui/material';
 
 
@@ -13,7 +13,7 @@ const Countdown = () => {
     let interval = useRef()
 
     const startTimer = () => {
-        const countdownDate = new Date('October 15, 2023 00:00:00').getTime()
+        const countdownDate = new Date('October 15, 2024 00:00:00').getTime()
 
         interval = setInterval(() => {
             const now = new Date().getTime()

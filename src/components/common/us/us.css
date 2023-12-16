@@ -14,7 +14,8 @@
     line-height: 37px;
 
     max-width: 1000px;
-
+    padding-left: 15px;
+    padding-right: 15px;
     color: #5A636C;
     margin-bottom: 30px;
 }

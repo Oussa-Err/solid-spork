@@ -1,5 +1,5 @@
-import React from 'react'
 import './about.css'
+import React from 'react'
 import noBgLogo from '../../../assets/noBgLogo.png'
 
 function About() {
