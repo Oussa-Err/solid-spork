@@ -1,10 +1,9 @@
+import "./contact.css";
 import React, { useRef, useState } from "react";
-import { Button } from "@mui/material";
+import Navbar from "../navbar/Navbar";
 import arrow from "../../../assets/Arrow.png";
 import panier from "../../../assets/header-panier-min.jpg";
 import emailjs from "@emailjs/browser";
-import "./contact.css";
-import Navbar from "../navbar/Navbar";
 
 const Contact = () => {
   const [success, setSuccess] = useState(false);

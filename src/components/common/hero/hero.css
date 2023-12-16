@@ -33,7 +33,7 @@
 
 .hero__btn>div {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     width: 130px;
     height: 12px;
     top: -7px;
@@ -48,8 +48,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 25px;
-    background-color: #E3EEF9;
+}
+
+.second__right-section {
+    padding-left: 30px;
 }
 
 .first__right-section,

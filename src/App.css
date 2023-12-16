@@ -2,6 +2,260 @@
   padding: 0 100px;
 }
 
+.about__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 50px;
+  background-color: #D9EAD3;
+  box-shadow: 0px 24px 30px 0px rgba(0, 0, 0, 0.28);
+}
+
+.third__left-section,
+.third__right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px;
+}
+
+
+.third__right-section {
+  width: 100%;
+  align-items: center;
+}
+
+.third__left-section>h3 {
+  font-family: var(--gradient-font);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 38px;
+  text-transform: capitalize;
+
+  margin-bottom: 30px;
+  color: #1D1B1B;
+}
+
+.third__left-section>p {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 37px;
+
+  color: #5A636C;
+  margin-bottom: 30px;
+}
+
+.third__right-section>img {
+  width: 100%;
+  height: auto;
+  max-width: 35rem;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.QuiNous_somme {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #feffff;
+  align-items: center;
+  justify-content: center;
+}
+
+.content_QuiNous_somme>p {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 37px;
+
+  max-width: 1000px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #5A636C;
+  margin-bottom: 30px;
+}
+
+.QuiNous_somme>h2 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 41.9996px;
+  line-height: 52px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  
+  color: #8E8181;
+  
+  padding: 50px;
+}
+
+
+
+.product__container {
+  background-color: #2C7566;
+  width: 100vw;
+  height: 458px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2rem #000;
+}
+
+.navbar__potato {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 75%;
+}
+
+.navbar__potato>img {
+  align-self: flex-end;
+}
+
+
+.nos_produit {
+  color: #FFF6F6;
+  font-size: 3rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 890px) {
+  .navbar__potato>img {
+    width: 500px;
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .nos_produit {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .QuiNous_somme>h2 {
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 32px;
+    padding: 15px;
+  }
+  
+  .content_QuiNous_somme>p {
+    font-size: 17px;
+    line-height: 32px;
+    margin: 0 10px 15px 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .arrow {
+    align-self: center;
+  }
+  
+  .navbar__potato {
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .navbar__potato>img {
+    width: 400px;
+    height: auto;
+  }
+  
+  .nos_produit {
+    position: relative;
+    top: 5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .QuiNous_somme>h2 {
+    font-weight: 400;
+    font-size: 40.9996px;
+    line-height: 42px;
+    padding: 25px;
+  }
+  
+  .content_QuiNous_somme>p {
+    font-size: 18px;
+    line-height: 35px;
+    margin: 0 15px 25px 15px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .about__container {
+    padding: 0;
+  }
+
+  .third__right-section>img {
+    max-height: 25rem;
+    height: 15.75rem;
+    width: 15.75rem;
+  }
+
+  .third__left-section {
+    padding-right: 3px;
+  }
+
+  .third__right-section {
+    padding: 0;
+  }  
+}  
+
+@media screen and (max-width: 1050px) {
+  .about__container {
+    flex-direction: column-reverse;
+    padding: 25px;
+  }
+
+  .third__left-section {
+    padding: 1rem;
+  }
+
+  .third__right-section {
+    padding: 1rem 0 1rem 0;
+  }
+
+  .third__left-section>h3 {
+    font-size: 1.875rem;
+    line-height: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .third__left-section>p {
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .third__right-section>img {
+    max-height: 31.25rem;
+    height: 24.5rem;
+    width: 25rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .about__container {
+    padding: 0;
+  }
+
+  .third__right-section>img {
+    max-height: 25rem;
+    height: 18.75rem;
+    width: 18.75rem;
+  }
+
+  .third__left-section>h3 {
+    font-weight: 400;
+  }
+}
+
 @media screen and (max-width: 1311px) {
   .hero__container {
     padding: 0 50px;
@@ -13,3 +267,4 @@
     padding: 0;
   }
 }
+

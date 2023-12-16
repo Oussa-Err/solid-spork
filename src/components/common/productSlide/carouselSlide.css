@@ -1,9 +1,98 @@
 .offers__container {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     padding: 90px;
     width: 100dvw;
     background-color: #f3f1ef;
+}
+
+.profiter-card-title {
+    color: #262626;
+    font-size: 1.5em;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.small-desc {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #452c2c;
+}
+
+.small-desc {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, #6293c8, #384c6c);
+    border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+}
+
+.profiter-card {
+    display: block;
+    flex: 1;
+    flex-direction: column;
+    position: relative;
+    max-width: 400px;
+    max-height: 370px;
+    background-color: #f2f8f9;
+    border-radius: 10px;
+    padding: 2em 1.2em;
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profiter-card:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, #364a60, #384c6c);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.35s ease-out;
+}
+
+.profiter-card:hover:before {
+    transform: scale(28);
+}
+
+.profiter-card:hover .small-desc {
+    transition: all 0.5s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.profiter-card:hover .profiter-card-title {
+    transition: all 0.5s ease-out;
+    color: #ffffff;
 }
 
 .carouselSlide__container {
@@ -49,6 +138,7 @@
 
 .carousel .control-arrow {
     background-color: rgba(126, 107, 107, 0.447) !important;
+    z-index: 1 !important;
 }
 
 .carousel.carousel-slider .control-arrow {
@@ -62,41 +152,10 @@
 }
 
 .carousel:hover .slide .legend {
-	opacity: 0.8 !important;
+    opacity: 0.8 !important;
 }
 
-.description {
-    margin: 0 0 15rem 6rem;
-}
 
-.description h2 {
-    font-family: var(--gradient-font);
-    line-height: 38px;
-
-    margin-bottom: 30px;
-    color: #1D1B1B;
-    max-width: 480px;
-    font-weight: 200;
-}
-
-.splatter {
-    width: 480px;
-    border-radius: 30px;
-    opacity: 0.2;
-    height: 200px;
-    background: brown;
-    z-index: 900;
-    position: relative;
-    top: 11.5rem;
-    left: 2rem;
-    box-shadow: 13px 14px 48px -14px rgba(0,0,0,0.67);
-}
-
-@media screen and (max-width: 1581px) {
-    .description {
-        margin-left: 2.2rem;
-    }
-}
 
 @media screen and (max-width: 1425px) {
     .offers__container {
@@ -104,7 +163,7 @@
     }
 }
 
-@media screen and (max-width: 11510px) {
+@media screen and (max-width: 1151px) {
     .carouselSlide__container {
         width: 45dvw;
     }
@@ -119,53 +178,14 @@
     .carouselSlide__container {
         width: 80dvw;
     }
-
-    .description {
-        height: 400px;
-        margin: 0 0 0.9rem 0;
-    }
-
 }
 
 @media screen and (max-width: 600px) {
-
     .offers__container {
         padding: 20px 0;
     }
 
     .carouselSlide__container {
         width: 100dvw;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .description {
-        margin-left: 0;
-    }
-
-    .description h2 {
-        max-width: 400px;
-    }
-
-    .splatter {
-        width: 380px;
-    }
-
-    .description h2 {
-        font-size: 20px;
-    }
-}
-
-@media screen and (max-width: 464px) {
-    .splatter {
-        display: none;
-    }
-
-    .description {
-        height: auto;
-    }
-
-    .description h2 {
-        padding: 0 6px;
     }
 }
