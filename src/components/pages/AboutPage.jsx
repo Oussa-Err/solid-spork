@@ -6,11 +6,11 @@ const About = () => (
   <>
     <div  className="product__container">
       <Navbar />
-      <div className="navbar__maticha">
+      <div className="nos-produit-hero_image">
         <img
           width="400px"
           height="300px"
-          className="potato"
+          className="nos-produit-image"
           src={nosProduit}
           alt="_"
         />

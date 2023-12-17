@@ -1,35 +1,18 @@
 import "./productHeader.css";
 import React from "react";
-import { useState } from "react";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import nosProduit from "../../../assets/nos-produit-hero-section.png";
 import Navbar from "../navbar/Navbar";
 
-const Menu = () => (
-  <>
-    <p>
-      <a href="/">Acceuil</a>
-    </p>
-    <p>
-      <a href="/about">À propos</a>
-    </p>
-    <p>
-      <a href="/products">Nos Produit</a>
-    </p>
-  </>
-);
-
 function ProductHeader() {
-  const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <div className="product__container1">
+    <div className="product-page-header-container">
       <Navbar />
-      <div className="navbar__maticha">
+      <div className="nos-produit-hero_image">
         <img
-          width="600px"
+          width="400px"
           height="300px"
-          className="potato"
+          className="nos-produit-image"
           src={nosProduit}
           alt="_"
         />

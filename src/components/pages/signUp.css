@@ -1,3 +1,9 @@
+.productpage {
+    background-image: url("../../assets/sitraka-background-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 .form {
     --input-focus: #2d8cf0;
     --font-color: #323232;

@@ -2,27 +2,33 @@ import "./productItems.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { RiCloseLine } from "react-icons/ri";
+import background from "../../../assets/sitraka-background-unsplash.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 
 const ProductItems = () => {
   const [product, setProduct] = useState(null);
   const [details, setDetails] = useState([]);
   const [page, setPage] = useState(1);
+  const [genre, setGenre] = useState("");
+  const [name, setName] = useState("");
 
-  const openFilter = (e) => {
+  const filterByName = (e, name) => {
     e.preventDefault();
-    setOpen(!open);
+    console.log(name);
+    setName("?name=" + name.toLowerCase());
   };
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8080/api/v1/products/")
+      .get(`http://127.0.0.1:8080/api/v1/products/${genre}`)
       .then((res) => {
         setProduct(res.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [genre, page]);
 
   const viewItem = (prod) => {
     setDetails([{ ...prod }]);
@@ -33,10 +39,21 @@ const ProductItems = () => {
       setPage(no);
   };
 
-  console.log(product);
+  const filterByGenre = (e, genre) => {
+    e.preventDefault();
+    console.log(genre);
+    console.log(typeof genre);
+    if (genre.toString().length > 0) {
+      setGenre("?genre=" + genre);
+    } else {
+      setGenre("");
+    }
+    setPage(1);
+  };
+
   if (!product) return null;
   return (
-    <div>
+    <div className="product_items-container">
       <div
         className="filter_by-container"
         style={{
@@ -75,21 +92,34 @@ const ProductItems = () => {
               </g>
             </svg>
           </summary>
-          <nav class="menu">
-            <a href="#link">Oil</a>
-            <a href="#link">Vegetables</a>
-            <a href="#link">Meat</a>
-            <a href="#link">Eggs</a>
+          <nav className="menu">
+            <a href="#all" onClick={(e) => filterByGenre(e, "")}>
+              All
+            </a>
+            <a href="#oil" onClick={(e) => filterByGenre(e, "oil")}>
+              Oil
+            </a>
+            <a href="#vegetables" onClick={(e) => filterByGenre(e, "vegetables")}>
+              Vegetables
+            </a>
+            <a href="#meat" onClick={(e) => filterByGenre(e, "meat")}>
+              Meat
+            </a>
+            <a href="#eggs" onClick={(e) => filterByGenre(e, "eggs")}>
+              Eggs
+            </a>
           </nav>
         </details>
       </div>
-      <div className="filter_bar-container">
+      <div id={genre} className="filter_bar-container">
         <div class="input-container">
           <input
             type="text"
-            name="text"
-            class="input"
+            name="name"
+            className="input"
             placeholder="search..."
+            value={name}
+            onClick={(e) => filterByName(e, e.target.name.value)}
           />
           <span class="icon">
             <svg
@@ -152,9 +182,13 @@ const ProductItems = () => {
           </a>
         </button>
       </div>
-      <div className="grid-container">
+      <div className="grid-container" id="products-items">
         {product.data.slice(page * 6 - 6, page * 6).map((elem, index) => (
           <div className="card" key={index}>
+            <FontAwesomeIcon
+              className="ellipsis-icon"
+              icon={faEllipsisVertical}
+            />
             <div className="card-img">
               <img src={elem.photo_url.url} alt="" width="100" height="100" />
             </div>
@@ -171,7 +205,7 @@ const ProductItems = () => {
               <button
                 className="card-btn"
                 onClick={() => {
-                  viewItem(elem), setOpen(false);
+                  viewItem(elem);
                 }}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

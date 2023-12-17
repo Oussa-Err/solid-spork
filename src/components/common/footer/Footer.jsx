@@ -9,13 +9,13 @@ const Footer = () => (
       </div>
       <div className="footer__pages-list">
         <a href="/">
-          <p>Home</p>
+          Home
         </a>
         <a href="/contact">
-          <p>Contact</p>
+          Contact
         </a>
         <a href="/products">
-          <p>Nos Produits</p>
+          Nos Produits
         </a>
       </div>
       <div className="footer__links">
@@ -45,10 +45,10 @@ const Footer = () => (
 
       <ul className="terms-privacy">
         <li>
-          <a href="/privacy"> Privacy Policy</a>
+          <a href="/privacy">Privacy Policy</a>
         </li>
         <li>
-          <a href="/terms"> Terms of Use</a>
+          <a href="/terms">Terms of Use</a>
         </li>
       </ul>
     </div>
