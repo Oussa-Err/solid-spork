@@ -2,6 +2,8 @@
     background-image: url("../../assets/sitraka-background-unsplash.jpg");
     background-position: center;
     background-size: cover;
+    width: 100dvw;
+    min-height: 700px;
 }
 
 .form {

@@ -5,6 +5,7 @@ import { RiCloseLine } from "react-icons/ri";
 import background from "../../../assets/sitraka-background-unsplash.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
+import Spinner from "../spinner/Spinner";
 
 const ProductItems = () => {
   const [product, setProduct] = useState(null);
@@ -12,21 +13,23 @@ const ProductItems = () => {
   const [page, setPage] = useState(1);
   const [genre, setGenre] = useState("");
   const [name, setName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const filterByName = (e, name) => {
-    e.preventDefault();
-    console.log(name);
-    setName("?name=" + name.toLowerCase());
-  };
-
+  
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get(`http://127.0.0.1:8080/api/v1/products/${genre}`)
       .then((res) => {
-        setProduct(res.data);
+        setTimeout(() => {
+          setProduct(res.data);
+          setIsLoading(false);
+        }, 1000);
       })
       .catch((error) => {
-        console.log(error);
+        setErrorMessage("Unable to fetch user list");
+        setIsLoading(false);
       });
   }, [genre, page]);
 
@@ -99,7 +102,10 @@ const ProductItems = () => {
             <a href="#oil" onClick={(e) => filterByGenre(e, "oil")}>
               Oil
             </a>
-            <a href="#vegetables" onClick={(e) => filterByGenre(e, "vegetables")}>
+            <a
+              href="#vegetables"
+              onClick={(e) => filterByGenre(e, "vegetables")}
+            >
               Vegetables
             </a>
             <a href="#meat" onClick={(e) => filterByGenre(e, "meat")}>
@@ -183,41 +189,46 @@ const ProductItems = () => {
         </button>
       </div>
       <div className="grid-container" id="products-items">
-        {product.data.slice(page * 6 - 6, page * 6).map((elem, index) => (
-          <div className="card" key={index}>
-            <FontAwesomeIcon
-              className="ellipsis-icon"
-              icon={faEllipsisVertical}
-            />
-            <div className="card-img">
-              <img src={elem.photo_url.url} alt="" width="100" height="100" />
-            </div>
-            <div className="card-title">{elem.name}</div>
-            <div className="card-subtitle">
-              Product description. Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit.
-            </div>
-            <hr className="card-divider" />
-            <div className="card-footer">
-              <div className="card-price">
-                <span>MAD</span> {elem.price}
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          product.data.slice(page * 6 - 6, page * 6).map((elem, index) => (
+            <div className="card" key={index}>
+              <FontAwesomeIcon
+                className="ellipsis-icon"
+                icon={faEllipsisVertical}
+              />
+              <div className="card-img">
+                <img src={elem.photo_url.url} alt="" width="100" height="100" />
               </div>
-              <button
-                className="card-btn"
-                onClick={() => {
-                  viewItem(elem);
-                }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path>
-                  <path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
-                  <path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
-                  <path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path>
-                </svg>
-              </button>
+              <div className="card-title">{elem.name}</div>
+              <div className="card-subtitle">
+                Product description. Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit.
+              </div>
+              <hr className="card-divider" />
+              <div className="card-footer">
+                <div className="card-price">
+                  <span>MAD</span> {elem.price}
+                </div>
+                <button
+                  className="card-btn"
+                  onClick={() => {
+                    viewItem(elem);
+                  }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path>
+                    <path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
+                    <path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path>
+                    <path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path>
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
+        {errorMessage && <div className="error">{errorMessage}</div>}
       </div>
       {product.data.length > 0 && (
         <div class="pagination_container">

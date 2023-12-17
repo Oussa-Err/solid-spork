@@ -3,10 +3,15 @@ import { Footer, ProductHeader, ProductItems } from '../common'
 import "./signUp.css"
 
 const ProductPage = () =>
-  <div className='productpage'>
+<>
     <ProductHeader />
+  <div className='productpage'>
+    {
+      
+    }
     <ProductItems />
-    <Footer />
   </div>
+    <Footer />
+</>
 
 export default ProductPage
