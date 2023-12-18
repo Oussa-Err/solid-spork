@@ -331,7 +331,8 @@ details[open]::before {
 .ellipsis-icon {
   position: relative;
   cursor: pointer;
-  left: 6rem !important;
+  left: 6rem;
+  top: -10px;
   z-index: 1;
 }
 

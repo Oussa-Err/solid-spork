@@ -5,13 +5,13 @@ import { RiCloseLine } from "react-icons/ri";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../spinner/Spinner";
+import SearchBar from "../searchBar/SearchBar";
 
 const ProductItems = () => {
   const [product, setProduct] = useState(null);
   const [details, setDetails] = useState([]);
   const [page, setPage] = useState(1);
   const [genre, setGenre] = useState("");
-  const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -42,8 +42,6 @@ const ProductItems = () => {
 
   const filterByGenre = (e, genre) => {
     e.preventDefault();
-    console.log(genre);
-    console.log(typeof genre);
     if (genre.toString().length > 0) {
       setGenre("?genre=" + genre);
     } else {
@@ -57,16 +55,16 @@ const ProductItems = () => {
   if (!product) {
     return (
       errorMessage && (
-        <div class="notifications-container">
-          <div class="error-alert">
-            <div class="flex">
-              <div class="flex-shrink-0">
+        <div className="notifications-container">
+          <div className="error-alert">
+            <div className="flex">
+              <div className="flex-shrink-0">
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="error-svg"
+                  className="error-svg"
                 >
                   <path
                     clip-rule="evenodd"
@@ -75,8 +73,8 @@ const ProductItems = () => {
                   ></path>
                 </svg>
               </div>
-              <div class="error-prompt-container">
-                <p class="error-prompt-heading">
+              <div className="error-prompt-container">
+                <p className="error-prompt-heading">
                   something went wrong please try again later
                 </p>
               </div>
@@ -112,7 +110,7 @@ const ProductItems = () => {
                 fillRule="evenodd"
                 stroke="currentColor"
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
                 transform="translate(2 4)"
               >
                 <path d="m4.5 0c.55228475 0 1 .44771525 1 1v2c0 .55228475-.44771525 1-1 1s-1-.44771525-1-1v-2c0-.55228475.44771525-1 1-1z" />
@@ -149,67 +147,8 @@ const ProductItems = () => {
           </nav>
         </details>
       </div>
-      <div id={genre} className="filter_bar-container">
-        <div class="input-container">
-          <input
-            type="text"
-            name="name"
-            className="input"
-            placeholder="search..."
-            value={name}
-            onClick={(e) => filterByName(e, e.target.name.value)}
-          />
-          <span class="icon">
-            <svg
-              width="19px"
-              height="19px"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                strokeLinecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                {" "}
-                <path
-                  opacity="1"
-                  d="M14 5H20"
-                  stroke="#000"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  stroke-linejoin="round"
-                ></path>{" "}
-                <path
-                  opacity="1"
-                  d="M14 8H17"
-                  stroke="#000"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  stroke-linejoin="round"
-                ></path>{" "}
-                <path
-                  d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2"
-                  stroke="#000"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  stroke-linejoin="round"
-                ></path>{" "}
-                <path
-                  opacity="1"
-                  d="M22 22L20 20"
-                  stroke="#000"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                  stroke-linejoin="round"
-                ></path>{" "}
-              </g>
-            </svg>
-          </span>
-        </div>
+      <div className="filter_bar-container">
+        <SearchBar placeholder="SEARCH..." data={product.data} />
         <button>
           <a
             href="/vegetable-form"
@@ -262,8 +201,8 @@ const ProductItems = () => {
         )}
       </div>
       {product.data.length > 0 && (
-        <div class="pagination_container">
-          <ul class="pagination">
+        <div className="pagination_container">
+          <ul className="pagination">
             <li
               style={page === 1 ? { display: "none" } : { display: "block" }}
               onClick={() => {
@@ -309,7 +248,7 @@ const ProductItems = () => {
         }}
       >
         {details.map((elem, i) => (
-          <div className="cards">
+          <div className="cards" key={i}>
             <RiCloseLine
               color="#fff"
               className="faCircleMinus"

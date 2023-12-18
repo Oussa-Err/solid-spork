@@ -8,12 +8,15 @@ const UpdateProduct = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const accordion = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div>
-      <div className="vegetable-container" style={{height: isOpen? "auto" : "100px"}}>
+      <div
+        className="vegetable-container"
+        style={{ height: isOpen ? "auto" : "100px" }}
+      >
         <div
           style={{
             width: "100%",
@@ -27,11 +30,11 @@ const UpdateProduct = () => {
         </div>
         <form action="#">
           <div className="form-row">
-            <button className="upload-area" style={{color: "whitesmoke"}}>
+            <button className="upload-area" style={{ color: "whitesmoke" }}>
               <span className="upload-area-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
                   width="340.531"
                   height="419.116"
                   viewBox="0 0 340.531 419.116"
@@ -70,7 +73,9 @@ const UpdateProduct = () => {
               <label htmlFor="">Price</label>
             </div>
           </div>
-          <button type="submit"><span className="button_top">Update</span></button>
+          <button type="submit">
+            <span className="button_top">Update</span>
+          </button>
           <ToastContainer />
         </form>
       </div>
