@@ -2,7 +2,6 @@ import "./productItems.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { RiCloseLine } from "react-icons/ri";
-import background from "../../../assets/sitraka-background-unsplash.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../spinner/Spinner";
@@ -13,10 +12,9 @@ const ProductItems = () => {
   const [page, setPage] = useState(1);
   const [genre, setGenre] = useState("");
   const [name, setName] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
-  
   useEffect(() => {
     setIsLoading(true);
     axios
@@ -54,7 +52,41 @@ const ProductItems = () => {
     setPage(1);
   };
 
-  if (!product) return null;
+  if (isLoading) return <Spinner />;
+
+  if (!product) {
+    return (
+      errorMessage && (
+        <div class="notifications-container">
+          <div class="error-alert">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="error-svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <div class="error-prompt-container">
+                <p class="error-prompt-heading">
+                  something went wrong please try again later
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    );
+  }
+
   return (
     <div className="product_items-container">
       <div
@@ -228,7 +260,6 @@ const ProductItems = () => {
             </div>
           ))
         )}
-        {errorMessage && <div className="error">{errorMessage}</div>}
       </div>
       {product.data.length > 0 && (
         <div class="pagination_container">
