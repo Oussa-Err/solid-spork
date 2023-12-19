@@ -78,6 +78,7 @@ details[open] .menu {
   border-radius: var(--cornerRad);
   background-color: var(--primColor);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
   margin-top: 8px;
   display: flex;
@@ -161,6 +162,7 @@ details[open]::before {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   border-radius: 2px;
 }
 

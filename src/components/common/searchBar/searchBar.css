@@ -24,6 +24,7 @@
 
 .dataItem p {
     margin-left: 10px;
+    cursor: pointer;
 }
 
 #clearBtn {

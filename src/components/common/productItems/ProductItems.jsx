@@ -36,8 +36,7 @@ const ProductItems = () => {
   };
 
   const setPageHandler = (no) => {
-    if (no > 0 && no <= Math.round(product.data.length / 4) && no !== page)
-      setPage(no);
+    
   };
 
   const filterByGenre = (e, genre) => {
@@ -210,22 +209,9 @@ const ProductItems = () => {
                 setPageHandler(page - 1);
               }}
             >
-              Prev
+              see less
             </li>
-            {[...Array(Math.ceil(product.data.length / 6))].map((_, i) => {
-              return (
-                <li
-                  aria-current={page}
-                  key={i}
-                  className={i + 1 === page ? "active" : ""}
-                  onClick={() => {
-                    setPageHandler(i + 1);
-                  }}
-                >
-                  {i + 1}
-                </li>
-              );
-            })}
+  
             <li
               style={
                 page === Math.ceil(product.data.length / 6)
@@ -236,7 +222,7 @@ const ProductItems = () => {
                 setPageHandler(page + 1)
               }}
             >
-              suivant
+              see more
             </li>
           </ul>
         </div>
@@ -249,7 +235,7 @@ const ProductItems = () => {
             backdropFilter: details.length > 0 ? "blur(10px)" : "none",
             zIndex: details.length > 0 ? "3" : "-1",
           }}
-          // onClick={() => {setDetails([]),(document.body.style.overflow = "auto")}}
+          key={i}
         >
           <div className="cards" key={i}>
             <RiCloseLine

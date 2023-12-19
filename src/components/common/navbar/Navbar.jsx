@@ -2,6 +2,17 @@ import "./navbar.css";
 import React from "react";
 
 const Navbar = () => {
+
+  const handleScrolling = () => {
+    if(document.body.style.overflow === "auto"){
+      console.log("executed 1")
+      document.body.style.overflow = "hidden"
+    }else {
+      console.log("executed 2")
+      document.body.style.overflow = "auto"
+    }
+  }
+  console.log()
   return (
     <div>
         <div className="navbar__container">
@@ -35,8 +46,8 @@ const Navbar = () => {
         </div>
       <div className="navbar">
         <div className="nav-container">
-          <input className="checkbox" type="checkbox" name="" id="" />
-          <div className="hamburger-lines">
+          <input className="checkbox" type="checkbox" name="" id="" onClick={handleScrolling}/>
+          <div className="hamburger-lines" >
             <span className="line line1"></span>
             <span className="line line2"></span>
             <span className="line line3"></span>

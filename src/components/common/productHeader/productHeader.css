@@ -8,6 +8,7 @@
     align-items: flex-start;
     height: 75%;
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .nos-produit-hero_image .nos-produit-image {
