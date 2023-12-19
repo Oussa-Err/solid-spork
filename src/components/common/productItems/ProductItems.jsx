@@ -185,7 +185,8 @@ const ProductItems = () => {
                 <button
                   className="card-btn"
                   onClick={() => {
-                    viewItem(elem);
+                    viewItem(elem),
+                    (document.body.style.overflow = "hidden");
                   }}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -231,8 +232,8 @@ const ProductItems = () => {
                   ? { display: "none" }
                   : { display: "block" }
               }
-              onClick={() => {
-                setPageHandler(page + 1);
+              onClick={(e) => {
+                setPageHandler(page + 1)
               }}
             >
               suivant
@@ -240,20 +241,22 @@ const ProductItems = () => {
           </ul>
         </div>
       )}
-      <div
-        className="card-view"
-        style={{
-          backdropFilter: details.length > 0 ? "blur(10px)" : "none",
-          zIndex: details.length > 0 ? "1" : "-1",
-        }}
-      >
-        {details.map((elem, i) => (
+
+      {details.map((elem, i) => (
+        <div
+          className="card-view"
+          style={{
+            backdropFilter: details.length > 0 ? "blur(10px)" : "none",
+            zIndex: details.length > 0 ? "3" : "-1",
+          }}
+          // onClick={() => {setDetails([]),(document.body.style.overflow = "auto")}}
+        >
           <div className="cards" key={i}>
             <RiCloseLine
               color="#fff"
               className="faCircleMinus"
               size={27}
-              onClick={() => setDetails([])}
+              onClick={() => {setDetails([]),(document.body.style.overflow = "auto")}}
               style={{ cursor: "pointer", color: "black", fontSize: "larger" }}
             />
             <div className="card-img">
@@ -278,8 +281,8 @@ const ProductItems = () => {
               </div>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 };
