@@ -5,14 +5,12 @@ const Navbar = () => {
 
   const handleScrolling = () => {
     if(document.body.style.overflow === "auto"){
-      console.log("executed 1")
       document.body.style.overflow = "hidden"
     }else {
-      console.log("executed 2")
       document.body.style.overflow = "auto"
     }
   }
-  console.log()
+  
   return (
     <div>
         <div className="navbar__container">

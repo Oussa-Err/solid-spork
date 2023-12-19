@@ -59,8 +59,8 @@ const Panier = () => {
                 </div>
 
                 <div className='trouver-nous'>
-                    <h1>OÙ NOUS TROUVER</h1>
-                    <p>Si vous désirez nous rendre visite, découvrir notre panier de légumes bio ainsi que tout le reste, n’hésitez pas à nous <a href="#footer"> <span style={{ color: 'green' }}>contacter</span></a>. Nous serons ravi de vous accueillir.</p>
+                    <h1 style={{color: "#fff"}}>OÙ NOUS TROUVER</h1>
+                    <p>Si vous désirez nous rendre visite, découvrir notre panier de légumes bio ainsi que tout le reste, n’hésitez pas à nous <a href="/contact"> <span style={{ color: 'green' }}>contacter</span></a>. Nous serons ravi de vous accueillir.</p>
                     <p>À très bientôt !</p>
                 </div>
             </div>
