@@ -10,7 +10,7 @@ import SearchBar from "../searchBar/SearchBar";
 const ProductItems = () => {
   const [product, setProduct] = useState(null);
   const [details, setDetails] = useState([]);
-  const [page, setPage] = useState(1);
+  const [more, setMore] = useState(1);
   const [genre, setGenre] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
@@ -29,14 +29,15 @@ const ProductItems = () => {
         setErrorMessage("Unable to fetch user list");
         setIsLoading(false);
       });
-  }, [genre, page]);
+  }, [genre, more]);
 
   const viewItem = (prod) => {
     setDetails([{ ...prod }]);
   };
 
   const setPageHandler = (no) => {
-    
+    if (no > 0 && no <= Math.round(product.data.length / 4) && no !== more)
+      setMore(no);
   };
 
   const filterByGenre = (e, genre) => {
@@ -46,7 +47,7 @@ const ProductItems = () => {
     } else {
       setGenre("");
     }
-    setPage(1);
+    setMore(4);
   };
 
   if (isLoading) return <Spinner />;
@@ -162,7 +163,7 @@ const ProductItems = () => {
         {isLoading ? (
           <Spinner />
         ) : (
-          product.data.slice(page * 6 - 6, page * 6).map((elem, index) => (
+          product.data.slice(0, more * 4).map((elem, index) => (
             <div className="card" key={index}>
               <FontAwesomeIcon
                 className="ellipsis-icon"
@@ -184,8 +185,7 @@ const ProductItems = () => {
                 <button
                   className="card-btn"
                   onClick={() => {
-                    viewItem(elem),
-                    (document.body.style.overflow = "hidden");
+                    viewItem(elem), (document.body.style.overflow = "hidden");
                   }}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -204,22 +204,22 @@ const ProductItems = () => {
         <div className="pagination_container">
           <ul className="pagination">
             <li
-              style={page === 1 ? { display: "none" } : { display: "block" }}
+              style={more === 1 ? { display: "none" } : { display: "block" }}
               onClick={() => {
-                setPageHandler(page - 1);
+                setPageHandler(more - 1);
               }}
             >
               see less
             </li>
-  
+
             <li
               style={
-                page === Math.ceil(product.data.length / 6)
+                more === Math.ceil(product.data.length / 4)
                   ? { display: "none" }
                   : { display: "block" }
               }
               onClick={(e) => {
-                setPageHandler(page + 1)
+                setPageHandler(more + 1);
               }}
             >
               see more
@@ -242,7 +242,9 @@ const ProductItems = () => {
               color="#fff"
               className="faCircleMinus"
               size={27}
-              onClick={() => {setDetails([]),(document.body.style.overflow = "auto")}}
+              onClick={() => {
+                setDetails([]), (document.body.style.overflow = "auto");
+              }}
               style={{ cursor: "pointer", color: "black", fontSize: "larger" }}
             />
             <div className="card-img">
