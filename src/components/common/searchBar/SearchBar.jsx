@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./searchBar.css";
-import SearchIcon from "@mui/icons-material/Search";
-import CloseIcon from "@mui/icons-material/Close";
 
 function SearchBar({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([]);
@@ -9,12 +7,11 @@ function SearchBar({ placeholder, data }) {
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
+
     setWordEntered(searchWord);
     const newFilter = data.filter((value) => {
-      console.log(value.name.toLowerCase().includes(searchWord.toLowerCase()));
       return value.name.toLowerCase().includes(searchWord.toLowerCase());
     });
-    console.log(searchWord);
     if (searchWord === "") {
       setFilteredData([]);
     } else {
