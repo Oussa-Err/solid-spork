@@ -6,30 +6,41 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../spinner/Spinner";
 import SearchBar from "../searchBar/SearchBar";
+import FilterBy from "../filterBy/FilterBy";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "../../../redux/actions/productAction";
 
 const ProductItems = () => {
   const [product, setProduct] = useState(null);
   const [details, setDetails] = useState([]);
   const [more, setMore] = useState(1);
-  const [genre, setGenre] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.data);
+  const error = useSelector((state) => state.error);
+
+  console.log(product);
+  const fetchDataAndSetLoading = async () => {
+    try {
+      setIsLoading(true);
+      dispatch(fetchData());
+      setProduct(data);
+    } catch (error) {
+      setErrorMessage("Unable to fetch user list");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
-    setIsLoading(true);
-    axios
-      .get(`http://127.0.0.1:8080/api/v1/products/${genre}`)
-      .then((res) => {
-        setTimeout(() => {
-          setProduct(res.data);
-          setIsLoading(false);
-        }, 1000);
-      })
-      .catch((error) => {
-        setErrorMessage("Unable to fetch user list");
-        setIsLoading(false);
-      });
-  }, [genre, more]);
+    fetchDataAndSetLoading();
+  }, [dispatch]);
+
+  if (error) {
+    setErrorMessage("Unable to fetch user list");
+  }
 
   const viewItem = (prod) => {
     setDetails([{ ...prod }]);
@@ -38,16 +49,6 @@ const ProductItems = () => {
   const setPageHandler = (no) => {
     if (no > 0 && no <= Math.round(product.data.length / 4) && no !== more)
       setMore(no);
-  };
-
-  const filterByGenre = (e, genre) => {
-    e.preventDefault();
-    if (genre.toString().length > 0) {
-      setGenre("?genre=" + genre);
-    } else {
-      setGenre("");
-    }
-    setMore(4);
   };
 
   if (isLoading) return <Spinner />;
@@ -87,66 +88,7 @@ const ProductItems = () => {
 
   return (
     <div className="product_items-container">
-      <div
-        className="filter_by-container"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          cursor: "pointer",
-        }}
-      >
-        <details>
-          <summary style={{ fontSize: "15px" }}>
-            Filter by
-            <svg
-              height="21"
-              viewBox="0 0 21 21"
-              width="21"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ marginLeft: "15px" }}
-            >
-              <g
-                fill="none"
-                fillRule="evenodd"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                transform="translate(2 4)"
-              >
-                <path d="m4.5 0c.55228475 0 1 .44771525 1 1v2c0 .55228475-.44771525 1-1 1s-1-.44771525-1-1v-2c0-.55228475.44771525-1 1-1z" />
-                <path d="m16.5 2h-11" />
-                <path d="m3.5 2h-3" />
-                <path d="m4.5 10c.55228475 0 1 .4477153 1 1v2c0 .5522847-.44771525 1-1 1s-1-.4477153-1-1v-2c0-.5522847.44771525-1 1-1z" />
-                <path d="m16.5 12h-11" />
-                <path d="m3.5 12h-3" />
-                <path d="m12.5 5c.5522847 0 1 .44771525 1 1v2c0 .55228475-.4477153 1-1 1s-1-.44771525-1-1v-2c0-.55228475.4477153-1 1-1z" />
-                <path d="m11.5 7h-11" />
-                <path d="m16.5 7h-3" />
-              </g>
-            </svg>
-          </summary>
-          <nav className="menu">
-            <a href="#all" onClick={(e) => filterByGenre(e, "")}>
-              All
-            </a>
-            <a href="#oil" onClick={(e) => filterByGenre(e, "oil")}>
-              Oil
-            </a>
-            <a
-              href="#vegetables"
-              onClick={(e) => filterByGenre(e, "vegetables")}
-            >
-              Vegetables
-            </a>
-            <a href="#meat" onClick={(e) => filterByGenre(e, "meat")}>
-              Meat
-            </a>
-            <a href="#eggs" onClick={(e) => filterByGenre(e, "eggs")}>
-              Eggs
-            </a>
-          </nav>
-        </details>
-      </div>
+      <FilterBy />
       <div className="filter_bar-container">
         <SearchBar placeholder="SEARCH..." data={product.data} />
         <button>
@@ -237,7 +179,7 @@ const ProductItems = () => {
           }}
           key={i}
         >
-          <div className="cards" key={i}>
+          <div className="cards">
             <RiCloseLine
               color="#fff"
               className="faCircleMinus"
