@@ -49,7 +49,7 @@ button {
   --button_radius: 0.75em;
   --button_color: #e8e8e8;
   --button_outline_color: #000000;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: bold;
   border: none;
   border-radius: var(--button_radius);
@@ -57,7 +57,9 @@ button {
 }
 
 .button_top {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   border: 2px solid var(--button_outline_color);
   border-radius: var(--button_radius);
@@ -66,6 +68,10 @@ button {
   color: var(--button_outline_color);
   transform: translateY(-0.2em);
   transition: transform 0.1s ease;
+}
+
+.button_top svg {
+  margin-left: 5px;
 }
 
 .button_top:hover {
