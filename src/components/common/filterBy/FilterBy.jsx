@@ -5,7 +5,6 @@ import { fetchDataByGenre } from "../../../redux/actions/productAction";
 const FilterBy = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data);
-  const error = useSelector((state) => state.error);
   const [genre, setGenre] = useState("");
 
   useEffect(() => {
@@ -15,11 +14,10 @@ const FilterBy = () => {
   console.log(data);
 
   const filterByGenre = (e, oneGenre) => {
-    e.preventDefault();
-    if (oneGenre.toString().length > 0) {
-      setGenre("?genre=" + oneGenre);
-    } else {
+    if (oneGenre === "all") {
       setGenre("");
+    }else{
+      setGenre("?genre=" + oneGenre);
     }
   };
 
@@ -64,7 +62,7 @@ const FilterBy = () => {
             </svg>
           </summary>
           <nav className="menu">
-            <a href="#all" onClick={(e) => filterByGenre(e, "")}>
+            <a href="#all" onClick={(e) => filterByGenre(e, "all")}>
               All
             </a>
             <a href="#oil" onClick={(e) => filterByGenre(e, "oil")}>
