@@ -94,7 +94,7 @@ const CreateProduct = () => {
                   height="419.116"
                   viewBox="0 0 340.531 419.116"
                 >
-                  <g id="files-new" clip-path="url(#clip-files-new)">
+                  <g id="files-new" clipPath="url(#clip-files-new)">
                     <path
                       id="Union_2"
                       data-name="Union 2"

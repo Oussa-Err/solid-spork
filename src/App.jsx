@@ -10,7 +10,8 @@ import {
   AboutPage,
   VegetableForm,
   LogIn,
-  SignUp
+  SignUp,
+  Checkout
 } from "./components";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );

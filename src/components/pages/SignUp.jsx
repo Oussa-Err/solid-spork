@@ -1,5 +1,6 @@
 import React from "react";
-import "./signUp.css";
+import "./pages-global.css";
+import Navbar from "../common/navbar/Navbar";
 
 const SignUp = () => {
   const handleSubmit = (event) => {
@@ -12,28 +13,36 @@ const SignUp = () => {
   };
 
   return (
-    <form className="form">
-      <div className="title">
-        Welcome,
-        <br />
-        <span>sign up to continue</span>
-      </div>
-      <input type="name" placeholder="Name" name="name" className="input" />
-      <input type="email" placeholder="Email" name="email" className="input" />
-      <input
-        type="password"
-        placeholder="Password"
-        name="password"
-        className="input"
-      />
-      <input
-        type="password"
-        placeholder="Confirm password"
-        name="confirm_password"
-        className="input"
-      />
-      <button className="button-confirm">Let`s go →</button>
-    </form>
+    <>
+    <Navbar />
+      <form className="form">
+        <div className="title">
+          Welcome,
+          <br />
+          <span>sign up to continue</span>
+        </div>
+        <input type="name" placeholder="Name" name="name" className="input" />
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          className="input"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          className="input"
+        />
+        <input
+          type="password"
+          placeholder="Confirm password"
+          name="confirm_password"
+          className="input"
+        />
+        <button className="button-confirm">Let`s go →</button>
+      </form>
+    </>
   );
 };
 

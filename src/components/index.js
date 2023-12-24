@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage'
 import VegetableForm from './pages/vegetables/VegetableForm'
 import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
+import Checkout from "./pages/Checkout"
 
 export {
     Home,
@@ -17,5 +18,6 @@ export {
     AboutPage,
     VegetableForm,
     LogIn,
-    SignUp
+    SignUp,
+    Checkout
 }

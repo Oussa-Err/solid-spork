@@ -1,6 +1,6 @@
 import React from "react";
 import { Footer, ProductHeader, ProductItems, Testimonials } from "../common";
-import "./signUp.css";
+import "./pages-global.css";
 
 const ProductPage = () => {
   return (

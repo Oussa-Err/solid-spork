@@ -4,19 +4,7 @@ import maticha from "../../assets/maticha.png";
 import arrow from "../../assets/Arrow.png";
 import noBgLogo from "../../assets/noBgLogo.png";
 
-const Menu = () => (
-  <>
-    <p>
-      <a href="/">Acceuil</a>
-    </p>
-    <p>
-      <a href="/about">À propos</a>
-    </p>
-    <p>
-      <a href="/products">Nos Produit</a>
-    </p>
-  </>
-);
+
 function Home() {
   return (
     <div className="app_container">
