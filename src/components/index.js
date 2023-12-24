@@ -7,7 +7,7 @@ import AboutPage from './pages/AboutPage'
 import VegetableForm from './pages/vegetables/VegetableForm'
 import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
-import Checkout from "./pages/Checkout"
+import Dashboard from "./pages/Dashboard"
 
 export {
     Home,
@@ -19,5 +19,5 @@ export {
     VegetableForm,
     LogIn,
     SignUp,
-    Checkout
+    Dashboard
 }

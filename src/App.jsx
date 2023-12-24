@@ -11,7 +11,7 @@ import {
   VegetableForm,
   LogIn,
   SignUp,
-  Checkout
+  Dashboard
 } from "./components";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
