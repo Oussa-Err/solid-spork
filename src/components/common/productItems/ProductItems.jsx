@@ -85,7 +85,7 @@ const ProductItems = () => {
   return (
     <div className="product_items-container">
       <FilterBy />
-      <div className="filter_bar-container">
+      <div className="filter_bar-container"  id="products-items">
         <SearchBar placeholder="SEARCH..." data={data.data} />
         <button>
           <a
@@ -97,7 +97,7 @@ const ProductItems = () => {
           </a>
         </button>
       </div>
-      <div className="grid-container" id="products-items">
+      <div className="grid-container" >
         {data.data.slice(0, more * 4).map((elem, index) => (
           <div className="card" key={index}>
             <FontAwesomeIcon

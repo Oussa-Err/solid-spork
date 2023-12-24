@@ -16,7 +16,7 @@ const FilterBy = () => {
   const filterByGenre = (e, oneGenre) => {
     if (oneGenre === "all") {
       setGenre("");
-    }else{
+    } else {
       setGenre("?genre=" + oneGenre);
     }
   };
@@ -62,22 +62,28 @@ const FilterBy = () => {
             </svg>
           </summary>
           <nav className="menu">
-            <a href="#all" onClick={(e) => filterByGenre(e, "all")}>
+            <a href="#products-items" onClick={(e) => filterByGenre(e, "all")}>
               All
             </a>
-            <a href="#oil" onClick={(e) => filterByGenre(e, "oil")}>
+            <a href="#products-items" onClick={(e) => filterByGenre(e, "oil")}>
               Oil
             </a>
             <a
-              href="#vegetables"
+              href="#products-items"
               onClick={(e) => filterByGenre(e, "vegetables")}
             >
               Vegetables
             </a>
-            <a href="#meat" onClick={(e) => filterByGenre(e, "meat")}>
+            <a
+              href="#products-items"
+              onClick={(e) => filterByGenre(e, "meat")}
+            >
               Meat
             </a>
-            <a href="#eggs" onClick={(e) => filterByGenre(e, "eggs")}>
+            <a
+              href="#products-items"
+              onClick={(e) => filterByGenre(e, "eggs")}
+            >
               Eggs
             </a>
           </nav>
