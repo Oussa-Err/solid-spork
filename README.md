@@ -37,9 +37,6 @@ This project is an enhanced web application for selling organic vegetables, orga
 
 ## Technologies
 
-1. Node.js: JavaScript runtime for server-side development
-2. Express: Web application framework for Node.js
-3. MongoDB: NoSQL database for data storage
 4. React: JavaScript library for building user interfaces
 5. Redux: State management for React applications
 6. Vite: Fast build tool for web applications
