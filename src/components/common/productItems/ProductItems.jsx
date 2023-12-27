@@ -22,14 +22,14 @@ const ProductItems = () => {
   const fetchDataAndSetLoading = async () => {
     try {
       setIsLoading(true);
-      await dispatch(fetchData());
+      dispatch(fetchData());
       setIsLoading(false);
     } catch (error) {
       console.log(error);
       setIsLoading(false);
     }
   };
-
+  console.log(isLoading)
   useEffect(() => {
     fetchDataAndSetLoading();
   }, [dispatch]);
@@ -48,7 +48,6 @@ const ProductItems = () => {
   }
 
   if (!data) {
-    console.log("executed 1");
     return (
       error && (
         <div className="notifications-container">
@@ -80,12 +79,11 @@ const ProductItems = () => {
       )
     );
   }
-  console.log("executed 2");
 
   return (
     <div className="product_items-container">
-      <FilterBy />
-      <div className="filter_bar-container"  id="products-items">
+      <FilterBy setIsLoading={setIsLoading} />
+      <div className="filter_bar-container" id="products-items">
         <SearchBar placeholder="SEARCH..." data={data.data} />
         <button>
           <a
@@ -97,7 +95,7 @@ const ProductItems = () => {
           </a>
         </button>
       </div>
-      <div className="grid-container" >
+      <div className="grid-container">
         {data.data.slice(0, more * 4).map((elem, index) => (
           <div className="card" key={index}>
             <FontAwesomeIcon
@@ -134,7 +132,7 @@ const ProductItems = () => {
           </div>
         ))}
       </div>
-      <Pagination data={data} onPageChange={setPageHandler} more={more}/>
+      <Pagination data={data} onPageChange={setPageHandler} more={more} />
       {details.map((elem, i) => (
         <div
           className="card-view"

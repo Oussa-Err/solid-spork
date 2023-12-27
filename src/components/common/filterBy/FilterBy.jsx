@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchDataByGenre } from "../../../redux/actions/productAction";
+import Spinner from "../spinner/Spinner";
 
-const FilterBy = () => {
+const FilterBy = ({ setIsLoading }) => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data);
   const [genre, setGenre] = useState("");
 
-  useEffect(() => {
-    dispatch(fetchDataByGenre(genre));
-  }, [dispatch, genre]);
+  const getProductsByGenre = async () => {
+    try {
+      setIsLoading(true);
+      dispatch(fetchDataByGenre(genre));
+      setIsLoading(false);
+    } catch (err) {
+      setIsLoading(false);
+    }
+  };
 
-  console.log(data);
+  useEffect(() => {
+    getProductsByGenre();
+  }, [dispatch, genre]);
 
   const filterByGenre = (e, oneGenre) => {
     if (oneGenre === "all") {
@@ -74,16 +83,10 @@ const FilterBy = () => {
             >
               Vegetables
             </a>
-            <a
-              href="#products-items"
-              onClick={(e) => filterByGenre(e, "meat")}
-            >
+            <a href="#products-items" onClick={(e) => filterByGenre(e, "meat")}>
               Meat
             </a>
-            <a
-              href="#products-items"
-              onClick={(e) => filterByGenre(e, "eggs")}
-            >
+            <a href="#products-items" onClick={(e) => filterByGenre(e, "eggs")}>
               Eggs
             </a>
           </nav>
