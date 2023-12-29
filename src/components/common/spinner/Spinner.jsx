@@ -1,10 +1,10 @@
 import React from "react";
 import "./spinner.css";
 
-const Spinner = () => {
+const Spinner = ({width, height}) => {
   return (
-    <div style={{width: "100dvw", display: "flex", justifyContent: "center"}}>
-      <div className="spinner-container">
+    <div style={{ display: "flex", justifyContent: "center"}}>
+      <div className="spinner-container" style={{width: width, height: height}}>
         <div className="loading-spinner"></div>
       </div>
     </div>

@@ -19,17 +19,17 @@ const ProductItems = () => {
   const data = useSelector((state) => state.data);
   const error = useSelector((state) => state.error);
 
-  const fetchDataAndSetLoading = async () => {
+  const fetchDataAndSetLoading = () => {
     try {
       setIsLoading(true);
-      dispatch(fetchData());
+      dispatch(fetchData()).then(setIsLoading(false)) 
       setIsLoading(false);
     } catch (error) {
       console.log(error);
       setIsLoading(false);
     }
   };
-  console.log(isLoading)
+
   useEffect(() => {
     fetchDataAndSetLoading();
   }, [dispatch]);
@@ -43,7 +43,9 @@ const ProductItems = () => {
       setMore(no);
   };
 
+  console.log(isLoading);
   if (isLoading) {
+    console.log("spinner executed...");
     return <Spinner />;
   }
 

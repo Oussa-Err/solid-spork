@@ -13,29 +13,36 @@ const SignUp = () => {
   };
 
   return (
-    <>
+    <div className="login-signup-page">
       <Navbar />
-      <form className="form">
-        <div className="title">
-          Welcome,
-          <br />
-          <span>&nbsp; &nbsp;Log in to continue</span>
-        </div>
-        <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          className="input"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          className="input"
-        />
-        <button className="button-confirm">Let`s go →</button>
-      </form>
-    </>
+      <div className="login-signup-body">
+        <form className="form">
+          <div className="title">
+            Welcome,
+            <br />
+            <span>&nbsp; &nbsp;Log in to continue</span>
+          </div>
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            className="input"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            className="input"
+          />
+          <p>
+            <a className="logIn" href="/forgetpassword">
+              Forgot password?
+            </a>
+          </p>
+          <button className="button-confirm">Let`s go →</button>
+        </form>
+      </div>
+    </div>
   );
 };
 
