@@ -82,9 +82,6 @@
 
 
 .productpage {
-    background-image: linear-gradient(rgba(93, 140, 202, 0.411), rgba(255, 255, 255, 0.151)), url("../../assets/sitraka-background-unsplash.jpg");
-    background-position: center;
-    background-size: cover;
     width: 100dvw;
     min-height: 700px;
 }

@@ -40,7 +40,7 @@ const SignUp = () => {
       setErr("Password must be at least 8 characters long.");
       return;
     } else if (input.password !== input.confirmedPassword) {
-      setErr("Confirmed password should match password");
+      setErr("Confirmed password should match password.");
       return;
     }
 

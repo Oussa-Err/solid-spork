@@ -1,15 +1,29 @@
 import React from "react";
 import "./pages-global.css";
 import Navbar from "../common/navbar/Navbar";
+import { useState } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const SignUp = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleOnChange = (e) => {
+    const { email, password } = e.target;
+    setInput((prev) => ({ ...prev, email, password }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios
+      .post(`http://127.0.0.1:8080/api/v1/users/login`, input)
+      .then((res) => {
+        toast.success("you are now loged in.");
+      })
+      .catch(console.log);
   };
 
   return (
@@ -27,20 +41,27 @@ const SignUp = () => {
             placeholder="Email"
             name="email"
             className="input"
+            value={input.email}
+            onChange={handleOnChange}
           />
           <input
             type="password"
             placeholder="Password"
             name="password"
             className="input"
+            value={input.password}
+            onChange={handleOnChange}
           />
           <p>
             <a className="logIn" href="/forgetpassword">
               Forgot password?
             </a>
           </p>
-          <button className="button-confirm">Let`s go →</button>
+          <button className="button-confirm" onClick={handleSubmit}>
+            Let`s go →
+          </button>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );

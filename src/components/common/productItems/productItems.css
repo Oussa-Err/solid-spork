@@ -5,8 +5,11 @@
 }
 
 .notifications-container {
+  background-image: linear-gradient(rgba(93, 140, 202, 0.411), rgba(255, 255, 255, 0.151)), url("../../../assets/sitraka-background-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
   width: 100dvw;
-  height: 300px;
+  min-height: 600px;
   font-size: 0.875rem;
   line-height: 1.25rem;
   display: flex;
@@ -127,14 +130,17 @@ details[open]::before {
   0% {
     height: 0;
   }
+
   100% {
     height: 312px;
   }
 }
+
 @keyframes fadeMe {
   0% {
     opacity: 0.4;
   }
+
   100% {
     opacity: 0;
   }

@@ -19,18 +19,18 @@ const ProductItems = () => {
   const data = useSelector((state) => state.data);
   const error = useSelector((state) => state.error);
 
-  const fetchDataAndSetLoading = () => {
-    try {
-      setIsLoading(true);
-      dispatch(fetchData()).then(setIsLoading(false)) 
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-      setIsLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const fetchDataAndSetLoading = async () => {
+      setIsLoading(true);
+      await dispatch(fetchData())
+        .then(() => {
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.log(error);
+          setIsLoading(false);
+        });
+    };
     fetchDataAndSetLoading();
   }, [dispatch]);
 
@@ -84,7 +84,7 @@ const ProductItems = () => {
 
   return (
     <div className="product_items-container">
-      <FilterBy setIsLoading={setIsLoading} />
+      <FilterBy  />
       <div className="filter_bar-container" id="products-items">
         <SearchBar placeholder="SEARCH..." data={data.data} />
         <button>
