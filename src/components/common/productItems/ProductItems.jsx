@@ -43,9 +43,7 @@ const ProductItems = () => {
       setMore(no);
   };
 
-  console.log(isLoading);
   if (isLoading) {
-    console.log("spinner executed...");
     return <Spinner />;
   }
 
