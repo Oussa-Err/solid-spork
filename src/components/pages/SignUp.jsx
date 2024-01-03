@@ -3,10 +3,13 @@ import "./pages-global.css";
 import Navbar from "../common/navbar/Navbar";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Spinner from "../common/spinner/Spinner";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [err, setErr] = useState(null);
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [input, setInput] = useState({
     name: "",
@@ -21,7 +24,6 @@ const SignUp = () => {
       ...prev,
       [name]: value,
     }));
-    console.log(input);
   };
 
   const handleSubmit = async (event) => {
@@ -50,13 +52,12 @@ const SignUp = () => {
     await axios
       .post(`http://127.0.0.1:8080/api/v1/users/signup`, input)
       .then(() => {
-        console.log("success");
         toast.success("user created Successfully");
+        navigate("/");
         setIsLoading(false);
       })
       .catch((err) => {
         setErr(err.response?.data?.message || "An error occurred");
-        console.log(err.response?.data?.message);
         setIsLoading(false);
       });
   };
@@ -144,8 +145,8 @@ const SignUp = () => {
             </a>
           </p>
           {isLoading ? (
-            <button className="button-confirm" >
-              <Spinner width={"50px"} height={"50px"}/>
+            <button className="button-confirm">
+              <Spinner width={"50px"} height={"50px"} />
             </button>
           ) : (
             <button className="button-confirm" onClick={(e) => handleSubmit(e)}>

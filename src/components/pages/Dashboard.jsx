@@ -8,17 +8,14 @@ const Dashboard = () => {
         <aside className="sidebar">
           <h1 className="">Dashboard</h1>
           <nav>
-            <a className="" href="#">
-              Home
+            <a className="/" href="#">
+              Acceuil
             </a>
-            <a className="" href="#">
-              Profile
+            <a className="/products" href="#">
+              Nos Produits
             </a>
-            <a className="" href="#">
-              Analytics
-            </a>
-            <a className="" href="#">
-              Settings
+            <a className="#" href="#">
+              Parametres
             </a>
           </nav>
         </aside>

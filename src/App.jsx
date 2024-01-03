@@ -11,7 +11,8 @@ import {
   VegetableForm,
   LogIn,
   SignUp,
-  Dashboard
+  Dashboard,
+  PrivateRoute,
 } from "./components";
 
 function App() {

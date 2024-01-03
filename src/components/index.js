@@ -8,6 +8,7 @@ import VegetableForm from './pages/vegetables/VegetableForm'
 import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
 import Dashboard from "./pages/Dashboard"
+import PrivateRoute from "./hooks/PrivateRoute"
 
 export {
     Home,
@@ -19,5 +20,6 @@ export {
     VegetableForm,
     LogIn,
     SignUp,
-    Dashboard
+    Dashboard,
+    PrivateRoute
 }
