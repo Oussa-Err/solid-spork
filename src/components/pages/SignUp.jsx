@@ -19,7 +19,6 @@ const SignUp = () => {
   });
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  console.log(user);
   const error = useSelector((state) => state.error);
   const [err, setErr] = useState(null);
 
@@ -31,6 +30,10 @@ const SignUp = () => {
     }));
     setErr(null);
   };
+
+  useEffect(() => {
+    setErr(error);
+  }, [error]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -53,28 +56,22 @@ const SignUp = () => {
     setErr(null);
     setIsLoading(true);
 
+    const response = dispatch(signUp(input));
+    
     try {
-      const response = dispatch(signUp(input));
-      if (error) {
-        setErr(error);
-        setIsLoading(false);
-        return;
-      } else {
+      if (user) {
+        console.log("executed?")
         toast.success("User created successfully");
-        setIsLoading(false);
         // navigate("/");
+      } else {
+        setErr(error || "An error occurred. Please try again later.");
       }
     } catch (err) {
-      setErr("An error occurred. Please try again later.");
+      setErr("An unexpected error occurred. Please try again later.");
     } finally {
       setIsLoading(false);
     }
   };
-
-  useEffect(() => {
-    dispatch(signUp(input))
-
-  }, [dispatch, error])
 
   return (
     <div className="login-signup-page">
