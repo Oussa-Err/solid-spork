@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./pages-global.css";
 import Navbar from "../common/navbar/Navbar";
-import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Spinner from "../common/spinner/Spinner";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { signUp } from "../../redux/actions/userAction";
 
 const SignUp = () => {
-  const [err, setErr] = useState(null);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [input, setInput] = useState({
@@ -17,6 +17,11 @@ const SignUp = () => {
     password: "",
     confirmedPassword: "",
   });
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  console.log(user);
+  const error = useSelector((state) => state.error);
+  const [err, setErr] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,11 +29,11 @@ const SignUp = () => {
       ...prev,
       [name]: value,
     }));
+    setErr(null);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // const data = new FormData(event.currentTarget);
     if (
       !input.name ||
       !input.email ||
@@ -36,7 +41,6 @@ const SignUp = () => {
       !input.confirmedPassword
     ) {
       setErr("All fields are required.");
-      console.log("executed" + err);
       return;
     } else if (input.password.length < 8) {
       setErr("Password must be at least 8 characters long.");
@@ -47,20 +51,30 @@ const SignUp = () => {
     }
 
     setErr(null);
-
     setIsLoading(true);
-    await axios
-      .post(`http://127.0.0.1:8080/api/v1/users/signup`, input)
-      .then(() => {
-        toast.success("user created Successfully");
-        navigate("/");
+
+    try {
+      const response = dispatch(signUp(input));
+      if (error) {
+        setErr(error);
         setIsLoading(false);
-      })
-      .catch((err) => {
-        setErr(err.response?.data?.message || "An error occurred");
+        return;
+      } else {
+        toast.success("User created successfully");
         setIsLoading(false);
-      });
+        // navigate("/");
+      }
+    } catch (err) {
+      setErr("An error occurred. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  useEffect(() => {
+    dispatch(signUp(input))
+
+  }, [dispatch, error])
 
   return (
     <div className="login-signup-page">

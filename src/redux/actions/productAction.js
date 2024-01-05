@@ -1,5 +1,4 @@
 import axios from "axios";
-import * as typeStore from "../typeStore";
 
 export const fetchData = () => async (dispatch) => {
     try {
@@ -9,7 +8,6 @@ export const fetchData = () => async (dispatch) => {
         dispatch({ type: 'FETCH_DATA_FAILURE', payload: error.message });
     }
 };
-
 
 export const fetchDataByGenre = (genre) => async (dispatch) => {
     try {
