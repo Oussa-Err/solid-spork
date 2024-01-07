@@ -20,7 +20,7 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const error = useSelector((state) => state.error);
-  const [err, setErr] = useState(null);
+  const [err, setErr] = useState(error);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,15 +28,26 @@ const SignUp = () => {
       ...prev,
       [name]: value,
     }));
-    setErr(null);
+  };
+
+  const userResponse = async () => {
+    if (user.status === "success") {
+      console.log(user);
+      console.log("executed on success");
+      // navigate("/products");
+      // window.location.reload(false);
+      toast.success("User created successfully");
+    }
   };
 
   useEffect(() => {
     setErr(error);
-  }, [error]);
+    userResponse();
+  }, [error, dispatch]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     if (
       !input.name ||
       !input.email ||
@@ -44,33 +55,20 @@ const SignUp = () => {
       !input.confirmedPassword
     ) {
       setErr("All fields are required.");
+      setIsLoading(false);
       return;
     } else if (input.password.length < 8) {
       setErr("Password must be at least 8 characters long.");
+      setIsLoading(false);
       return;
     } else if (input.password !== input.confirmedPassword) {
       setErr("Confirmed password should match password.");
+      setIsLoading(false);
       return;
     }
 
-    setErr(null);
-    setIsLoading(true);
-
-    const response = dispatch(signUp(input));
-    
-    try {
-      if (user) {
-        console.log("executed?")
-        toast.success("User created successfully");
-        // navigate("/");
-      } else {
-        setErr(error || "An error occurred. Please try again later.");
-      }
-    } catch (err) {
-      setErr("An unexpected error occurred. Please try again later.");
-    } finally {
-      setIsLoading(false);
-    }
+    const response = await dispatch(signUp(input));
+    setIsLoading(false);
   };
 
   return (
