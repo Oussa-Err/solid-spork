@@ -32,7 +32,6 @@ const SignUp = () => {
 
   const userResponse = async () => {
     if (user.status === "success") {
-      console.log(user);
       console.log("executed on success");
       // navigate("/products");
       // window.location.reload(false);

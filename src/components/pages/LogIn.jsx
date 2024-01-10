@@ -10,12 +10,11 @@ import { useNavigate } from "react-router-dom";
 const LogIn = () => {
   const navigate = useNavigate();
   const [err, setErr] = useState(null);
+  const [isLoading, setIsLoading] = useState(false)
   const [input, setInput] = useState({
     email: "",
     password: "",
   });
-
-  console.log(navigate);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -27,18 +26,12 @@ const LogIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await axios.post(
-        `http://127.0.0.1:8080/api/v1/users/login`,
-        input
-      );
-      toast.success("You are now logged in.");
-
-      navigate("/dashboard");
-    } catch (err) {
-      err.response?.data?.message[0].toUpperCase()
-      setErr(err.response?.data?.message || "An error occurred");
+    if(!input.email || !input.password) {
+      setErr("All fields are required")
+      setIsLoading(false)
+      return
     }
+    
   };
 
   return (
