@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 const Navbar = () => {
   const [isUser, setIsUser] = useState(false);
   const user = useSelector((state) => state.user);
-  console.log(user);
 
   useEffect(() => {
     if (user) {

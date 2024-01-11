@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./pages-global.css";
+import { logInUser } from "../../redux/actions/userAction";
 import Navbar from "../common/navbar/Navbar";
-import { useState } from "react";
-import axios from "axios";
+import Spinner from "../common/spinner/Spinner";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
 
 const LogIn = () => {
   const navigate = useNavigate();
   const [err, setErr] = useState(null);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+  const error = useSelector((state) => state.error);
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
   const [input, setInput] = useState({
     email: "",
     password: "",
   });
+
+  const loginResponse = async () => {
+    if (user.statut === "success") {
+      console.log("executed on success!");
+      toast.success("logged in successful!");
+    }
+  };
+
+  useEffect(() => {
+    loginResponse();
+    setErr(error);
+  }, [error, dispatch]);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -26,12 +43,16 @@ const LogIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!input.email || !input.password) {
-      setErr("All fields are required")
-      setIsLoading(false)
-      return
+    setIsLoading(true);
+
+    if (!input.email || !input.password) {
+      setErr("All fields are required");
+      setIsLoading(false);
+      return;
     }
-    
+
+    const response = await dispatch(logInUser(input));
+    setIsLoading(false);
   };
 
   return (
@@ -95,9 +116,15 @@ const LogIn = () => {
               Don't have an account?<a href="/signup">&nbsp; Sign up</a>
             </span>
           </div>
-          <button className="button-confirm" onClick={handleSubmit}>
-            Let`s go →
-          </button>
+          {isLoading ? (
+            <button className="button-confirm">
+              <Spinner width={"50px"} height={"50px"} />
+            </button>
+          ) : (
+            <button className="button-confirm" onClick={(e) => handleSubmit(e)}>
+              Let`s go →
+            </button>
+          )}
           <a
             style={{ fontSize: "small", opacity: "70%" }}
             href="/forgetpassword"

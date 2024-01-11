@@ -2,7 +2,6 @@ import axios from "axios";
 
 export const signUp = (user_input) => async (dispatch) => {
     try {
-        // const {name, email, password, confirmedPassword} = user_input
         const { data } = await axios.post(`http://127.0.0.1:8080/api/v1/users/signup`, user_input)
         dispatch({
             type: 'SIGNUP_DATA_SUCCESS',
@@ -17,7 +16,7 @@ export const signUp = (user_input) => async (dispatch) => {
 }
 
 
-export const logIn = (user_input) => async (dispatch) => {
+export const logInUser = (user_input) => async (dispatch) => {
     try {
         const { data } = await axios.post(`http://127.0.0.1:8080/api/v1/users/login`, user_input)
         dispatch({
