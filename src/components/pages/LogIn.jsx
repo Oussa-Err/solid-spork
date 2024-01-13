@@ -20,19 +20,21 @@ const LogIn = () => {
     email: "",
     password: "",
   });
-  console.log(user);
+
   const loginResponse = async () => {
+
     if (user.status === "success") {
-      console.log("executed on success!");
-      localStorage.setItem(user.user.name, user.token);
-      toast.success("logged in successful!");
+      console.log("Executed on success!");
+      toast.success("Logged in successful!");
     }
   };
+
+  console.log(localStorage.getItem("user"))
 
   useEffect(() => {
     setErr(error);
     loginResponse();
-  }, [error, dispatch]);
+  }, [error, user]);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;

@@ -42,7 +42,7 @@ const SignUp = () => {
   useEffect(() => {
     setErr(error);
     userResponse();
-  }, [error, dispatch]);
+  }, [error, user]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -66,7 +66,7 @@ const SignUp = () => {
       return;
     }
 
-    const response = await dispatch(signUp(input));
+    await dispatch(signUp(input));
     setIsLoading(false);
   };
 
