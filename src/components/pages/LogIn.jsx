@@ -22,14 +22,11 @@ const LogIn = () => {
   });
 
   const loginResponse = async () => {
-
     if (user.status === "success") {
       console.log("Executed on success!");
       toast.success("Logged in successful!");
     }
   };
-
-  console.log(localStorage.getItem("user"))
 
   useEffect(() => {
     setErr(error);

@@ -20,17 +20,39 @@ export const logInUser = (user_input) => async (dispatch) => {
     try {
         const { data } = await axios.post(`http://127.0.0.1:8080/api/v1/users/login`, user_input)
 
-        localStorage.setItem("user", data.token);
-
         dispatch({
             type: 'LOGIN_DATA_SUCCESS',
-            payload: data
+            payload: data.user
         })
-        
+
+        dispatch({
+            type: 'TOKEN_DATA_SUCCESS',
+            payload: data.token
+        })
+
     } catch (err) {
         dispatch({
             type: 'LOGIN_DATA_FAILURE',
             payload: err.response?.data?.message
         })
+    }
+}
+
+export const logOutUser = (user_input) => async (dispatch) => {
+    try {
+        const { data } = await axios.post(`http://127.0.0.1:8080/api/v1/users/logout`, user_input)
+
+        dispatch({
+            type: "LOGOUT_DATA_SUCCESS",
+            payload: data
+        })
+
+    } catch (err) {
+
+        dispatch({
+            type: "LOUGOUT_DATA_FAILURE",
+            payload: err.response?.data?.message
+        })
+
     }
 }
