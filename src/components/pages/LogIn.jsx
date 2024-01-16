@@ -23,7 +23,6 @@ const LogIn = () => {
 
   const loginResponse = async () => {
     if (user.status === "success") {
-      console.log("Executed on success!");
       toast.success("Logged in successful!");
     }
   };
@@ -40,7 +39,7 @@ const LogIn = () => {
       [name]: value,
     }));
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);

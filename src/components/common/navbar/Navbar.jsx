@@ -10,7 +10,7 @@ const Navbar = () => {
     if (user) {
       setIsUser(true);
     }
-  }, []);
+  }, [user]);
 
   const handleScrolling = () => {
     if (
