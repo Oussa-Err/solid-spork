@@ -87,7 +87,7 @@ const Navbar = () => {
           ) : (
             <button type="button">
               <a
-                href="/signup"
+                href="/login"
                 className="button_top"
                 style={{ color: "#000000" }}
               >
