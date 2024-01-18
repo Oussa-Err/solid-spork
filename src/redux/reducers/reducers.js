@@ -6,8 +6,6 @@ const initialState = {
     user: null,
 };
 
-
-
 const dataReducer = (state = initialState, action) => {
     switch (action.type) {
         case typeStore.FETCH_DATA_SUCCESS:

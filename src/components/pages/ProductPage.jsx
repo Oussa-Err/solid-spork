@@ -4,7 +4,7 @@ import "./pages-global.css";
 
 const ProductPage = () => {
   return (
-    <div style={{width: '100dvw'}}>
+    <div>
       <ProductHeader />
       <div className="productpage">
         <ProductItems />

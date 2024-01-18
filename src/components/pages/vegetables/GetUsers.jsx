@@ -9,15 +9,23 @@ const GetUsers = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8080/api/v1/users/")
-      .then((res) => {
-        setUsers(res.data);
-        toast.success("user sumoned Successfully");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const checkAuth = async () => {
+      await axios
+        .get("http://127.0.0.1:8080/api/v1/users/", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res) => {
+          setUsers(res.data);
+          toast.success("user sumoned Successfully");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+
+    checkAuth();
   }, []);
 
   const accordion = () => {

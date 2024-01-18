@@ -7,7 +7,7 @@ function PrivateRoute({ component: Component, ...rest }) {
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
-    setAuthenticated(!!token);
+    setAuthenticated(token);
   }, []);
 
   return (

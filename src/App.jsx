@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Home,
@@ -16,6 +16,17 @@ import {
 } from "./components";
 
 function App() {
+  const [isAuth, setIsAuth] = useState(false)
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user")
+
+    if (loggedInUser && loggedInUser !== "null") {
+      setIsAuth(true)
+    }
+  }, [isAuth])
+
+
   return (
     <Router>
       <Routes>
@@ -28,7 +39,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={isAuth? <Dashboard /> : <LogIn />} />
       </Routes>
     </Router>
   );

@@ -26,6 +26,29 @@
     font-weight: bolder;
 }
 
+.two_btns{
+    display: flex;
+}
+
+.logout_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid var(--button_outline_color);
+    border-radius: 0 0.70rem 0.70rem 0;
+    padding: 0.70em 0;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+}
+
+
+.logout_button:hover {
+    transform: translateY(-0.33em);
+}
+
 .nav-container .checkbox {
     position: absolute;
     display: block;

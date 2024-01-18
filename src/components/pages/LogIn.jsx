@@ -24,6 +24,7 @@ const LogIn = () => {
   const loginResponse = async () => {
     if (user.status === "success") {
       toast.success("Logged in successful!");
+      navigate("/products")
     }
   };
 
