@@ -17,10 +17,9 @@ import {
 
 function App() {
   const [isAuth, setIsAuth] = useState(false)
+  const loggedInUser = JSON.parse(localStorage.getItem("user"))
 
   useEffect(() => {
-    const loggedInUser = localStorage.getItem("user")
-
     if (loggedInUser && loggedInUser !== "null") {
       setIsAuth(true)
     }
@@ -39,7 +38,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/dashboard" element={isAuth? <Dashboard /> : <LogIn />} />
+        <Route path="/dashboard" element={isAuth? <Dashboard user={loggedInUser}/> : <LogIn />} />
       </Routes>
     </Router>
   );

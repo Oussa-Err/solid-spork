@@ -20,8 +20,8 @@
 
 @media screen and (max-width: 500px) {
     .nos-produit-hero_image .nos-produit-image {
-        height: 250px;
-        width: 300px;
+        height: 200px;
+        width: 250px;
     }
 }
 

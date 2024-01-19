@@ -85,15 +85,6 @@ const ProductItems = () => {
       <FilterBy  />
       <div className="filter_bar-container" id="products-items">
         <SearchBar placeholder="SEARCH..." data={data.data} />
-        <button>
-          <a
-            href="/vegetable-form"
-            className="button_top"
-            style={{ color: "#000000" }}
-          >
-            Edit
-          </a>
-        </button>
       </div>
       <div className="grid-container">
         {data.data.slice(0, more * 4).map((elem, index) => (

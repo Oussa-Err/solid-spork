@@ -22,9 +22,14 @@ const LogIn = () => {
   });
 
   const loginResponse = async () => {
-    if (user.status === "success") {
-      toast.success("Logged in successful!");
-      navigate("/products")
+    try {
+      
+      if (user.status === "success") {
+        toast.success("Logged in successful!");
+        navigate("/products")
+      }
+    } catch (error) {
+      console.log(error)
     }
   };
 

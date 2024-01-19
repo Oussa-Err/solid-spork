@@ -5,7 +5,6 @@ import Navbar from "./navbar/Navbar"
 import Map from "./map/Map";
 import CarouselSlide from "./productSlide/CarouselSlide";
 import Panier from "./panier/Panier";
-import ProductHeader from "./productHeader/ProductHeader"
 import ProductItems from "./productItems/ProductItems"
 import Spinner from "./spinner/Spinner"
 import Testimonials from "./testimonials/Testimonials"
@@ -14,7 +13,6 @@ export {
     Contact,
     Footer,
     Hero,
-    ProductHeader,
     ProductItems,
     Navbar,
     Map,

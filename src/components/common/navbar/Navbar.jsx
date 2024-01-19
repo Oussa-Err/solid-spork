@@ -7,13 +7,12 @@ const Navbar = () => {
   const [isUser, setIsUser] = useState(false);
   const [user, setUser] = useState(null);
   const dispatch = useDispatch()
+  const loggedInUser = JSON.parse(localStorage.getItem("user"))
 
   useEffect(() => {
-    const loggedInUser = localStorage.getItem("user");
 
     if (loggedInUser && loggedInUser !== "null") {
-      console.log(loggedInUser)
-      setUser(JSON.parse(loggedInUser));
+      setUser(loggedInUser);
       setIsUser(true);
     }
   }, [isUser]);
@@ -38,7 +37,7 @@ const Navbar = () => {
   console.log(localStorage.getItem("user"))
 
   return (
-    <div>
+    <>
       <div className="navbar__container">
         <div className="navbar__logo">
           <h2>HEALTHY FARM</h2>
@@ -212,7 +211,9 @@ const Navbar = () => {
             <li>
               <a href="/products">Nos Produit</a>
             </li>
-
+            <li>
+                <a href="/contact">Contacter Nous</a>
+              </li>
             {isUser ? (
               <li>
                 <a href="/" onClick={onLogout}>Logout</a>
@@ -225,7 +226,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

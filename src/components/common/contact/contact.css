@@ -1,14 +1,13 @@
 .contact__container {
     display: flex;
     flex-direction: column;
-    width: 100dvw;
+    /* width: 100dvw; */
     background-color: rgba(9, 174, 41, 0.55);
 }
 
 /* first section*/
 
 .contact__first-section {
-    width: 100%;
     display: flex;
     flex-direction: column;
     background: #536451
@@ -44,7 +43,6 @@
 /* contact fieldset section */
 
 .contact__second-section {
-    width: 100%;
     height: 900px;
     display: flex;
     justify-content: center;
