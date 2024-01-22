@@ -1,11 +1,13 @@
 import axios from "axios";
 
+axios.defaults.withCredentials = true
+
 export const logInUser = (user_input) => async (dispatch) => {
     try {
         const response = await axios.post(`http://127.0.0.1:8080/api/v1/users/login`, user_input)
 
-        localStorage.clear()
-        localStorage.setItem("user", JSON.stringify(response.data))
+        // localStorage.clear()
+        // localStorage.setItem("user", JSON.stringify(response.data))
 
         dispatch({
             type: 'LOGIN_DATA_SUCCESS',

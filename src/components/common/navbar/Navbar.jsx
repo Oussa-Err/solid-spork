@@ -34,8 +34,6 @@ const Navbar = () => {
     }
   };
 
-  console.log(localStorage.getItem("user"))
-
   return (
     <>
       <div className="navbar__container">
