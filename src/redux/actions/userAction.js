@@ -5,6 +5,7 @@ axios.defaults.withCredentials = true
 export const logInUser = (user_input) => async (dispatch) => {
     try {
         const response = await axios.post(`http://127.0.0.1:8080/api/v1/users/login`, user_input)
+        console.log(response)
 
         // localStorage.clear()
         // localStorage.setItem("user", JSON.stringify(response.data))
@@ -16,10 +17,11 @@ export const logInUser = (user_input) => async (dispatch) => {
 
     } catch (err) {
         console.log(err)
+        console.log("executed")
 
         dispatch({
             type: 'LOGIN_DATA_FAILURE',
-            payload: err.response?.data?.message
+            payload: err.response?.data?.message || err.message
         })
     }
 }
@@ -36,7 +38,7 @@ export const signUp = (user_input) => async (dispatch) => {
     } catch (err) {
         dispatch({
             type: "SIGNUP_DATA_FAILURE",
-            payload: err.response?.data?.message
+            payload: err.response?.data?.message || err.message
         })
     }
 }
