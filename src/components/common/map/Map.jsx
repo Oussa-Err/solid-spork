@@ -1,28 +1,31 @@
-import React from 'react'
-import './map.css'
-import { useMemo } from 'react';
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api'
-
-
-
+import "./map.css";
+import React, { useRef } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 const Map = () => {
+  const mapRef = useRef(null);
+  const position = [33.74451577797111, -6.155663348132094];
 
-    const { isLoaded } = useLoadScript({
-        googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_KEY
-    });
-    const center = useMemo(() => ({ lat: 33.74451577797111, lng: -6.155663348132094 }), [])
+  return (
+    <MapContainer
+      center={position}
+      zoom={13}
+      ref={mapRef}
+      style={{ height: "300px", maxWidth: "100dvw" }}
+      className="map-container"
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Marker position={position}>
+        <Popup>
+          Healthy Farm
+        </Popup>
+      </Marker>
+    </MapContainer>
+  );
+};
 
-    if (!isLoaded) { return <div className='map__loading'>Loading...</div>; }
-    return (
-            <GoogleMap
-                zoom={13}
-                center={center}
-                mapContainerClassName='map-container'
-            >
-                <Marker position={center} />
-            </GoogleMap>
-    )
-}
-
-export default Map
+export default Map;
